@@ -1,0 +1,49 @@
+@media screen and (min-width: 280px) {
+    .title {
+        
+        font-size: 8px;
+        text-align: center;
+      }
+      img {
+        width: 60px;
+        margin-left: 10px;
+      }
+    
+}
+@media screen and (min-width: 390px) {
+    .title {
+        
+        font-size: 10px;
+        text-align: center;
+      }
+      img {
+        width: 60px;
+        margin-left: 10px;
+      }
+    
+}
+@media screen and (min-width: 500px) {
+  
+ 
+}
+
+header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  background-color: red;
+}
+
+
+.title {
+  font-family: Rubik, Lato, sans-serif;
+
+}
+.title .red {
+  color: #aa111b;
+}
+.title .dark {
+  color: #470b0f;
+}

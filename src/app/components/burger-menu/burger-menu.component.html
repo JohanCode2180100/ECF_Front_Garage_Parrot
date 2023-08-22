@@ -1,0 +1,15 @@
+<button mat-button (click)="toggleMenu()" *ngIf="isButtonVisible" class="noDisplay">
+  <mat-icon class="burger-icon ">menu</mat-icon>
+</button>
+
+<ul *ngIf="isMenuOpen">
+  <li><a href="#">Accueil</a></li>
+  <li><a href="#">Nos voitures d'occasions</a></li>
+  <li><a href="#">Nous contacter</a></li>
+  <li><a href="#">Espace pro</a></li>
+  <li (click)="closeMenu()" style="text-align: center;"><span class="material-symbols-outlined">
+    close
+    </span></li>
+</ul>
+
+
