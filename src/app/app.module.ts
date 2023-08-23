@@ -14,6 +14,10 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { HoursComponent } from "./components/hours/hours.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HoursServiceService } from "./services/hours-service.service";
+import { SecondHandCarComponent } from "./components/second-hand-car/second-hand-car/second-hand-car.component";
+import { SecondHandCarDetailsComponent } from "./components/second-hand-car-details/second-hand-car-details.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +27,16 @@ import { HoursServiceService } from "./services/hours-service.service";
     SectionOneCarouselComponent,
     sectionOneContainComponent,
     ServicesCardsComponent,
-
     SectionThreeComponent,
     FooterComponent,
     HoursComponent,
+    SecondHandCarComponent,
+    SecondHandCarDetailsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     MatIconModule,
     MatSidenavModule,
     MatCardModule,
