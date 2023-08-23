@@ -28,6 +28,9 @@
     margin: 10 10 0 10;
   }
 }
+.title {
+  padding: 10px;
+}
 
 .title .red {
   color: #aa111b;
@@ -39,6 +42,7 @@ nav ul li a {
 
 .p {
   margin: 20 10 10 0;
+  padding: 10px;
   text-align: justify;
   color: #470b0f;
 }
