@@ -56,7 +56,7 @@
     text-decoration: none;
   }
   .linkDisplay .right {
-    position: fixed;
+    position:absolute;
     right: 0;
     margin: 20px; /* Ajoutez une marge pour espacement */
   }
