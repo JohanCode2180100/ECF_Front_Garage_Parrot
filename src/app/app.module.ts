@@ -7,7 +7,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { SectionOneCarouselComponent } from "./components/section-one/carousel/carousel.component";
 import { sectionOneContainComponent } from "./components/section-one/contain/contain.component";
-
+import { ServicesCardsComponent } from './components/section-two/services-cards/services-cards.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,8 +16,9 @@ import { sectionOneContainComponent } from "./components/section-one/contain/con
     BurgerMenuComponent,
     SectionOneCarouselComponent,
     sectionOneContainComponent,
+    ServicesCardsComponent,
   ],
-  imports: [BrowserModule, MatIconModule, MatSidenavModule],
+  imports: [BrowserModule, MatIconModule, MatSidenavModule, MatCardModule],
   providers: [],
   bootstrap: [AppComponent],
 })

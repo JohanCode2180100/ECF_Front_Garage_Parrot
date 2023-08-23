@@ -1,0 +1,73 @@
+@media screen and (min-width: 280px) {
+    .section2Title{
+        font-size: 0.8em;
+    }
+  .section2Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .card {
+    width: 95%;
+    background-color: #aa111b;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    color: #ffffff;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
+}
+
+@media screen and (min-width: 500px) {
+    .section2Title{
+        font-size: 1em;
+    }
+  
+}
+
+@media screen and (min-width: 700px) {
+ 
+  .section2Card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+  .card {
+    max-width: 40%;
+    background-color: #aa111b;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    color: #ffffff;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
+  .section2Title{
+    font-size: 1.5em;
+}
+}
+
+@media screen and (min-width: 900px) {
+}
+
+@media screen and (min-width: 1080px) {
+}
+
+.section2Title {
+  text-align: center;
+  padding: 10px;
+}
+.red {
+  color: #aa111b;
+}
+.dark {
+  color: #470b0f;
+}
+
+
+.card .title {
+  padding: 20px;
+}

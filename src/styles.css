@@ -5,6 +5,16 @@
   margin: 0;
   padding: 0;
 }
-p, h1{
+p,
+h1,
+h2,
+h3 {
   font-family: "Rubik", "Lato", sans-serif;
+}
+
+.title .red {
+  color: #aa111b;
+}
+.title .dark {
+  color: #470b0f;
 }
