@@ -9,7 +9,10 @@ import { SectionOneCarouselComponent } from "./components/section-one/carousel/c
 import { sectionOneContainComponent } from "./components/section-one/contain/contain.component";
 import { ServicesCardsComponent } from './components/section-two/services-cards/services-cards.component';
 import {MatCardModule} from '@angular/material/card';
+
 import { SectionThreeComponent } from './components/section-three/section-three.component';
+=======
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,10 @@ import { SectionThreeComponent } from './components/section-three/section-three.
     SectionOneCarouselComponent,
     sectionOneContainComponent,
     ServicesCardsComponent,
+
     SectionThreeComponent,
+=======
+
   ],
   imports: [BrowserModule, MatIconModule, MatSidenavModule, MatCardModule],
   providers: [],
