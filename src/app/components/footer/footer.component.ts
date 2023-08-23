@@ -13,12 +13,14 @@ import { Component } from "@angular/core";
         </div>
         <div class="adress">
           <p>0322303030</p>
+          <br />
           <p>1 RUE TOULOUSE</p>
           <p>31000 TOULOUSE</p>
         </div>
       </div>
-
-      <app-hours></app-hours>
+      <div class="footer2">
+        <app-hours></app-hours>
+      </div>
     </footer>
   `,
   styleUrls: ["./footer.component.css"],
