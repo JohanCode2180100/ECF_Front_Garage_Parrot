@@ -9,9 +9,8 @@ import { SectionOneCarouselComponent } from "./components/section-one/carousel/c
 import { sectionOneContainComponent } from "./components/section-one/contain/contain.component";
 import { ServicesCardsComponent } from './components/section-two/services-cards/services-cards.component';
 import {MatCardModule} from '@angular/material/card';
-
 import { SectionThreeComponent } from './components/section-three/section-three.component';
-=======
+
 
 @NgModule({
   declarations: [
@@ -23,7 +22,7 @@ import { SectionThreeComponent } from './components/section-three/section-three.
     ServicesCardsComponent,
 
     SectionThreeComponent,
-=======
+
 
   ],
   imports: [BrowserModule, MatIconModule, MatSidenavModule, MatCardModule],
