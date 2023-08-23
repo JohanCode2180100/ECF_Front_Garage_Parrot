@@ -1,0 +1,48 @@
+@media screen and (min-width: 280px) {
+  .titleDisplay {
+    display: none;
+  }
+  .contain {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .titleDisplay {
+    display: block;
+  }
+  .p {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .p {
+    font-size: 1.2em;
+    margin: 10 10 0 10;
+  }
+}
+.title {
+  padding: 10px;
+}
+
+.title .red {
+  color: #aa111b;
+}
+.title .dark,
+nav ul li a {
+  color: #470b0f;
+}
+
+.p {
+  margin: 20 10 10 0;
+  padding: 10px;
+  text-align: justify;
+  color: #470b0f;
+}
