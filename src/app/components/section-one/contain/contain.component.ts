@@ -3,6 +3,13 @@ import { Component } from "@angular/core";
 @Component({
   selector: "app-contain",
   template: `
+  <div class="title titleDisplay">
+    <h1>
+      <span class="red">CONFIEZ VOTRE VEHICULE A </span>
+      <span class="dark">DES MAINS EXPERTES</span>
+    </h1>
+  </div>
+
     <div class="contain">
       <br />
       <p *ngFor="let contain of contains" class="p">{{ contain }}</p>
