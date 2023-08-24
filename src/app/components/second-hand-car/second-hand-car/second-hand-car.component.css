@@ -34,7 +34,6 @@
   ------------------------------------------------------------------------------------------ */
   .containerCarSells {
     width: 95%;
-    background-color: bisque;
     margin: auto;
     border: 2px solid #aa111b;
     border-radius: 10px;
@@ -46,7 +45,8 @@
   }
   img {
     background-size: cover;
-    max-width: 100%;
+    height: 225px;
+    border-radius: 8px 8px 0 0;
   }
   .titleCard {
     font-weight: bold;
@@ -58,6 +58,11 @@
   .cardAction {
     display: flex;
     justify-content: center;
+  }
+  .example-card span {
+    font-family: "Lato", "Rubik", sans-serif;
+    font-size: 1em;
+    font-weight: 700;
   }
 
   .submit {
@@ -89,23 +94,22 @@
 @media screen and (min-width: 700px) {
   .container {
     display: flex;
+    flex-wrap: wrap;
   }
   .containerCarSells {
     width: 40%;
-    background-color: bisque;
+    max-width: 300px;
     margin: auto;
     border: 2px solid #aa111b;
     border-radius: 10px;
     margin-top: 40px;
+    max-height: auto;
   }
   .exemple-card {
     display: flex;
     justify-content: center;
   }
-  img {
-    background-size: cover;
-    max-width: 100%;
-  }
+
   .titleCard {
     font-weight: bold;
     text-align: center;
