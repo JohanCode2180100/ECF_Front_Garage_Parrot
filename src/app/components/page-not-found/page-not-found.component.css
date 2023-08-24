@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+span{
+    color: #aa111b;
+    font-size: 3em;
+}
