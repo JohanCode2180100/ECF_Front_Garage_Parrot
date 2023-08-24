@@ -18,6 +18,7 @@ import { SecondHandCarComponent } from "./components/second-hand-car/second-hand
 import { SecondHandCarDetailsComponent } from "./components/second-hand-car-details/second-hand-car-details.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from './components/home/home.component';
+import { CarCardComponent } from './components/car-card/car-card.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HomeComponent } from './components/home/home.component';
     SecondHandCarComponent,
     SecondHandCarDetailsComponent,
     HomeComponent,
+    CarCardComponent,
   ],
   imports: [
     BrowserModule,

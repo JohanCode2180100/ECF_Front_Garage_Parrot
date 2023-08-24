@@ -28,7 +28,55 @@
   .card .title {
     font-size: 0.6em;
   }
-}
+
+  /* ---------------------------------------------------------------------------------------
+  ----------------------------------- CARD CARS---------------------------------------------
+  ------------------------------------------------------------------------------------------ */
+  .containerCarSells {
+    width: 95%;
+    background-color: bisque;
+    margin: auto;
+    border: 2px solid #aa111b;
+    border-radius: 10px;
+  }
+  .exemple-card {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    background-size: cover;
+    max-width: 100%;
+  }
+  .titleCard {
+    font-weight: bold;
+    text-align: center;
+    color: #470b0f;
+    margin: 10px;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
+  .cardAction{
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+  .submit{
+    background-color: #aa111b;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.5em;
+  }
+  .backHome{
+    text-align: center;
+    margin: 20px;
+   
+  }
+  
+   
+  }
+
 @media screen and (min-width: 390px) {
   .sectionCard {
     width: 40%;
@@ -38,6 +86,9 @@
     flex-direction: row;
     justify-content: space-around;
   }
+  /* ---------------------------------------------------------------------------------------
+  ----------------------------------- CARD CARS---------------------------------------------
+  ------------------------------------------------------------------------------------------ */
 }
 @media screen and (min-width: 900px) {
   .container {
@@ -45,6 +96,9 @@
     align-items: center;
     justify-content: space-evenly;
   }
+  /* ---------------------------------------------------------------------------------------
+  ----------------------------------- CARD CARS---------------------------------------------
+  ------------------------------------------------------------------------------------------ */
 }
 
 h2 .red {
