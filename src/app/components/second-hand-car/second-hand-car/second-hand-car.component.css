@@ -28,7 +28,56 @@
   .card .title {
     font-size: 0.6em;
   }
+
+  /* ---------------------------------------------------------------------------------------
+  ----------------------------------- CARD CARS---------------------------------------------
+  ------------------------------------------------------------------------------------------ */
+  .containerCarSells {
+    width: 95%;
+    margin: auto;
+    border: 2px solid #aa111b;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  .exemple-card {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    background-size: cover;
+    height: 225px;
+    border-radius: 8px 8px 0 0;
+  }
+  .titleCard {
+    font-weight: bold;
+    text-align: center;
+    color: #470b0f;
+    margin: 10px;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
+  .cardAction {
+    display: flex;
+    justify-content: center;
+  }
+  .example-card span {
+    font-family: "Lato", "Rubik", sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+  }
+
+  .submit {
+    background-color: #aa111b;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.5em;
+  }
+  .backHome {
+    text-align: center;
+    margin: 20px;
+  }
 }
+
 @media screen and (min-width: 390px) {
   .sectionCard {
     width: 40%;
@@ -39,12 +88,61 @@
     justify-content: space-around;
   }
 }
+/* ---------------------------------------------------------------------------------------
+  ----------------------------------- CARD CARS---------------------------------------------
+  ------------------------------------------------------------------------------------------ */
+@media screen and (min-width: 700px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .containerCarSells {
+    width: 40%;
+    max-width: 300px;
+    margin: auto;
+    border: 2px solid #aa111b;
+    border-radius: 10px;
+    margin-top: 40px;
+    max-height: auto;
+  }
+  .exemple-card {
+    display: flex;
+    justify-content: center;
+  }
+
+  .titleCard {
+    font-weight: bold;
+    text-align: center;
+    color: #470b0f;
+    margin: 10px;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
+  .cardAction {
+    display: flex;
+    justify-content: center;
+  }
+
+  .submit {
+    background-color: #aa111b;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.5em;
+  }
+  .backHome {
+    text-align: center;
+    margin: 20px;
+  }
+}
 @media screen and (min-width: 900px) {
   .container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
   }
+  /* ---------------------------------------------------------------------------------------
+  ----------------------------------- CARD CARS---------------------------------------------
+  ------------------------------------------------------------------------------------------ */
 }
 
 h2 .red {

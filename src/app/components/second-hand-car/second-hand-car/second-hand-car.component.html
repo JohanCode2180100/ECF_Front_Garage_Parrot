@@ -26,5 +26,27 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="containerCarSells" *ngFor="let car of cars">
+    <mat-card class="example-card">
+      <img [src]="car.picture" />
+      <div class="titleCard">
+        <mat-card-title
+          >{{ car.brand }} {{ car.name }} <br />
+          <span>{{ car.year }}</span>
+        </mat-card-title>
+      </div>
+      <mat-card-content class="detailsCard">
+        <span>{{ car.km }} km</span><br /><br />
+        <span>{{ car.price | currency : "EUR" : "symbol" }}</span>
+      </mat-card-content>
+      <mat-card-actions class="cardAction">
+        <button mat-button class="submit">PRENDRE CONTACT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
 
-<a routerLink="/">Retour Accueil</a>
+<div class="backHome">
+  <a routerLink="/"><span class="material-symbols-outlined"> home </span></a>
+</div>

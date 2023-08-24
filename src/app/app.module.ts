@@ -17,7 +17,9 @@ import { HoursServiceService } from "./services/hours-service.service";
 import { SecondHandCarComponent } from "./components/second-hand-car/second-hand-car/second-hand-car.component";
 import { SecondHandCarDetailsComponent } from "./components/second-hand-car-details/second-hand-car-details.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from "./components/home/home.component";
+import { CarCardComponent } from "./components/car-card/car-card.component";
+import { carsService } from "./services/cars.service";
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { HomeComponent } from './components/home/home.component';
     SecondHandCarComponent,
     SecondHandCarDetailsComponent,
     HomeComponent,
+    CarCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { HomeComponent } from './components/home/home.component';
     MatCardModule,
     HttpClientModule,
   ],
-  providers: [HoursServiceService],
+  providers: [HoursServiceService, carsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
