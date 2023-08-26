@@ -20,6 +20,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from "./components/home/home.component";
 import { CarCardComponent } from "./components/car-card/car-card.component";
 import { carsService } from "./services/cars.service";
+import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
+
 
 @NgModule({
   declarations: [
@@ -36,6 +38,9 @@ import { carsService } from "./services/cars.service";
     SecondHandCarDetailsComponent,
     HomeComponent,
     CarCardComponent,
+    PageNotFoundComponent
+    
+    
   ],
   imports: [
     BrowserModule,
