@@ -5,13 +5,15 @@ import { Component } from "@angular/core";
   template: `
     <div class="container">
       <span> OUPSSSSS ERROR 404 - PAGE NOT FOUND </span>
-      <div>
+      <div class="picture">
         <img src="./assets/picture/404.png" alt="page not found" />
       </div>
       <span>Vous avez fait une sortie de route !!!</span>
       <div class="error404">
-        
-        <a routerLink="/"><span> Revenir vers l'accueil</span></a>
+
+        <a routerLink="/"><span class="material-symbols-outlined">
+home
+</span></a>
       </div>
     </div>
   `,
