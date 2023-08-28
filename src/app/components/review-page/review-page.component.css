@@ -1,0 +1,58 @@
+@media screen and (min-width: 280px) {
+  .containerReview {
+    width: 95%;
+    margin: auto;
+    box-shadow: 5px 5px 5px #f5f5f5;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  .exemple-card {
+    display: flex;
+    justify-content: center;
+  }
+  .titleCard {
+    font-weight: bold;
+    text-align: center;
+    color: #aa111b;
+    margin: 10px;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
+
+  .example-card span {
+    font-family: "Lato", "Rubik", sans-serif;
+    font-size: 1em;
+    color: #470b0f;
+    font-weight: 700;
+  }
+  .cardAction {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .backHome {
+    text-align: center;
+    margin: 20px;
+  }
+  .backHome span {
+    font-size: 40px;
+    color: #aa111b;
+  }
+}
+@media screen and (min-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .containerReview {
+    width: 30%;
+    background-color: #f5f5f5;
+  }
+}
+.buttonForm {
+  background-color: #aa111b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.5em;
+}

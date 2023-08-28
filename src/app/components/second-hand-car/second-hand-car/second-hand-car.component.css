@@ -126,13 +126,7 @@
     justify-content: center;
   }
 
-  .submit {
-    background-color: #aa111b;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 0.5em;
-  }
+  
   .backHome {
     text-align: center;
     margin: 20px;
@@ -151,4 +145,12 @@ h2 .red {
 }
 h2 .dark {
   color: #470b0f;
+}
+
+.submit {
+  background-color: #aa111b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.5em;
 }

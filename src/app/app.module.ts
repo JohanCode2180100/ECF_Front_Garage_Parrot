@@ -27,6 +27,8 @@ import { carsService } from "./services/cars.service";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { ContactPageInformationComponent } from "./components/contact-page-information/contact-page-information.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ReviewPageComponent } from "./components/review-page/review-page.component";
+import { ReviewFormComponent } from "./components/review-form/review-form.component";
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     CarCardComponent,
     PageNotFoundComponent,
     ContactPageInformationComponent,
+    ReviewPageComponent,
+    ReviewFormComponent,
   ],
   imports: [
     BrowserModule,
