@@ -82,11 +82,9 @@
   }
   .container .title {
     font-size: 1em;
-    
   }
   h3 {
     font-size: 0.8em;
-    
   }
 }
 @media screen and (min-width: 800px) {
@@ -98,11 +96,9 @@
   }
   .container .title {
     font-size: 1.2em;
-    
   }
   h3 {
     font-size: 0.8em;
-    
   }
 }
 
@@ -112,10 +108,25 @@
   }
   .container .title {
     font-size: 1.6em;
-    
   }
   h3 {
     font-size: 1em;
-    
   }
+}
+
+input.ng-valid {
+  border: 2px solid lightgreen;
+}
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+  box-shadow: 5px 5px 5px red;
+}
+.error {
+  width: 100%;
+}
+.disabled-btn
+  {
+    background-color: grey;
+    text-decoration:line-through;
+    color: #fff;
 }
