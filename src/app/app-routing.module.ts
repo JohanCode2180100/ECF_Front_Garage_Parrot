@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
   { path: "second-hand-car/:id", component: SecondHandCarDetailsComponent },
   { path: "contact", component: ContactPageInformationComponent },
+  { path: "avis" ,component:ReviewPageComponent },
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent },
 ];
