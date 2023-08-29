@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -40,6 +40,25 @@ import { NgForm } from "@angular/forms";
           maxlength="255"
           placeholder="Votre message*"
         ></textarea>
+
+        <div class="rank">
+          <h4>Ajoutez une note</h4>
+          <mat-form-field class="matForm">
+            <select
+              matNativeControl
+              required
+              [(ngModel)]="rating"
+              name="rating"
+            >
+              <option class="option" value="1">1</option>
+              <option class="option" value="2">2</option>
+              <option class="option" value="3">3</option>
+              <option class="option" value="4">4</option>
+              <option class="option" value="4">5</option>
+            </select>
+          </mat-form-field>
+        </div>
+
         <div class="button">
           <button
             [ngClass]="{ 'disabled-btn': form.invalid }"
@@ -57,6 +76,7 @@ import { NgForm } from "@angular/forms";
 export class ReviewFormComponent {
   //longueur string
   message: string = "";
+  rating: number;
 
   onSubmit(form: NgForm) {
     console.log(form);

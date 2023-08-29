@@ -58,6 +58,26 @@
     border-radius: 5px;
     font-size: 1em;
   }
+  .rank{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+  }
+  .matForm{
+    
+    width: 40%;
+  }
+  .rank h4{
+    text-align: center;
+    font-size: 0.8em;
+    color: #aa111b;
+
+  }
+  .option{
+    color: #aa111b;
+    font-size: 1em
+
+  }
 }
 
 @media screen and (min-width: 500px) {
