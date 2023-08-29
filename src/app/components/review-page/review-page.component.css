@@ -37,6 +37,10 @@
     font-size: 40px;
     color: #aa111b;
   }
+  .titleCard span {
+    color: #aa111b;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
 }
 @media screen and (min-width: 500px) {
   .container {

@@ -15,6 +15,10 @@ import { ReviewService } from "src/app/services/review.service";
             <span>{{ review.contenu }}</span
             ><br /><br />
           </mat-card-content>
+          <mat-card-content class="titleCard">
+            <span>note : {{ review.rank }}</span
+            >
+          </mat-card-content>
         </mat-card>
       </div>
       <mat-card-actions class="cardAction">
