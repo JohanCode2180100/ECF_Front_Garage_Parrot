@@ -8,10 +8,13 @@
 </button>
 
 <ul *ngIf="isMenuOpen">
-  <li><a routerLink="/">Accueil</a></li>
-  <li><a routerLink="/second-hand-car">Nos voitures d'occasions</a></li>
-  <li><a href="/contact">Nous contacter</a></li>
-  <li><a href="/login">Espace pro</a></li>
+  <li><a routerLink="" (click)="(closeAutoMenu)">Accueil</a></li>
+  <li (click)="(closeAutoMenu)">
+    <a routerLink="second-hand-car">Nos voitures d'occasions</a>
+  </li>
+  <li (click)="(closeAutoMenu)"><a routerLink="contact">Nous contacter</a></li>
+  <li (click)="(closeAutoMenu)"><a routerLink="avis">Nos avis</a></li>
+  <li (click)="(closeAutoMenu)"><a routerLink="login">Espace pro</a></li>
   <li (click)="closeMenu()" style="text-align: center">
     <span class="material-symbols-outlined"> close </span>
   </li>
