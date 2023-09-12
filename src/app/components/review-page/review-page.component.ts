@@ -1,23 +1,23 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ReviewService } from "src/app/services/review.service";
+import { Review } from "./review";
 
 @Component({
   selector: "app-review-page",
   template: `
     <div class="container">
-      <div class="containerReview" *ngFor="let review of review">
+      <div class="containerReview" *ngFor="let review of reviewData">
         <mat-card class="example-card">
           <div class="titleCard">
-            <mat-card-title>{{ review.prenom }} :<br /> </mat-card-title>
+            <mat-card-title>{{ review.FirstName }} :<br /> </mat-card-title>
           </div>
           <mat-card-content class="detailsCard">
-            <span>{{ review.contenu }}</span
+            <span>{{ review.Containt }}</span
             ><br /><br />
           </mat-card-content>
           <mat-card-content class="titleCard">
-            <span>note : {{ review.rank }}</span
-            >
+            <span>note : {{ review.Rank }}</span>
           </mat-card-content>
         </mat-card>
       </div>
@@ -36,16 +36,23 @@ import { ReviewService } from "src/app/services/review.service";
   styleUrls: ["./review-page.component.css"],
 })
 export class ReviewPageComponent implements OnInit {
-  review: any[] = [];
+  reviewData: Review[];
 
   constructor(private reviewService: ReviewService, private router: Router) {}
 
-  ngOnInit() {
-    this.getReview();
+  ngOnInit(): void {
+    this.getReviewValid();
   }
 
-  private getReview(): void {
-    this.reviewService.getReview().subscribe((data) => (this.review = data));
+  getReviewValid() {
+    this.reviewService.getReviewValid().subscribe((data: Review[]) => {
+      if (data) {
+        this.reviewData = data;
+        console.log(data);
+      } else {
+        console.error("Aucune donnée n'a été renvoyée par le service.");
+      }
+    });
   }
 
   redirectToReviewForm() {

@@ -52,6 +52,7 @@ import { ReviewFormComponent } from "./components/review-form/review-form.compon
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatIconModule,
     MatSidenavModule,
@@ -60,7 +61,6 @@ import { ReviewFormComponent } from "./components/review-form/review-form.compon
     MatSelectModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
   ],
   providers: [HoursServiceService, carsService],

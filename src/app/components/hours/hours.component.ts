@@ -1,34 +1,34 @@
 import { Component, OnInit } from "@angular/core";
 import { HoursServiceService } from "src/app/services/hours-service.service";
+import { Hours } from "./hours";
 
 @Component({
   selector: "app-hours",
-  template: `<div class="hoursContainer"> <div class="hoursTitle">
+  template: `<div class="hoursContainer">
+    <div class="hoursTitle">
       <p>Horaires d'ouverture</p>
     </div>
-    <li *ngFor="let day of hours">
-      <span class="day">{{ day.day }}</span>
-      :
+    <li *ngFor="let day of hoursData">
+      <span class="day">{{ day.Days }}: </span>
       <span class="hours"
-        >{{ day.openAM }} - {{ day.closeAM }} | {{ day.openPM }} -
-        {{ day.closePM || day.close }}</span
+        >{{ day.Open_AM }} : {{ day.Close_AM }} | {{ day.Open_PM }} -
+        {{ day.Close_PM }}</span
       >
-    </li></div>`,
+    </li>
+  </div>`,
   styleUrls: ["./hours.component.css"],
 })
 export class HoursComponent implements OnInit {
-  hours: any[] = [];
+  hoursData: Hours[];
 
   constructor(private hoursService: HoursServiceService) {}
 
   ngOnInit(): void {
     this.getHours();
   }
-  private getHours(): void {
-    this.hoursService.getHours().subscribe((data) => {
-      this.hours = data;
+  getHours() {
+    this.hoursService.getHours().subscribe((data: Hours[]) => {
+      this.hoursData = data;
     });
   }
-
-
 }

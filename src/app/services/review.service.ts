@@ -1,16 +1,19 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, map } from "rxjs";
+import { Review } from "../components/review-page/review";
 
 @Injectable({
   providedIn: "root",
 })
 export class ReviewService {
-  private apiUrl = "assets/data/review.json";
+  private apiUrl = "http://localhost:3000";
 
   constructor(private http: HttpClient) {}
 
-  getReview(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getReviewValid(): Observable<Review[]> {
+    return this.http
+      .get<any>(`${this.apiUrl}/api/review/valid`)
+      .pipe(map((data) => data.reviewStatus));
   }
 }
