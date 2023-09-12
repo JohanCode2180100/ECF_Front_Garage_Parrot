@@ -28,7 +28,6 @@ export class HoursComponent implements OnInit {
   }
   getHours() {
     this.hoursService.getHours().subscribe((data: Hours[]) => {
-      console.log(data);
       this.hoursData = data;
     });
   }
