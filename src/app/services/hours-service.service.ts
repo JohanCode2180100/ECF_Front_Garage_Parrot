@@ -1,18 +1,19 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Hours } from "../components/hours/hours";
+import { Observable, map } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
 export class HoursServiceService {
-  private apiUrl = "assets/data/hours.json";
+  private apiUrl = "http://localhost:3000";
 
   constructor(private http: HttpClient) {}
 
-  getHours(): Observable<any[]> {
-    
-    return this.http.get<any[]>(this.apiUrl);
-    
+  getHours(): Observable<Hours[]> {
+    return this.http
+      .get<any>(`${this.apiUrl}/api/hours`)
+      .pipe(map((data) => data.hours));
   }
 }
