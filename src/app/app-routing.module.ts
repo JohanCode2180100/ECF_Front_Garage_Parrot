@@ -7,12 +7,14 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { ContactPageInformationComponent } from "./components/contact-page-information/contact-page-information.component";
 import { ReviewPageComponent } from "./components/review-page/review-page.component";
 import { ReviewFormComponent } from "./components/review-form/review-form.component";
+import { isLoggedInGuard } from "./Admin.guard";
+
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
   { path: "second-hand-car/:id", component: SecondHandCarDetailsComponent },
   { path: "contact", component: ContactPageInformationComponent },
-  { path: "avis", component: ReviewPageComponent },
+  { path: "avis", component: ReviewPageComponent, canActivate: [isLoggedInGuard] },
   { path: "reviewForm", component: ReviewFormComponent },
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent },
