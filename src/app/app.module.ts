@@ -29,6 +29,7 @@ import { ContactPageInformationComponent } from "./components/contact-page-infor
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReviewPageComponent } from "./components/review-page/review-page.component";
 import { ReviewFormComponent } from "./components/review-form/review-form.component";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ReviewFormComponent } from "./components/review-form/review-form.compon
     ContactPageInformationComponent,
     ReviewPageComponent,
     ReviewFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
