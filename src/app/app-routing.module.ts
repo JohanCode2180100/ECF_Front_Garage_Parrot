@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { ContactPageInformationComponent } from "./components/contact-page-information/contact-page-information.component";
 import { ReviewPageComponent } from "./components/review-page/review-page.component";
 import { ReviewFormComponent } from "./components/review-form/review-form.component";
-import { isLoggedInGuard } from "./Admin.guard";
+
 import { LoginComponent } from "./login/login.component";
 
 const routes: Routes = [
