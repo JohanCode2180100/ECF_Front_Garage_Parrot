@@ -6,7 +6,7 @@ import { BurgerMenuComponent } from "./components/burger-menu/burger-menu.compon
 import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatSelectModule } from "@angular/material/select";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { SectionOneCarouselComponent } from "./components/section-one/carousel/carousel.component";
 import { sectionOneContainComponent } from "./components/section-one/contain/contain.component";
@@ -16,7 +16,7 @@ import { MatInputModule } from "@angular/material/input";
 import { SectionThreeComponent } from "./components/section-three/section-three.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HoursComponent } from "./components/hours/hours.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { HoursServiceService } from "./services/hours-service.service";
 import { SecondHandCarComponent } from "./components/second-hand-car/second-hand-car/second-hand-car.component";
 import { SecondHandCarDetailsComponent } from "./components/second-hand-car-details/second-hand-car-details.component";
@@ -30,7 +30,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReviewPageComponent } from "./components/review-page/review-page.component";
 import { ReviewFormComponent } from "./components/review-form/review-form.component";
 import { LoginComponent } from "./login/login.component";
-
+import { AdminDashboardComponent } from "./adminComponents/admin-dashboard/admin-dashboard.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { AuthInterceptor } from "./auth-interceptor";
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,8 @@ import { LoginComponent } from "./login/login.component";
     ContactPageInformationComponent,
     ReviewPageComponent,
     ReviewFormComponent,
-    LoginComponent
+    LoginComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,10 +65,16 @@ import { LoginComponent } from "./login/login.component";
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [HoursServiceService, carsService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    HoursServiceService,
+    carsService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
