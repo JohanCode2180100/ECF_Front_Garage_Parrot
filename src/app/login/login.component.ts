@@ -1,47 +1,28 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
-  styles: [],
+  styleUrls: ["./login.component.css"],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   message: string = "Vous êtes déconnecté.";
-  Email: string;
-  Password: string;
+  userEmail: string;
+  userPassword: string;
   auth: AuthService;
 
   constructor(public authService: AuthService, private router: Router) {}
 
-  ngOnInit() {
-    this.auth = this.authService;
-  }
+  isLoading = false;
 
-  setMessage() {
-    if (this.auth.isLoggedIn) {
-      this.message = "Vous êtes connecté";
-    } else {
-      this.message = "Email ou mot de passe incorrect";
+  onLogin(form: NgForm) {
+    if (form.invalid) {
+      return;
     }
-  }
-
-  login() {
-    this.message = "tentative de connexion";
-
-    this.auth.login(this.Email, this.Password).subscribe((isLoggedInGuard) => {
-      this.setMessage();
-      if (isLoggedInGuard) {
-        this.router.navigate(["/adminPannel"]);
-      } else {
-        this.Password = "";
-        this.router.navigate(["/login"]);
-      }
-    });
-  }
-  logout() {
-    this.auth.logout();
-    this.message = "Vous êtes déconnecté";
+    this.authService.login(form.value.userEmail, form.value.userPassword);
+   
   }
 }

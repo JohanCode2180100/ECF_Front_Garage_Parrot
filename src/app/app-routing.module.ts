@@ -7,8 +7,9 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { ContactPageInformationComponent } from "./components/contact-page-information/contact-page-information.component";
 import { ReviewPageComponent } from "./components/review-page/review-page.component";
 import { ReviewFormComponent } from "./components/review-form/review-form.component";
-
 import { LoginComponent } from "./login/login.component";
+import { AdminDashboardComponent } from "./adminComponents/admin-dashboard/admin-dashboard.component";
+
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
@@ -20,7 +21,10 @@ const routes: Routes = [
   },
   { path: "reviewForm", component: ReviewFormComponent },
   { path: "login", component: LoginComponent },
-  // {path : "admin", component:AdminComponent,canActivate: [isLoggedInGuard]},
+  {
+    path: "adminPannel",
+    component: AdminDashboardComponent,
+  },
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent },
 ];
