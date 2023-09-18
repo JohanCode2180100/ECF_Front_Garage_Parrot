@@ -30,6 +30,7 @@
         >Veuillez entrer un mot de passe valide</mat-error
       >
     </mat-form-field>
-    <button type="submit">Login</button>
+    <button type="submit" *ngIf="!isLoading">Login</button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
   </form>
 </mat-card>

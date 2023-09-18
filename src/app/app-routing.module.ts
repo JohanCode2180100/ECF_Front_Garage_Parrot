@@ -9,7 +9,7 @@ import { ReviewPageComponent } from "./components/review-page/review-page.compon
 import { ReviewFormComponent } from "./components/review-form/review-form.component";
 import { LoginComponent } from "./login/login.component";
 import { AdminDashboardComponent } from "./adminComponents/admin-dashboard/admin-dashboard.component";
-
+import { AdminGuard } from "src/guard/Admin.guard";
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
@@ -24,6 +24,7 @@ const routes: Routes = [
   {
     path: "adminPannel",
     component: AdminDashboardComponent,
+    canActivate: [AdminGuard],
   },
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent },
