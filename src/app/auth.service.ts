@@ -9,7 +9,8 @@ import { Router } from "@angular/router";
 })
 export class AuthService {
   private isAuthenticated = false;
-  private token: string;
+  private token: string | null;
+  private tokenTimer: any;
   private authStatusListener = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -33,19 +34,27 @@ export class AuthService {
     };
 
     this.http
-      .post<{ token: string }>(baseURL, authData)
+      .post<{ token: string; expiresIn: number }>(baseURL, authData)
       .subscribe((response) => {
         const token = response.token;
         this.token = token;
+        //Token TIMER before the logout
+        if (token) {
+          const expiresInDuration = response.expiresIn;
+          this.tokenTimer = setTimeout(() => {
+            this.logout();
+          }, expiresInDuration * 1000);
+        }
         this.isAuthenticated = true;
         this.authStatusListener.next(true);
         this.router.navigate(["adminPannel"]);
       });
   }
   logout() {
-    this.token = "null";
+    this.token = null;
     this.isAuthenticated = false;
     this.authStatusListener.next(false);
+    clearTimeout(this.tokenTimer);
     this.router.navigate([""]);
   }
 }
