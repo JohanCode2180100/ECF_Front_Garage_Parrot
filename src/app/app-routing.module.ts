@@ -10,6 +10,13 @@ import { ReviewFormComponent } from "./components/review-form/review-form.compon
 import { LoginComponent } from "./login/login.component";
 import { AdminDashboardComponent } from "./adminComponents/admin-dashboard/admin-dashboard.component";
 import { AdminGuard } from "src/guard/Admin.guard";
+import { AdminPannelContactFormComponent } from "./adminComponents/admin-pannel-contact-form/admin-pannel-contact-form.component";
+import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-review/admin-pannel-review.component";
+import { AdminPannelSecondHandCarComponent } from "./adminComponents/admin-pannel-second-hand-car/admin-pannel-second-hand-car.component";
+import { AdminPannelSectionComponent } from "./adminComponents/admin-pannel-section/admin-pannel-section.component";
+import { AdminPannelOpeningHoursComponent } from "./adminComponents/admin-pannel-opening-hours/admin-pannel-opening-hours.component";
+import { AdminPannelImageComponent } from "./adminComponents/admin-pannel-image/admin-pannel-image.component";
+import { AdminPannelHomePageComponent } from "./adminComponents/admin-pannel-home-page/admin-pannel-home-page.component";
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
@@ -25,6 +32,28 @@ const routes: Routes = [
     path: "adminPannel",
     component: AdminDashboardComponent,
     canActivate: [AdminGuard],
+    children: [
+      { path: "adminPannel_review", component: AdminPannelReviewComponent },
+      {
+        path: "adminPannel_second-hand-car",
+        component: AdminPannelSecondHandCarComponent,
+      },
+      { path: "adminPannel_HomePage", component: AdminPannelHomePageComponent },
+      { path: "admin_panel_section", component: AdminPannelSectionComponent },
+      {
+        path: "admin_pannel_contact_form",
+        component: AdminPannelContactFormComponent,
+      },
+      {
+        path: "adminPannel_opening_hours",
+        component: AdminPannelOpeningHoursComponent,
+      },
+      { path: "adminPannel_image", component: AdminPannelImageComponent },
+      {
+        path: "adminPannel_car_contact_form",
+        component: AdminPannelContactFormComponent,
+      },
+    ],
   },
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent },
