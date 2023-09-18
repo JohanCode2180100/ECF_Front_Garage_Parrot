@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { ReviewService } from "src/app/services/review.service";
 import { Review } from "./review";
 
+
 @Component({
   selector: "app-review-page",
   template: `
@@ -38,7 +39,11 @@ import { Review } from "./review";
 export class ReviewPageComponent implements OnInit {
   reviewData: Review[];
 
-  constructor(private reviewService: ReviewService, private router: Router) {}
+  constructor(
+    private reviewService: ReviewService,
+  
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getReviewValid();
@@ -54,6 +59,8 @@ export class ReviewPageComponent implements OnInit {
       }
     });
   }
+
+
 
   redirectToReviewForm() {
     this.router.navigate(["reviewForm"]);
