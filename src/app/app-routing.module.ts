@@ -31,6 +31,7 @@ const routes: Routes = [
   {
     path: "adminPannel",
     canActivate: [AdminGuard],
+
     component: AdminDashboardComponent,
 
     children: [

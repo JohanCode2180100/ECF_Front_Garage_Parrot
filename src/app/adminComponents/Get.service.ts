@@ -27,7 +27,7 @@ export class GetService {
       .get<any>(`${this.apiUrlAdmin}/api/review/pending`)
       .pipe(map((data) => data.reviewStatus));
   }
-
+  //READ PANNEL CONTACT
   getFormContact(): Observable<FormContact[]> {
     const token = this.authService.getToken();
 

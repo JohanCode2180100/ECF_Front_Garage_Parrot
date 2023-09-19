@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 import { PostsService } from "src/app/adminComponents/Post.service";
 import { FormContact } from "src/app/adminComponents/models/formContact";
 
@@ -146,7 +147,7 @@ import { FormContact } from "src/app/adminComponents/models/formContact";
 export class ContactPageInformationComponent implements OnInit {
   formData: FormContact[] = [];
 
-  constructor(private PostService: PostsService) {}
+  constructor(private PostService: PostsService, private router:Router) {}
 
   ngOnInit() {}
 
@@ -156,7 +157,7 @@ export class ContactPageInformationComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.PostService.addPostForm(form.value).subscribe((FormContact) => {
       this.formData.push(FormContact);
-      console.log(this.formData);
+      this.router.navigate([""]);
     });
   }
 }
