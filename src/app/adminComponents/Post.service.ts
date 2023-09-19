@@ -4,10 +4,12 @@ import { Router } from "@angular/router";
 import { Review } from "./models/review";
 import { Observable } from "rxjs";
 import { AuthService } from "../auth.service";
+import { FormContact } from "./models/formContact";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
-  private apiUrl = "http://localhost:3000/api/review";
+  private reviewUrl = "http://localhost:3000/api/review";
+  private formUrl = "http://localhost:3000/api/contact";
 
   constructor(
     private http: HttpClient,
@@ -22,6 +24,10 @@ export class PostsService {
       this.router.navigate(["/login"]);
     }
 
-    return this.http.post<Review>(this.apiUrl, Review);
+    return this.http.post<Review>(this.reviewUrl, Review);
+  }
+
+  addPostForm(FormContact: FormContact): Observable<FormContact> {
+    return this.http.post<FormContact>(this.formUrl, FormContact);
   }
 }

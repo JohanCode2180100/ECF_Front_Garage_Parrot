@@ -1,5 +1,7 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { PostsService } from "src/app/adminComponents/Post.service";
+import { FormContact } from "src/app/adminComponents/models/formContact";
 
 @Component({
   selector: "app-contact-page-information",
@@ -63,7 +65,7 @@ import { NgForm } from "@angular/forms";
             ngModel
             #name="ngModel"
             type="text"
-            name="Nom"
+            name="Name"
             id="name"
             placeholder="Nom*"
           />
@@ -74,7 +76,7 @@ import { NgForm } from "@angular/forms";
             ngModel
             #firstName="ngModel"
             type="text"
-            name="Prénom"
+            name="FirstName"
             id="firstName"
             placeholder="Prénom*"
           />
@@ -85,7 +87,7 @@ import { NgForm } from "@angular/forms";
             ngModel
             #adress="ngModel"
             type="text"
-            name="Adresse"
+            name="Adress"
             id="address"
             placeholder="Adresse*"
           />
@@ -108,7 +110,7 @@ import { NgForm } from "@angular/forms";
             #phone="ngModel"
             type="phone"
             pattern="[0-9]{10}"
-            name="Téléphone"
+            name="Phone"
             id="phone"
             placeholder="téléphone*"
           />
@@ -121,12 +123,13 @@ import { NgForm } from "@angular/forms";
             rows="8"
             cols="28"
             type="textArea"
-            name="message"
+            name="Message"
             id="message"
             placeholder="Votre message*"
           ></textarea>
           <div class="button">
             <button
+              type="submit"
               [ngClass]="{ 'disabled-btn': form.invalid }"
               class="btn"
               [disabled]="form.invalid"
@@ -140,11 +143,20 @@ import { NgForm } from "@angular/forms";
   `,
   styleUrls: ["./contact-page-information.css"],
 })
-export class ContactPageInformationComponent {
+export class ContactPageInformationComponent implements OnInit {
+  formData: FormContact[] = [];
+
+  constructor(private PostService: PostsService) {}
+
+  ngOnInit() {}
+
   @ViewChild("email")
   emailInput?: ElementRef<HTMLInputElement>;
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.PostService.addPostForm(form.value).subscribe((FormContact) => {
+      this.formData.push(FormContact);
+      console.log(this.formData);
+    });
   }
 }

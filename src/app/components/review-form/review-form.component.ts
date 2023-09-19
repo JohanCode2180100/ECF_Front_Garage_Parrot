@@ -83,8 +83,8 @@ export class ReviewFormComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(form: NgForm) {
-    this.PostService.addPost(form.value).subscribe((ReviewPost) =>
-      this.reviewData.push(ReviewPost)
+    this.PostService.addPost(form.value).subscribe((Review) =>
+      this.reviewData.push(Review)
     );
   }
 }
