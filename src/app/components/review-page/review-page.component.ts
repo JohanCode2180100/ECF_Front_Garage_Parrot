@@ -28,9 +28,9 @@ import { ReviewService } from "src/app/services/review.service";
       </mat-card-actions>
     </div>
     <div class="backHome">
-      <a routerLink="/"
-        ><span class="material-symbols-outlined"> home </span></a
-      >
+      <a (click)="navigateToHome()">
+        <span class="material-symbols-outlined"> home </span>
+      </a>
     </div>
   `,
   styleUrls: ["./review-page.component.css"],
@@ -60,5 +60,11 @@ export class ReviewPageComponent implements OnInit {
 
   redirectToReviewForm() {
     this.router.navigate(["reviewForm"]);
+  }
+
+  navigateToHome() {
+    this.router.navigate(["/"]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }

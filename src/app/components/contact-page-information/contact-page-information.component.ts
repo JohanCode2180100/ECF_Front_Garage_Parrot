@@ -141,13 +141,18 @@ import { FormContact } from "src/app/adminComponents/models/formContact";
         </form>
       </div>
     </div>
+    <div class="backHome">
+      <a (click)="navigateToHome()">
+        <span class="material-symbols-outlined"> home </span>
+      </a>
+    </div>
   `,
   styleUrls: ["./contact-page-information.css"],
 })
 export class ContactPageInformationComponent implements OnInit {
   formData: FormContact[] = [];
 
-  constructor(private PostService: PostsService, private router:Router) {}
+  constructor(private PostService: PostsService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -158,6 +163,11 @@ export class ContactPageInformationComponent implements OnInit {
     this.PostService.addPostForm(form.value).subscribe((FormContact) => {
       this.formData.push(FormContact);
       this.router.navigate([""]);
+    });
+  }
+  navigateToHome() {
+    this.router.navigate(["/"]).then(() => {
+      window.scrollTo(0, 0);
     });
   }
 }

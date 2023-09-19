@@ -57,6 +57,14 @@
     border-radius: 5px;
     font-size: 1em;
   }
+  .backHome {
+    text-align: center;
+    margin: 20px;
+  }
+  .backHome span {
+    font-size: 40px;
+    color: #aa111b;
+  }
 }
 
 @media screen and (min-width: 500px) {
@@ -124,9 +132,8 @@ input.ng-invalid.ng-touched {
 .error {
   width: 100%;
 }
-.disabled-btn
-  {
-    background-color: grey;
-    text-decoration:line-through;
-    color: #fff;
+.disabled-btn {
+  background-color: grey;
+  text-decoration: line-through;
+  color: #fff;
 }
