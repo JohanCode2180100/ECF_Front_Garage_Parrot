@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { PostsService } from "src/app/adminComponents/Post.service";
-import { ReviewPost } from "../../adminComponents/review-post.model";
-import { Review } from "../review-page/review";
+import { Review } from "src/app/adminComponents/models/review";
+
 @Component({
   selector: "app-review-form",
   template: `
@@ -78,14 +78,13 @@ export class ReviewFormComponent implements OnInit {
   message: string = "";
   rating: number;
 
-  reviewData: ReviewPost[] = [];
+  reviewData: Review[] = [];
 
   ngOnInit() {}
 
   onSubmit(form: NgForm) {
     this.PostService.addPost(form.value).subscribe((ReviewPost) =>
       this.reviewData.push(ReviewPost)
-      
     );
   }
 }

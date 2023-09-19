@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Review } from "src/app/adminComponents/models/review";
 import { ReviewService } from "src/app/services/review.service";
-import { Review } from "./review";
-
 
 @Component({
   selector: "app-review-page",
@@ -41,7 +40,7 @@ export class ReviewPageComponent implements OnInit {
 
   constructor(
     private reviewService: ReviewService,
-  
+
     private router: Router
   ) {}
 
@@ -53,14 +52,11 @@ export class ReviewPageComponent implements OnInit {
     this.reviewService.getReviewValid().subscribe((data: Review[]) => {
       if (data) {
         this.reviewData = data;
-        console.log(data);
       } else {
         console.error("Aucune donnée n'a été renvoyée par le service.");
       }
     });
   }
-
-
 
   redirectToReviewForm() {
     this.router.navigate(["reviewForm"]);

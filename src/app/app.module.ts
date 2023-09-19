@@ -12,6 +12,7 @@ import { SectionOneCarouselComponent } from "./components/section-one/carousel/c
 import { sectionOneContainComponent } from "./components/section-one/contain/contain.component";
 import { ServicesCardsComponent } from "./components/section-two/services-cards/services-cards.component";
 import { MatCardModule } from "@angular/material/card";
+import {MatChipsModule} from '@angular/material/chips';
 import { MatInputModule } from "@angular/material/input";
 import { SectionThreeComponent } from "./components/section-three/section-three.component";
 import { FooterComponent } from "./components/footer/footer.component";
@@ -33,6 +34,7 @@ import { LoginComponent } from "./login/login.component";
 import { AdminDashboardComponent } from "./adminComponents/admin-dashboard/admin-dashboard.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTabsModule } from "@angular/material/tabs";
+import { MatTableModule } from "@angular/material/table";
 import { AuthInterceptor } from "./auth-interceptor";
 import { AdminPannelSecondHandCarComponent } from "./adminComponents/admin-pannel-second-hand-car/admin-pannel-second-hand-car.component";
 import { AdminPannelHomePageComponent } from "./adminComponents/admin-pannel-home-page/admin-pannel-home-page.component";
@@ -81,6 +83,8 @@ import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-revie
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatTableModule,
+    MatChipsModule,
     MatProgressSpinnerModule,
     MatTabsModule,
     ReactiveFormsModule,

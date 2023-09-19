@@ -1,18 +1,29 @@
-import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-
+import { HttpClient } from "@angular/common/http";
+import { Observable, map } from "rxjs";
+import { AuthService } from "../auth.service";
+import { Router } from "@angular/router";
+import { Review } from "./models/review";
 @Injectable({
-    providedIn: "root",
-  })
-  export class ReviewService {
-    private apiUrl = "http://localhost:3000";
-  
-    constructor(private http: HttpClient) {}
-  
-    getReviewValid(): Observable<Review[]> {
-      return this.http
-        .get<any>(`${this.apiUrl}/api/review/valid`)
-        .pipe(map((data) => data.reviewStatus));
+  providedIn: "root",
+})
+export class GetService {
+  private apiUrlAdmin = "http://localhost:3000/admin";
+
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private authService: AuthService
+  ) {}
+
+  getReviewPending(): Observable<Review[]> {
+    const token = this.authService.getToken();
+
+    if (!token) {
+      this.router.navigate(["/login"]);
     }
+    return this.http
+      .get<any>(`${this.apiUrlAdmin}/api/review/pending`)
+      .pipe(map((data) => data.reviewStatus));
   }
+}

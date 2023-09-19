@@ -30,8 +30,9 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   {
     path: "adminPannel",
-    component: AdminDashboardComponent,
     canActivate: [AdminGuard],
+    component: AdminDashboardComponent,
+
     children: [
       { path: "adminPannel_review", component: AdminPannelReviewComponent },
       {

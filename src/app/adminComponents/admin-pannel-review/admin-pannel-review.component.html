@@ -1,1 +1,9 @@
-<p>admin-pannel-review works!</p>
+<mat-tab-group>
+  <mat-tab [label]="review.FirstName" *ngFor="let review of reviewData"
+    >{{ review.Containt }} - note : {{ review.Rank }}
+    <mat-chip-option (click)="validReview(review.Review_id)">Accepter</mat-chip-option>
+    <mat-chip-option color="warn" (click)="deleteReview(review.Review_id)"
+      >Supprimer</mat-chip-option
+    ></mat-tab
+  >
+</mat-tab-group>
