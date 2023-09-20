@@ -5,12 +5,16 @@
       alt="logo du garage de Monsieur Parrot"
     />
   </div>
+  <a href="#top"></a>
   <div class="banner">
     <nav class="linkDisplay">
       <ul>
         <li><a routerLink="second-hand-car">Nos voitures d'occasions</a></li>
         <li><a routerLink="contact">Nous contacter</a></li>
         <li><a routerLink="avis">Vos avis</a></li>
+        <li>
+          <a routerLink="adminPannel" *ngIf="userIsAuthenticated">Admin</a>
+        </li>
         <li *ngIf="!userIsAuthenticated" class="right">
           <a routerLink="login">Espace pro</a>
         </li>

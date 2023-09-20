@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { PostsService } from "src/app/adminComponents/admin-service/Post.service";
+import { Review } from "src/app/models/review";
 
 @Component({
   selector: "app-review-form",
@@ -24,7 +26,7 @@ import { NgForm } from "@angular/forms";
           ngModel
           #firstName="ngModel"
           type="text"
-          name="Prénom"
+          name="FirstName"
           id="firstName"
           placeholder="Prénom*"
         />
@@ -32,7 +34,7 @@ import { NgForm } from "@angular/forms";
         <textarea
           required
           [(ngModel)]="message"
-          name="message"
+          name="Containt"
           id="message"
           rows="8"
           cols="28"
@@ -44,12 +46,7 @@ import { NgForm } from "@angular/forms";
         <div class="rank">
           <h4>Ajoutez une note</h4>
           <mat-form-field class="matForm">
-            <select
-              matNativeControl
-              required
-              [(ngModel)]="rating"
-              name="rating"
-            >
+            <select matNativeControl required [(ngModel)]="rating" name="Rank">
               <option class="option" value="1">1</option>
               <option class="option" value="2">2</option>
               <option class="option" value="3">3</option>
@@ -61,6 +58,7 @@ import { NgForm } from "@angular/forms";
 
         <div class="button">
           <button
+            type="submit"
             [ngClass]="{ 'disabled-btn': form.invalid }"
             class="btn"
             [disabled]="form.invalid"
@@ -73,12 +71,20 @@ import { NgForm } from "@angular/forms";
   `,
   styleUrls: ["review-form.component.css"],
 })
-export class ReviewFormComponent {
+export class ReviewFormComponent implements OnInit {
+  constructor(private PostService: PostsService) {}
+
   //longueur string
   message: string = "";
   rating: number;
 
+  reviewData: Review[] = [];
+
+  ngOnInit() {}
+
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.PostService.addPost(form.value).subscribe((Review) =>
+      this.reviewData.push(Review)
+    );
   }
 }

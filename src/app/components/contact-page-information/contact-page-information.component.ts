@@ -1,5 +1,8 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
+import { PostsService } from "src/app/adminComponents/admin-service/Post.service";
+import { FormContact } from "src/app/models/formContact";
 
 @Component({
   selector: "app-contact-page-information",
@@ -63,7 +66,7 @@ import { NgForm } from "@angular/forms";
             ngModel
             #name="ngModel"
             type="text"
-            name="Nom"
+            name="Name"
             id="name"
             placeholder="Nom*"
           />
@@ -74,7 +77,7 @@ import { NgForm } from "@angular/forms";
             ngModel
             #firstName="ngModel"
             type="text"
-            name="Prénom"
+            name="FirstName"
             id="firstName"
             placeholder="Prénom*"
           />
@@ -85,7 +88,7 @@ import { NgForm } from "@angular/forms";
             ngModel
             #adress="ngModel"
             type="text"
-            name="Adresse"
+            name="Adress"
             id="address"
             placeholder="Adresse*"
           />
@@ -108,7 +111,7 @@ import { NgForm } from "@angular/forms";
             #phone="ngModel"
             type="phone"
             pattern="[0-9]{10}"
-            name="Téléphone"
+            name="Phone"
             id="phone"
             placeholder="téléphone*"
           />
@@ -121,12 +124,13 @@ import { NgForm } from "@angular/forms";
             rows="8"
             cols="28"
             type="textArea"
-            name="message"
+            name="Message"
             id="message"
             placeholder="Votre message*"
           ></textarea>
           <div class="button">
             <button
+              type="submit"
               [ngClass]="{ 'disabled-btn': form.invalid }"
               class="btn"
               [disabled]="form.invalid"
@@ -137,14 +141,33 @@ import { NgForm } from "@angular/forms";
         </form>
       </div>
     </div>
+    <div class="backHome">
+      <a (click)="navigateToHome()">
+        <span class="material-symbols-outlined"> home </span>
+      </a>
+    </div>
   `,
   styleUrls: ["./contact-page-information.css"],
 })
-export class ContactPageInformationComponent {
+export class ContactPageInformationComponent implements OnInit {
+  formData: FormContact[] = [];
+
+  constructor(private PostService: PostsService, private router: Router) {}
+
+  ngOnInit() {}
+
   @ViewChild("email")
   emailInput?: ElementRef<HTMLInputElement>;
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.PostService.addPostForm(form.value).subscribe((FormContact) => {
+      this.formData.push(FormContact);
+      this.router.navigate([""]);
+    });
+  }
+  navigateToHome() {
+    this.router.navigate(["/"]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }

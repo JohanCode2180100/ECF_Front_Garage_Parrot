@@ -1,6 +1,7 @@
 @media screen and (min-width: 280px) {
   .titleDisplay {
     display: none;
+    text-align: center;
   }
   .contain {
     width: 100%;

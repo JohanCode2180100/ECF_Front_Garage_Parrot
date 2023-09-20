@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Review } from "src/app/models/review";
 import { ReviewService } from "src/app/services/review.service";
-import { Review } from "./review";
 
 @Component({
   selector: "app-review-page",
@@ -28,9 +28,9 @@ import { Review } from "./review";
       </mat-card-actions>
     </div>
     <div class="backHome">
-      <a routerLink="/"
-        ><span class="material-symbols-outlined"> home </span></a
-      >
+      <a (click)="navigateToHome()">
+        <span class="material-symbols-outlined"> home </span>
+      </a>
     </div>
   `,
   styleUrls: ["./review-page.component.css"],
@@ -38,7 +38,11 @@ import { Review } from "./review";
 export class ReviewPageComponent implements OnInit {
   reviewData: Review[];
 
-  constructor(private reviewService: ReviewService, private router: Router) {}
+  constructor(
+    private reviewService: ReviewService,
+
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getReviewValid();
@@ -48,7 +52,6 @@ export class ReviewPageComponent implements OnInit {
     this.reviewService.getReviewValid().subscribe((data: Review[]) => {
       if (data) {
         this.reviewData = data;
-        console.log(data);
       } else {
         console.error("Aucune donnée n'a été renvoyée par le service.");
       }
@@ -57,5 +60,11 @@ export class ReviewPageComponent implements OnInit {
 
   redirectToReviewForm() {
     this.router.navigate(["reviewForm"]);
+  }
+
+  navigateToHome() {
+    this.router.navigate(["/"]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }
