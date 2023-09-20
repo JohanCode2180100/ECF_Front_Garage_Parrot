@@ -1,4 +1,4 @@
-export interface car {
+export interface Car {
   Second_hand_car_id: number;
   Brand: string;
   Name: string;
