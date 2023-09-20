@@ -7,8 +7,8 @@ import { Car } from "../models/car";
   providedIn: "root",
 })
 export class carsService {
-  private apiUrlAll = "http://localhost:3000/api/second-hand-car";
-  private apiUrlId = "http://localhost:3000/api/second-hand-car/";
+  apiUrlAll = "http://localhost:3000/api/second-hand-car";
+  urlCarId = "http://localhost:3000/api/second-hand-car";
 
   constructor(private http: HttpClient) {}
 
@@ -16,5 +16,9 @@ export class carsService {
     return this.http
       .get<any>(`${this.apiUrlAll}`)
       .pipe(map((data) => data.cars));
+  }
+  getCarsById(Second_hand_car_id: number): Observable<Car> {
+    const url = `${this.urlCarId}/${Second_hand_car_id}`;
+    return this.http.get<any>(url).pipe(map((data) => data.car));
   }
 }

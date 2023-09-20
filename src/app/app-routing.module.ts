@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { SecondHandCarComponent } from "./components/second-hand-car/second-hand-car/second-hand-car.component";
-import { SecondHandCarDetailsComponent } from "./components/second-hand-car-details/second-hand-car-details.component";
+
 import { HomeComponent } from "./components/home/home.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { ContactPageInformationComponent } from "./components/contact-page-information/contact-page-information.component";
@@ -17,10 +17,11 @@ import { AdminPannelSectionComponent } from "./adminComponents/admin-pannel-sect
 import { AdminPannelOpeningHoursComponent } from "./adminComponents/admin-pannel-opening-hours/admin-pannel-opening-hours.component";
 import { AdminPannelImageComponent } from "./adminComponents/admin-pannel-image/admin-pannel-image.component";
 import { AdminPannelHomePageComponent } from "./adminComponents/admin-pannel-home-page/admin-pannel-home-page.component";
+import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
-  { path: "second-hand-car/:id", component: SecondHandCarDetailsComponent },
+  { path: "second-hand-car/:id", component: CarDetailComponent },
   { path: "contact", component: ContactPageInformationComponent },
   {
     path: "avis",

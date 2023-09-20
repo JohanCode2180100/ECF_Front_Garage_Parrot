@@ -10,6 +10,8 @@ import { Car } from "src/app/models/car";
 export class SecondHandCarComponent implements OnInit {
   carsData: Car[];
 
+  car: Car[];
+
   constructor(private carsService: carsService, private router: Router) {}
 
   ngOnInit(): void {
@@ -24,6 +26,10 @@ export class SecondHandCarComponent implements OnInit {
         console.error("Aucune donnée n'a été renvoyée par le service.");
       }
     });
+  }
+
+  goToCarById(car: Car) {
+    this.router.navigate(["second-hand-car/", car.Second_hand_car_id]);
   }
   navigateToHome() {
     this.router.navigate(["/"]).then(() => {

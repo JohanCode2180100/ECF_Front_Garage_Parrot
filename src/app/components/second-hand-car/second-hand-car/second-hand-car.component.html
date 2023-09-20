@@ -41,7 +41,13 @@
         <span>{{ car.Price | currency : "EUR" : "symbol" }}</span>
       </mat-card-content>
       <mat-card-actions class="cardAction">
-        <button mat-button class="submit">PRENDRE CONTACT</button>
+        <button
+          mat-button
+          class="submit"
+          (click)="goToCarById(car)"
+        >
+          Plus de détails
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

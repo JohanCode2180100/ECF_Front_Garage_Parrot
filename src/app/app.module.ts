@@ -12,7 +12,7 @@ import { SectionOneCarouselComponent } from "./components/section-one/carousel/c
 import { sectionOneContainComponent } from "./components/section-one/contain/contain.component";
 import { ServicesCardsComponent } from "./components/section-two/services-cards/services-cards.component";
 import { MatCardModule } from "@angular/material/card";
-import {MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from "@angular/material/chips";
 import { MatInputModule } from "@angular/material/input";
 import { SectionThreeComponent } from "./components/section-three/section-three.component";
 import { FooterComponent } from "./components/footer/footer.component";
@@ -20,7 +20,6 @@ import { HoursComponent } from "./components/hours/hours.component";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { HoursServiceService } from "./services/hours-service.service";
 import { SecondHandCarComponent } from "./components/second-hand-car/second-hand-car/second-hand-car.component";
-import { SecondHandCarDetailsComponent } from "./components/second-hand-car-details/second-hand-car-details.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from "./components/home/home.component";
 import { CarCardComponent } from "./components/car-card/car-card.component";
@@ -43,6 +42,7 @@ import { AdminPannelContactFormComponent } from "./adminComponents/admin-pannel-
 import { AdminPannelOpeningHoursComponent } from "./adminComponents/admin-pannel-opening-hours/admin-pannel-opening-hours.component";
 import { AdminPannelImageComponent } from "./adminComponents/admin-pannel-image/admin-pannel-image.component";
 import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-review/admin-pannel-review.component";
+import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
 
 @NgModule({
   declarations: [
@@ -56,7 +56,7 @@ import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-revie
     FooterComponent,
     HoursComponent,
     SecondHandCarComponent,
-    SecondHandCarDetailsComponent,
+    CarDetailComponent,
     HomeComponent,
     CarCardComponent,
     PageNotFoundComponent,
@@ -77,9 +77,9 @@ import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-revie
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    MatCardModule,
     MatIconModule,
     MatSidenavModule,
-    MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
