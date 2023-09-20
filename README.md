@@ -1,28 +1,58 @@
+
 # GarageParrot
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+## Front-end project in Angular for studi. The goal is to create a front-end application for a garage website.
 
-## Development server
+This project was generated with Angular CLI version 16.1.3.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Deployment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+sorry, the project is only localHost
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run ng serve for a dev server. Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
 
-## Running unit tests
+## Local installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Install project 
 
-## Running end-to-end tests
+#### Summary of Commands:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### use git bash
+#### create a directory
+#### git clone url
+#### cd project
+#### npm i
+#### ng serve -o
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# ECF_Front_Garage_Parrot
+```bash
+"Visit my front-end repository on GitHub at the following address: https://github.com/JohanCode2180100/ECF_Front_Garage_Parrot"
+
+Choose a method for cloning: You can choose between SSH or HTTPS.
+
+Create a directory in your workspace: Create a directory in your workspace where you want to store the project.
+
+Execute the git clone command: Open a command terminal inside your directory and execute the git clone command. For example:
+
+git clone https://github.com/JohanCode2180100/ECF_Front_Garage_Parrot.git
+
+Install project dependencies: Use the following command to install project dependencies using npm:
+
+npm install
+
+Compile and run the project: To compile the project and start the development server, run the following command:
+
+ng serve
+
+Then, open your web browser and navigate to http://localhost:4200/. Alternatively, you can use the following command to open the browser automatically:
+
+ng serve -o
+```
+
+    
+## Authors
+
+- [@JohanCode2180100](https://github.com/JohanCode2180100)
+
