@@ -1,0 +1,49 @@
+@media screen and (min-width: 280px) {
+  .hoursContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hoursTitle {
+    font-size: 1em;
+  }
+  span {
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 390px) {
+  .hoursTitle {
+    font-size: 1.2em;
+  }
+  span {
+    font-size: 1em;
+  }
+}
+
+
+
+@media screen and (min-width: 700px) {
+    .hoursContainer {
+        display: flex;
+        
+      }
+}
+
+li {
+  list-style: none;
+}
+.hoursTitle {
+  margin-top: 20px;
+  color: #aa111b;
+  font-size: 1em;
+  margin: 10 10 10 10px;
+}
+span {
+  font-size: 0.8em;
+}
+span .days {
+  color: #aa111b;
+}
+span .hours {
+  color: #470b0f;
+}

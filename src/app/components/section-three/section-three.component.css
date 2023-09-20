@@ -1,0 +1,79 @@
+@media screen and (min-width: 280px) {
+  h2 {
+    font-size: 0.8em;
+    background-color: f5f5f5;
+  }
+  .section3Card {
+    display: flex;
+    width: 40%;
+  }
+  .section3Card .title {
+    font-size: 0.5em;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  h2 {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .section3Card .title {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    display: flex;
+  }
+  .section3Card {
+    width: 20%;
+  }
+  h2 {
+    font-size: 1.5em;
+    background-color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section3Card .title {
+    font-size: 1em;
+  }
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+.red {
+  color: #aa111b;
+}
+.dark {
+  color: #470b0f;
+}
+
+.card {
+  width: 100%;
+  border: 2px solid #aa111b;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  color: #470b0f;
+  font-family: "Lato", "Rubik", sans-serif;
+}
+.section3Card .title {
+  text-align: center;
+}
+.containCard {
+  margin-top: 10px;
+  text-align: center;
+  color: #aa111b;
+}

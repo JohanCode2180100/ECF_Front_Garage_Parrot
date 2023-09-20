@@ -1,0 +1,157 @@
+@media screen and (min-width: 280px) {
+  h2 {
+    font-size: 0.8em;
+    background-color: f5f5f5;
+    text-align: center;
+  }
+  .containerCard {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sectionCard {
+    margin-bottom: 20px;
+    border: 2px solid #aa111b;
+    border-radius: 10px;
+    width: 95%;
+  }
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    margin-left: 10px;
+    height: 40px;
+  }
+  .card .title {
+    font-size: 0.6em;
+  }
+
+  /* ---------------------------------------------------------------------------------------
+  ----------------------------------- CARD CARS---------------------------------------------
+  ------------------------------------------------------------------------------------------ */
+  .containerCarSells {
+    width: 95%;
+    margin: auto;
+    border: 2px solid #aa111b;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  .exemple-card {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  img {
+    width: 100%;
+    background-size: cover;
+    height: 225px;
+    border-radius: 6px 6px 0 0;
+  }
+  .titleCard {
+    font-weight: bold;
+    text-align: center;
+    color: #470b0f;
+    margin: 10px;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
+  .cardAction {
+    display: flex;
+    justify-content: center;
+  }
+  .example-card span {
+    font-family: "Lato", "Rubik", sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+  }
+
+  .submit {
+    background-color: #aa111b;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.5em;
+  }
+  .backHome {
+    text-align: center;
+    margin: 20px;
+  }
+  .backHome span {
+    font-size: 40px;
+    color: #aa111b;
+  }
+}
+
+@media screen and (min-width: 390px) {
+  .sectionCard {
+    width: 40%;
+  }
+  .containerCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+/* ---------------------------------------------------------------------------------------
+  ----------------------------------- CARD CARS---------------------------------------------
+  ------------------------------------------------------------------------------------------ */
+@media screen and (min-width: 700px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .containerCarSells {
+    width: 40%;
+    max-width: 300px;
+    margin: auto;
+    border: 2px solid #aa111b;
+    border-radius: 10px;
+    margin-top: 40px;
+    max-height: auto;
+  }
+  .exemple-card {
+    display: flex;
+    justify-content: center;
+  }
+
+  .titleCard {
+    font-weight: bold;
+    text-align: center;
+    color: #470b0f;
+    margin: 10px;
+    font-family: "Lato", "Rubik", sans-serif;
+  }
+  .cardAction {
+    display: flex;
+    justify-content: center;
+  }
+
+  .backHome {
+    text-align: center;
+    margin: 20px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+h2 .red {
+  color: #aa111b;
+}
+h2 .dark {
+  color: #470b0f;
+}
+
+.submit {
+  background-color: #aa111b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.5em;
+}
