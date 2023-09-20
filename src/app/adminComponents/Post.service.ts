@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
-import { Review } from "./models/review";
-import { Observable } from "rxjs";
+import { Review } from "../models/review";
+import { Observable, tap } from "rxjs";
 import { AuthService } from "../auth.service";
-import { FormContact } from "./models/formContact";
+import { FormContact } from "../models/formContact";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
@@ -24,7 +24,16 @@ export class PostsService {
       this.router.navigate(["/login"]);
     }
 
-    return this.http.post<Review>(this.reviewUrl, Review);
+    return this.http.post<Review>(this.reviewUrl, Review).pipe(
+      tap(() => {
+        this.router.navigate(["/"]).then(() => {
+          window.scrollTo(0, 0);
+          alert(
+            "Votre avis sera visible apres validation des administrateurs du site"
+          );
+        });
+      })
+    );
   }
 
   addPostForm(FormContact: FormContact): Observable<FormContact> {

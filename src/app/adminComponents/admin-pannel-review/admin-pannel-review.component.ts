@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Review } from "../models/review";
+import { Review } from "../../models/review";
 import { GetService } from "../Get.service";
 import { AuthService } from "src/app/auth.service";
 import { DeleteService } from "../Delete.service";

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { PostsService } from "src/app/adminComponents/Post.service";
-import { Review } from "src/app/adminComponents/models/review";
+import { Review } from "src/app/models/review";
 
 @Component({
   selector: "app-review-form",
@@ -87,5 +87,4 @@ export class ReviewFormComponent implements OnInit {
       this.reviewData.push(Review)
     );
   }
- 
 }

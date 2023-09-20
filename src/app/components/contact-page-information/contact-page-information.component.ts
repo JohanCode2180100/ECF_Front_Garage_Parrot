@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { PostsService } from "src/app/adminComponents/Post.service";
-import { FormContact } from "src/app/adminComponents/models/formContact";
+import { FormContact } from "src/app/models/formContact";
 
 @Component({
   selector: "app-contact-page-information",

@@ -3,8 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, map } from "rxjs";
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
-import { Review } from "./models/review";
-import { FormContact } from "./models/formContact";
+import { Review } from "../models/review";
+import { FormContact } from "../models/formContact";
 @Injectable({
   providedIn: "root",
 })
@@ -16,7 +16,7 @@ export class GetService {
     private router: Router,
     private authService: AuthService
   ) {}
-
+  //Pending review
   getReviewPending(): Observable<Review[]> {
     const token = this.authService.getToken();
 

@@ -1,4 +1,5 @@
 export interface FormContact {
+  Contact_form_id: number;
   Name: string;
   FirstName: string;
   Adress: string;

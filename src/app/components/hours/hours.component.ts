@@ -23,12 +23,13 @@ export class HoursComponent implements OnInit {
 
   constructor(private hoursService: HoursServiceService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getHours();
   }
   getHours() {
     this.hoursService.getHours().subscribe((data: Hours[]) => {
       this.hoursData = data;
+      
     });
   }
 }
