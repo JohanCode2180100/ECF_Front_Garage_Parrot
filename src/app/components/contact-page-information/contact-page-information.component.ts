@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { PostsService } from "src/app/adminComponents/Post.service";
+import { PostsService } from "src/app/adminComponents/admin-service/Post.service";
 import { FormContact } from "src/app/models/formContact";
 
 @Component({

@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Review } from "../../models/review";
-import { GetService } from "../Get.service";
+import { GetService } from "../admin-service/Get.service";
 import { AuthService } from "src/app/auth.service";
-import { DeleteService } from "../Delete.service";
-import { PutService } from "../Put.service";
+import { DeleteService } from "../admin-service/Delete.service";
+import { PutService } from "../admin-service/Put.service";
 
 @Component({
   selector: "app-admin-pannel-review",

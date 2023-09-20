@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, map } from "rxjs";
-import { AuthService } from "../auth.service";
+import { AuthService } from "../../auth.service";
 import { Router } from "@angular/router";
-import { Review } from "../models/review";
-import { FormContact } from "../models/formContact";
+import { Review } from "../../models/review";
+import { FormContact } from "../../models/formContact";
 @Injectable({
   providedIn: "root",
 })

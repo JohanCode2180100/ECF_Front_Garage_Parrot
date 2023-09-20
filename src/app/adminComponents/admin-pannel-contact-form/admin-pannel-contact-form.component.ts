@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { GetService } from "../Get.service";
+import { GetService } from "../admin-service/Get.service";
 import { FormContact } from "../../models/formContact";
-import { DeleteService } from "../Delete.service";
+import { DeleteService } from "../admin-service/Delete.service";
 
 @Component({
   selector: "app-admin-pannel-contact-form",

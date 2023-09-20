@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { PostsService } from "src/app/adminComponents/Post.service";
+import { PostsService } from "src/app/adminComponents/admin-service/Post.service";
 import { Review } from "src/app/models/review";
 
 @Component({

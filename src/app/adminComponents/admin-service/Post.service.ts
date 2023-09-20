@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
-import { Review } from "../models/review";
+import { Review } from "../../models/review";
 import { Observable, tap } from "rxjs";
-import { AuthService } from "../auth.service";
-import { FormContact } from "../models/formContact";
+import { AuthService } from "../../auth.service";
+import { FormContact } from "../../models/formContact";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
