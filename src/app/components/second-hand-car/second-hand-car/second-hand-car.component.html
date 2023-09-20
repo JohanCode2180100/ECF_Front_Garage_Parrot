@@ -1,0 +1,60 @@
+<div class="container">
+  <h2>
+    <span class="red">Trouvez la voiture d'occasions de vos rêves dans le</span>
+    <span class="dark">garage V.Parrot</span>
+  </h2>
+  <div class="containerCard">
+    <div class="sectionCard">
+      <div class="card">
+        <div class="title">
+          <h4>Véhicules certifiés par les experts du garage V.Parrot</h4>
+        </div>
+        <div class="symbol">
+          <span class="material-symbols-outlined"> workspace_premium</span>
+        </div>
+      </div>
+    </div>
+    <div class="sectionCard">
+      <div class="card">
+        <div class="title">
+          <h4>Révisions constructeurs certifiées, garantie prolongée</h4>
+        </div>
+        <div class="symbol">
+          <span class="material-symbols-outlined"> verified_user </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="containerCarSells" *ngFor="let car of carsData">
+    <mat-card class="example-card">
+      <img [src]="car.Picture" />
+      <div class="titleCard">
+        <mat-card-title
+          >{{ car.Brand }} {{ car.Name }} <br />
+          <span>{{ car.Year }}</span>
+        </mat-card-title>
+      </div>
+      <mat-card-content class="detailsCard">
+        <span>{{ car.Kilometer }} km</span><br /><br />
+        <span>{{ car.Price | currency : "EUR" : "symbol" }}</span>
+      </mat-card-content>
+      <mat-card-actions class="cardAction">
+        <button
+          mat-button
+          class="submit"
+          (click)="goToCarById(car)"
+        >
+          Plus de détails
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<div class="backHome">
+  <a (click)="navigateToHome()">
+    <span class="material-symbols-outlined"> home </span>
+  </a>
+</div>

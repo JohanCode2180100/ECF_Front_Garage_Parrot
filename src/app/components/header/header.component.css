@@ -1,0 +1,110 @@
+@media screen and (min-width: 280px) {
+  .linkDisplay {
+    display: none;
+  }
+  .title {
+    font-size: 8px;
+    text-align: center;
+  }
+  img {
+    width: 60px;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 390px) {
+  .linkDisplay {
+    display: none;
+  }
+  .title {
+    font-size: 10px;
+    text-align: center;
+  }
+  img {
+    width: 60px;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 700px) {
+  .linkDisplay {
+    display: block;
+  }
+
+  .titleDisplay {
+    display: none;
+  }
+  .picture {
+    position: absolute;
+    
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 20px;
+  }
+  nav ul li {
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+  }
+  .linkDisplay .right {
+    position:absolute;
+    right: 0;
+    margin: 20px; /* Ajoutez une marge pour espacement */
+  }
+
+  .banner {
+    height: 80px;
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+@media screen and (min-width: 800px) {
+  nav ul li {
+    font-size: 1.3em;
+  }
+}
+@media screen and (min-width: 900px) {
+  nav ul li {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  nav ul li {
+    font-size: 2em;
+  }
+}
+header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 130px;
+}
+
+.title,
+nav ul li {
+  font-family: "Rubik", "Lato", sans-serif;
+}
+.title .red {
+  color: #aa111b;
+}
+.title .dark,
+nav ul li a {
+  color: #470b0f;
+}
+nav ul li a:hover {
+  color: #aa111b;
+}

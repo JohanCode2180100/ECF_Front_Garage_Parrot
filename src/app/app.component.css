@@ -1,0 +1,15 @@
+@media screen and (min-width: 700px) {
+  .section1 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .carousel {
+    width: 45%;
+  }
+  .contain {
+    width: 45%;
+    background-color: #f5f5f5;
+  }
+}
