@@ -6,7 +6,6 @@
 
 button {
   margin: 10px;
-
   color: #aa111b;
   border: none;
 }
@@ -20,7 +19,6 @@ button {
 
 ul li {
   list-style: none;
-  padding: 2px;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
 }
