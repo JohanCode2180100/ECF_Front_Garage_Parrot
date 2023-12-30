@@ -22,6 +22,14 @@ import { carsService } from "src/app/services/cars.service";
       <!-- Autres propriétés de l'objet car ici -->
     </div>
     <p *ngIf="!carByID || carByID.length === 0">Voiture introuvable</p>
+
+    <div>
+      <a (click)="returnToCars()">
+        <span class="material-symbols-outlined">
+          Revenir vers les véhicules</span
+        >
+      </a>
+    </div>
   `,
   styles: [],
 })
@@ -60,8 +68,8 @@ export class CarDetailComponent implements OnInit {
     });
   }
 
-  navigateToHome() {
-    this.router.navigate(["/"]).then(() => {
+  returnToCars() {
+    this.router.navigate(["/second-hand-car"]).then(() => {
       window.scrollTo(0, 0);
     });
   }
