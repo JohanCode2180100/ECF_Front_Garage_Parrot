@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, map } from "rxjs";
+import { Observable, map, tap } from "rxjs";
 import { Car } from "../models/car";
 
 @Injectable({
@@ -8,7 +8,6 @@ import { Car } from "../models/car";
 })
 export class carsService {
   apiUrlAll = "http://localhost:3000/api/second-hand-car";
-  urlCarId = "http://localhost:3000/api/second-hand-car";
 
   constructor(private http: HttpClient) {}
 
@@ -17,8 +16,8 @@ export class carsService {
       .get<any>(`${this.apiUrlAll}`)
       .pipe(map((data) => data.cars));
   }
-  getCarsById(Second_hand_car_id: number): Observable<Car> {
-    const url = `${this.urlCarId}/${Second_hand_car_id}`;
-    return this.http.get<any>(url).pipe(map((data) => data.car));
+  getCarsById(secondHandCarId: number): Observable<Car[]> {
+    const url = `${this.apiUrlAll}/${secondHandCarId}`;
+    return this.http.get<any>(url);
   }
 }
