@@ -21,6 +21,4 @@ export class carsService {
     const url = `${this.urlCarId}/${Second_hand_car_id}`;
     return this.http.get<any>(url).pipe(map((data) => data.car));
   }
-
-  
 }

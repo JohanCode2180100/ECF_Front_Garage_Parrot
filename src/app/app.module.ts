@@ -44,6 +44,8 @@ import { AdminPannelImageComponent } from "./adminComponents/admin-pannel-image/
 import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-review/admin-pannel-review.component";
 import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
 
+import { SearchComponent } from "./filter/search/search.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +74,7 @@ import { CarDetailComponent } from "./components/second-hand-car-detail/second-h
     AdminPannelContactFormComponent,
     AdminPannelOpeningHoursComponent,
     AdminPannelImageComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
