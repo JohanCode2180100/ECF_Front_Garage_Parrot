@@ -1,8 +1,10 @@
 <mat-tab-group>
-  <mat-tab [label]="review.FirstName" *ngFor="let review of reviewData"
-    >{{ review.Containt }} - note : {{ review.Rank }}
-    <mat-chip-option (click)="validReview(review.Review_id)">Accepter</mat-chip-option>
-    <mat-chip-option color="warn" (click)="deleteReview(review.Review_id)"
+  <mat-tab [label]="review.firstName" *ngFor="let review of reviewData"
+    >{{ review.containt }} - note : {{ review.note }}
+    <mat-chip-option (click)="validReview(review.review_id)"
+      >Accepter</mat-chip-option
+    >
+    <mat-chip-option color="warn" (click)="deleteReview(review.review_id)"
       >Supprimer</mat-chip-option
     ></mat-tab
   >

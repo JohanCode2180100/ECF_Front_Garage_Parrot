@@ -39,4 +39,8 @@ export class PostsService {
   addPostForm(FormContact: FormContact): Observable<FormContact> {
     return this.http.post<FormContact>(this.formUrl, FormContact);
   }
+
+  addCar(){
+    
+  }
 }

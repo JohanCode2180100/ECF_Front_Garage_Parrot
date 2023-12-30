@@ -10,14 +10,14 @@ import { ReviewService } from "src/app/services/review.service";
       <div class="containerReview" *ngFor="let review of reviewData">
         <mat-card class="example-card">
           <div class="titleCard">
-            <mat-card-title>{{ review.FirstName }} :<br /> </mat-card-title>
+            <mat-card-title>{{ review.firstName }} :<br /> </mat-card-title>
           </div>
           <mat-card-content class="detailsCard">
-            <span>{{ review.Containt }}</span
+            <span>{{ review.containt }}</span
             ><br /><br />
           </mat-card-content>
           <mat-card-content class="titleCard">
-            <span>note : {{ review.Rank }}</span>
+            <span>note : {{ review.note }}</span>
           </mat-card-content>
         </mat-card>
       </div>

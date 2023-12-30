@@ -1,7 +1,7 @@
 export class Review {
-  Review_id: number;
-  FirstName: string;
-  Containt: string;
-  Rank: number;
-  CreatedAt: Date;
+  review_id: number;
+  firstName: string;
+  containt: string;
+  note: number;
+  createdAt: Date;
 }

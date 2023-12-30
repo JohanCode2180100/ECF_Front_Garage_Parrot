@@ -26,7 +26,7 @@ import { Review } from "src/app/models/review";
           ngModel
           #firstName="ngModel"
           type="text"
-          name="FirstName"
+          name="firstName"
           id="firstName"
           placeholder="Prénom*"
         />
@@ -34,7 +34,7 @@ import { Review } from "src/app/models/review";
         <textarea
           required
           [(ngModel)]="message"
-          name="Containt"
+          name="containt"
           id="message"
           rows="8"
           cols="28"
@@ -46,12 +46,12 @@ import { Review } from "src/app/models/review";
         <div class="rank">
           <h4>Ajoutez une note</h4>
           <mat-form-field class="matForm">
-            <select matNativeControl required [(ngModel)]="rating" name="Rank">
+            <select matNativeControl required [(ngModel)]="rating" name="note">
               <option class="option" value="1">1</option>
               <option class="option" value="2">2</option>
               <option class="option" value="3">3</option>
               <option class="option" value="4">4</option>
-              <option class="option" value="4">5</option>
+              <option class="option" value="5">5</option>
             </select>
           </mat-form-field>
         </div>

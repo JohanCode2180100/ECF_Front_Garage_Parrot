@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Hours } from "../components/hours/hours";
+import { Hours } from "../models/hours";
 import { Observable, map } from "rxjs";
 
 @Injectable({

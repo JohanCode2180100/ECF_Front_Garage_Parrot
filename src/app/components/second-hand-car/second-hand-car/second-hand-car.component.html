@@ -29,23 +29,19 @@
 <div class="container">
   <div class="containerCarSells" *ngFor="let car of carsData">
     <mat-card class="example-card">
-      <img [src]="car.Picture" />
+      <img [src]="car.picture" />
       <div class="titleCard">
         <mat-card-title
-          >{{ car.Brand }} {{ car.Name }} <br />
-          <span>{{ car.Year }}</span>
+          >{{ car.brand }} {{ car.name }} <br />
+          <span>{{ car.year }}</span>
         </mat-card-title>
       </div>
       <mat-card-content class="detailsCard">
-        <span>{{ car.Kilometer }} km</span><br /><br />
-        <span>{{ car.Price | currency : "EUR" : "symbol" }}</span>
+        <span>{{ car.kilometer }} km</span><br /><br />
+        <span>{{ car.price | currency : "EUR" : "symbol" }}</span>
       </mat-card-content>
       <mat-card-actions class="cardAction">
-        <button
-          mat-button
-          class="submit"
-          (click)="goToCarById(car)"
-        >
+        <button mat-button class="submit" (click)="goToCarById(car)">
           Plus de détails
         </button>
       </mat-card-actions>

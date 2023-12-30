@@ -29,7 +29,7 @@ export class SecondHandCarComponent implements OnInit {
   }
 
   goToCarById(car: Car) {
-    this.router.navigate(["second-hand-car/", car.Second_hand_car_id]);
+    this.router.navigate(["second-hand-car/", car.second_hand_car_id]);
   }
   navigateToHome() {
     this.router.navigate(["/"]).then(() => {
