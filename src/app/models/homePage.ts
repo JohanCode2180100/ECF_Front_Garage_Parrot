@@ -1,4 +1,5 @@
 export interface HomePage {
-  Home_page_id: number;
-  Title: string;
+  section_home_page_id: number;
+  title: string;
+  content: string;
 }

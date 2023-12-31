@@ -13,7 +13,7 @@ export class HomePageService {
 
   getHomePage(): Observable<HomePage[]> {
     return this.http
-      .get<any>(`${this.apiUrl}/api/home_page`)
+      .get<any>(`${this.apiUrl}/api/section_homepage`)
       .pipe(map((data) => data.HomePage));
   }
 }

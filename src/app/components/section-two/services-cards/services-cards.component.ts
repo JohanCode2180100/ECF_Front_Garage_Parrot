@@ -15,10 +15,10 @@ import { SectionService } from "src/app/services/section.service";
     <div class="section2Card">
       <div class="card" *ngFor="let service of sectionData">
         <div class="title">
-          <h3>{{ service.Title }}</h3>
+          <h3>{{ service.title }}</h3>
         </div>
         <div class="containCard">
-          <p>{{ service.Content }}</p>
+          <p>{{ service.content }}</p>
         </div>
       </div>
     </div>

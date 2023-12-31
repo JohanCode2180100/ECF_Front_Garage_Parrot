@@ -1,5 +1,5 @@
 export interface Section {
-  Section_id: number;
-  Title: string;
-  Content: string;
+  section_home_page_id: number;
+  title: string;
+  content: string;
 }
