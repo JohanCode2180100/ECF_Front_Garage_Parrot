@@ -7,31 +7,31 @@ import { carsService } from "src/app/services/cars.service";
 @Component({
   selector: "app-second-hand-car-detail",
   template: `
-    <div *ngIf="carByID && carByID.length > 0 && carByID[0]">
+    <div class="container" *ngIf="carByID && carByID.length > 0 && carByID[0]">
       <h2>
         {{ carByID[0].brand }} {{ carByID[0].name }} - {{ carByID[0].year }}
       </h2>
-      <img
-        [src]="carByID[0].picture"
-        alt="{{ carByID[0].brand }} {{ carByID[0].name }}"
-      />
+      <img [src]="carByID[0].picture" alt="image d'une voiture d'occasions" />
       <p>{{ carByID[0].kilometer }} km</p>
       <p>{{ carByID[0].price | currency : "EUR" : "symbol" }}</p>
       <p>{{ carByID[0].description }}</p>
-      <span>Mise en ligne de l'annonce : {{ carByID[0].createdAt }}</span>
-      <!-- Autres propriétés de l'objet car ici -->
+
+      <mat-card-actions class="cardAction">
+        <button mat-button class="submit">Demande de renseignements</button>
+      </mat-card-actions>
+      <span class="createdAt"
+        >Mise en ligne de l'annonce : {{ carByID[0].createdAt }}</span
+      >
     </div>
     <p *ngIf="!carByID || carByID.length === 0">Voiture introuvable</p>
 
-    <div>
+    <div class="backCar">
       <a (click)="returnToCars()">
-        <span class="material-symbols-outlined">
-          Revenir vers les véhicules</span
-        >
+        <span class="material-symbols-outlined"> directions_car </span>
       </a>
     </div>
   `,
-  styles: [],
+  styleUrls: ["./second-hand-car-detail.component.css"],
 })
 export class CarDetailComponent implements OnInit {
   carByID: Car[];
