@@ -28,11 +28,18 @@
     border-radius: 10px;
   }
   .backCar {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     color: #aa111b;
-    font-size: 50px;
+    font-size: 1em;
+    border: 2px solid #aa111b;
+    border-radius: 10px;
+    width: 20%;
+    text-align: center;
   }
 }
 
@@ -53,7 +60,6 @@
   }
   .backCar {
     margin-top: 20px;
-    font-size: 70px;
   }
 }
 /* ---------------------------------------------------------------------------------------
@@ -72,7 +78,6 @@
   }
   .backCar {
     margin-top: 20px;
-    font-size: 90px;
   }
 }
 @media screen and (min-width: 900px) {
@@ -88,6 +93,5 @@
   }
   .backCar {
     margin-top: 20px;
-    font-size: 90px;
   }
 }

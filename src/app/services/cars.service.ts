@@ -18,6 +18,6 @@ export class carsService {
   }
   getCarsById(secondHandCarId: number): Observable<Car[]> {
     const url = `${this.apiUrlAll}/${secondHandCarId}`;
-    return this.http.get<any>(url);
+    return this.http.get<any>(url).pipe(map((data) => data.car));
   }
 }

@@ -7,34 +7,29 @@ import { carsService } from "src/app/services/cars.service";
 @Component({
   selector: "app-second-hand-car-detail",
   template: `
-    <div class="container" *ngIf="carByID && carByID.length > 0 && carByID[0]">
-      <h2>
-        {{ carByID[0].brand }} {{ carByID[0].name }} - {{ carByID[0].year }}
-      </h2>
-      <img [src]="carByID[0].picture" alt="image d'une voiture d'occasions" />
-      <p>{{ carByID[0].kilometer }} km</p>
-      <p>{{ carByID[0].price | currency : "EUR" : "symbol" }}</p>
-      <p>{{ carByID[0].description }}</p>
+    <div class="container">
+      <h2>{{ carByID.brand }} {{ carByID.name }} - {{ carByID.year }}</h2>
+      <img [src]="carByID.picture" alt="image d'une voiture d'occasions" />
+      <p>{{ carByID.kilometer }} km</p>
+      <p>{{ carByID.price | currency : "EUR" : "symbol" }}</p>
+      <p>{{ carByID.description }}</p>
 
       <mat-card-actions class="cardAction">
         <button mat-button class="submit">Demande de renseignements</button>
       </mat-card-actions>
       <span class="createdAt"
-        >Mise en ligne de l'annonce : {{ carByID[0].createdAt }}</span
+        >Mise en ligne de l'annonce : {{ carByID.createdAt }}</span
       >
-    </div>
-    <p *ngIf="!carByID || carByID.length === 0">Voiture introuvable</p>
 
-    <div class="backCar">
-      <a (click)="returnToCars()">
-        <span class="material-symbols-outlined"> directions_car </span>
-      </a>
+      <div class="backCar">
+        <a (click)="returnToCars()"> <span>Page précédente</span> </a>
+      </div>
     </div>
   `,
   styleUrls: ["./second-hand-car-detail.component.css"],
 })
 export class CarDetailComponent implements OnInit {
-  carByID: Car[];
+  carByID: Car;
 
   constructor(
     private router: Router,
@@ -47,16 +42,8 @@ export class CarDetailComponent implements OnInit {
       const carId = +params["id"];
 
       this.carsService.getCarsById(carId).subscribe(
-        (data: any) => {
-          console.log("Données de la voiture :", data);
-
-          if (data.car && data.car.length > 0) {
-            this.carByID = data.car;
-          } else {
-            console.error(
-              "Les données de la voiture sont vides ou incorrectes."
-            );
-          }
+        (data: Car[]) => {
+          this.carByID = data[0];
         },
         (error) => {
           console.error(
