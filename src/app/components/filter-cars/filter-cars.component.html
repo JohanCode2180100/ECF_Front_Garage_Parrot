@@ -1,0 +1,58 @@
+<div class="containerFilter">
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Sélectionner un modèle</mat-label>
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="Number"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of optionsCarsName" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <mat-card class="example-result-card">
+    <mat-card-content>
+      <h4>Prix €</h4>
+      <mat-slider
+        min="{{ minPrice }}"
+        max="{{ maxPrice }}"
+        step="100"
+        showTickMarks
+        discrete
+        [displayWith]="formatLabel"
+        ><input matSliderThumb />
+      </mat-slider>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-result-card">
+    <mat-card-content>
+      <h4>Nombre de km</h4>
+      <mat-slider
+        min="{{ minKilometer }}"
+        max="{{ maxKilometer }}"
+        step="1000"
+        showTickMarks
+        discrete
+        [displayWith]="formatLabel"
+      >
+        <input matSliderThumb />
+      </mat-slider>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-chip-listbox aria-label="yearSelection">
+    <mat-chip-option>Moins de 2 ans</mat-chip-option>
+    <mat-chip-option>entre 2 et 5 ans</mat-chip-option>
+    <mat-chip-option>Plus de 5 ans</mat-chip-option>
+    <mat-chip-option>Collection</mat-chip-option>
+  </mat-chip-listbox>
+</div>

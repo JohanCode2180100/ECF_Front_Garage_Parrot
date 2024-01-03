@@ -18,6 +18,8 @@ export class SecondHandCarComponent implements OnInit {
     this.getCars();
   }
 
+  
+
   getCars() {
     this.carsService.getCars().subscribe((data: Car[]) => {
       if (data) {

@@ -34,6 +34,8 @@ import { AdminDashboardComponent } from "./adminComponents/admin-dashboard/admin
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatTableModule } from "@angular/material/table";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatSliderModule } from "@angular/material/slider";
 import { AuthInterceptor } from "./auth-interceptor";
 import { AdminPannelSecondHandCarComponent } from "./adminComponents/admin-pannel-second-hand-car/admin-pannel-second-hand-car.component";
 import { AdminPannelHomePageComponent } from "./adminComponents/admin-pannel-home-page/admin-pannel-home-page.component";
@@ -43,8 +45,7 @@ import { AdminPannelOpeningHoursComponent } from "./adminComponents/admin-pannel
 import { AdminPannelImageComponent } from "./adminComponents/admin-pannel-image/admin-pannel-image.component";
 import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-review/admin-pannel-review.component";
 import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
-
-import { SearchComponent } from "./filter/search/search.component";
+import { FilterCarsComponent } from "./components/filter-cars/filter-cars.component";
 
 @NgModule({
   declarations: [
@@ -74,10 +75,11 @@ import { SearchComponent } from "./filter/search/search.component";
     AdminPannelContactFormComponent,
     AdminPannelOpeningHoursComponent,
     AdminPannelImageComponent,
-    SearchComponent,
+    FilterCarsComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     MatCardModule,
@@ -90,9 +92,10 @@ import { SearchComponent } from "./filter/search/search.component";
     MatChipsModule,
     MatProgressSpinnerModule,
     MatTabsModule,
+    MatAutocompleteModule,
+    MatSliderModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

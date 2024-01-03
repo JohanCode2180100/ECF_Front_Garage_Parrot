@@ -20,4 +20,6 @@ export class carsService {
     const url = `${this.apiUrlAll}/${secondHandCarId}`;
     return this.http.get<any>(url).pipe(map((data) => data.car));
   }
+
+
 }
