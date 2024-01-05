@@ -9,7 +9,6 @@ import { Car } from "src/app/models/car";
 })
 export class SecondHandCarComponent implements OnInit {
   carsData: Car[];
-
   car: Car;
 
   constructor(private carsService: carsService, private router: Router) {}
@@ -17,8 +16,6 @@ export class SecondHandCarComponent implements OnInit {
   ngOnInit(): void {
     this.getCars();
   }
-
-  
 
   getCars() {
     this.carsService.getCars().subscribe((data: Car[]) => {

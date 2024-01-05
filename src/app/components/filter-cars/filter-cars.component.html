@@ -1,58 +1,22 @@
-<div class="containerFilter">
-  <form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Sélectionner un modèle</mat-label>
+<div class="container">
+  <form #form="ngForm" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Rechercher un véhicule</mat-label>
       <input
-        type="text"
-        placeholder="Pick one"
-        aria-label="Number"
+        #searchBox
+        (keyup)="search(searchBox.value)"
+        ngModel
         matInput
-        [formControl]="myControl"
-        [matAutocomplete]="auto"
+        type="search"
+        name="search"
+        id="search"
+        placeholder="ex: Ford, Peugeot"
       />
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of optionsCarsName" [value]="option">
-          {{ option }}
-        </mat-option>
-      </mat-autocomplete>
+      <div>
+        <a *ngFor="let car of Car$ | async" (click)="toGoDetailCar(car)">{{
+          car.brand
+        }}</a>
+      </div>
     </mat-form-field>
   </form>
-
-  <mat-card class="example-result-card">
-    <mat-card-content>
-      <h4>Prix €</h4>
-      <mat-slider
-        min="{{ minPrice }}"
-        max="{{ maxPrice }}"
-        step="100"
-        showTickMarks
-        discrete
-        [displayWith]="formatLabel"
-        ><input matSliderThumb />
-      </mat-slider>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card class="example-result-card">
-    <mat-card-content>
-      <h4>Nombre de km</h4>
-      <mat-slider
-        min="{{ minKilometer }}"
-        max="{{ maxKilometer }}"
-        step="1000"
-        showTickMarks
-        discrete
-        [displayWith]="formatLabel"
-      >
-        <input matSliderThumb />
-      </mat-slider>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-chip-listbox aria-label="yearSelection">
-    <mat-chip-option>Moins de 2 ans</mat-chip-option>
-    <mat-chip-option>entre 2 et 5 ans</mat-chip-option>
-    <mat-chip-option>Plus de 5 ans</mat-chip-option>
-    <mat-chip-option>Collection</mat-chip-option>
-  </mat-chip-listbox>
 </div>

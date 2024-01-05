@@ -1,8 +1,14 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Router } from "@angular/router";
 import { carsService } from "src/app/services/cars.service";
 import { Car } from "src/app/models/car";
+import { Router } from "@angular/router";
+import {
+  Observable,
+  Subject,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+} from "rxjs";
 
 @Component({
   selector: "app-filter-cars",
@@ -11,32 +17,49 @@ import { Car } from "src/app/models/car";
 })
 export class FilterCarsComponent implements OnInit {
   Cars: Car[];
+  optionsCarsBrand: string[] = [];
 
-  optionsCarsName: string[] = [];
+  //déclaration fonction recherche avec RXJS
+  searchTerms = new Subject<string>();
+  Car$: Observable<Car[]>;
 
   maxPrice: Number;
-  minPrice: number;
-
+  minPrice: Number;
   maxKilometer: Number;
   minKilometer: Number;
-
   maxYear: Number;
   minYear: Number;
+  brand: string;
+  price: number;
+  kilometer: number;
+  year: number;
 
   constructor(private carsService: carsService, private router: Router) {}
 
   ngOnInit() {
-    this.getCarsFilter();
+    this.Car$ = this.searchTerms.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      //annule la derniere en cours, permet de rechercher la plus recente
+      switchMap((term) => this.carsService.SearchCarName(term))
+    );
   }
-  myControl = new FormControl("");
+
+  // Recherche d'un modele ou d'une marque
+  search(term: string) {
+    //ici on pousse les entrées utilisateurs avec next (comme push)
+    this.searchTerms.next(term);
+  }
+
+  //redirection vers le détail de la voiture lors du click sur un filtrage de recherche
+  toGoDetailCar(car: Car) {
+    this.router.navigate(["second-hand-car/", car.second_hand_car_id]);
+  }
 
   getCarsFilter() {
     this.carsService.getCars().subscribe((data: Car[]) => {
       if (data) {
         this.Cars = data;
-
-        //Interpolation name
-        this.optionsCarsName = this.Cars.map((car) => car.name);
         //Interpolation price
         this.maxPrice = Math.max.apply(
           null,
