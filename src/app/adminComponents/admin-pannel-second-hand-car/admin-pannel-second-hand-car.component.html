@@ -1,1 +1,159 @@
-<p>admin-pannel-second-hand-car works!</p>
+<div>
+  <form #postForm="ngForm" (submit)="onPostCar(postForm)" class="form">
+    <mat-form-field>
+      <mat-label>Marque</mat-label>
+      <input
+        matInput
+        name="brand"
+        ngModel
+        type="text"
+        placeholder="Marque du véhicule"
+        required
+        brand
+        #brand="ngModel"
+      />
+    </mat-form-field>
+    <div class="error">
+      <p
+        class="invalid-feedback"
+        *ngIf="brand.touched && brand.hasError('required')"
+      >
+        La marque du véhicule est obligatoire
+      </p>
+    </div>
+
+    <mat-form-field>
+      <mat-label>Nom</mat-label>
+      <input
+        matInput
+        name="model"
+        ngModel
+        type="text"
+        placeholder="Modéle du véhicule"
+        required
+        cname
+        #cname="ngModel"
+      />
+    </mat-form-field>
+    <p
+      class="invalid-feedback"
+      *ngIf="cname.touched && cname.hasError('required')"
+    >
+      Le modéle du véhicule est obligatoire
+    </p>
+
+    <mat-form-field>
+      <mat-label>Année de mise en circulation</mat-label>
+      <input
+        matInput
+        name="year"
+        ngModel
+        type="number"
+        placeholder="Année de mise en circulation"
+        required
+        year
+        #year="ngModel"
+      />
+    </mat-form-field>
+    <div class="error">
+      <p
+        class="invalid-feedback"
+        *ngIf="year.touched && year.hasError('required')"
+      >
+        L'année de mise en circulation est obligatoire "ex: 2024"
+      </p>
+    </div>
+
+    <mat-form-field>
+      <mat-label>Prix</mat-label>
+      <input
+        matInput
+        name="price"
+        ngModel
+        type="number"
+        placeholder="Prix du véhicule"
+        required
+        price
+        #price="ngModel"
+      />
+    </mat-form-field>
+    <p
+      class="invalid-feedback"
+      *ngIf="price.touched && price.hasError('required')"
+    >
+      Le prix du véhicule est obligatoire
+    </p>
+    <mat-form-field>
+      <mat-label>Kilomètres </mat-label>
+      <input
+        matInput
+        name="kilometer"
+        required
+        ngModel
+        type="number"
+        placeholder="Kilométrage du véhicule"
+        kilometer
+        #kilometer="ngModel"
+      />
+    </mat-form-field>
+    <p
+      class="invalid-feedback"
+      *ngIf="kilometer.touched && kilometer.hasError('required')"
+    >
+      Le kilométrage du véhicule est obligatoire
+    </p>
+    <p
+      class="invalid-feedback"
+      *ngIf="kilometer.touched && kilometer.hasError('maxlength')"
+    >
+      veuillez entrer un maximum de 6 chiffres
+    </p>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        name="description"
+        ngModel
+        placeholder="description du véhicule"
+        rows="8"
+        cols="28"
+        type="textArea"
+        required
+        description
+        #description="ngModel"
+      ></textarea>
+    </mat-form-field>
+    <p
+      class="invalid-feedback"
+      *ngIf="description.touched && description.hasError('required')"
+    >
+      Une description est obligatoire
+    </p>
+
+    <mat-form-field>
+      <mat-label>image</mat-label>
+      <textarea
+        matInput
+        name="picture"
+        ngModel
+        placeholder="test image"
+        required
+        picture
+        #picture="ngModel"
+      ></textarea>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="example-label"
+      class="example-button-row"
+      [ngClass]="{ 'disabled-btn': postForm.invalid }"
+      class="btn"
+      [disabled]="postForm.invalid"
+    >
+      Enregistrer
+    </button>
+  </form>
+</div>

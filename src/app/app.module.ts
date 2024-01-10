@@ -36,6 +36,8 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatTableModule } from "@angular/material/table";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatSliderModule } from "@angular/material/slider";
+import { MatButtonModule } from "@angular/material/button";
+import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { AuthInterceptor } from "./auth-interceptor";
 import { AdminPannelSecondHandCarComponent } from "./adminComponents/admin-pannel-second-hand-car/admin-pannel-second-hand-car.component";
 import { AdminPannelHomePageComponent } from "./adminComponents/admin-pannel-home-page/admin-pannel-home-page.component";
@@ -92,6 +94,8 @@ import { FilterCarsComponent } from "./components/filter-cars/filter-cars.compon
     MatChipsModule,
     MatProgressSpinnerModule,
     MatTabsModule,
+    MatButtonModule,
+    MatBottomSheetModule,
     MatAutocompleteModule,
     MatSliderModule,
     ReactiveFormsModule,

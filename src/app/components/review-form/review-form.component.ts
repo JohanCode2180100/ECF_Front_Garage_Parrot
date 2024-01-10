@@ -86,5 +86,6 @@ export class ReviewFormComponent implements OnInit {
     this.PostService.addPost(form.value).subscribe((Review) =>
       this.reviewData.push(Review)
     );
+    
   }
 }

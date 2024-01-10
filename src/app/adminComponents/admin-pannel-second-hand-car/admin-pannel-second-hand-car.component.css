@@ -1,0 +1,33 @@
+.form {
+  margin: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+mat-form-field {
+  width: 20%;
+}
+
+button {
+  border: 2px solid lightblue;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+.invalid-feedback {
+  font-weight: bold;
+  color: red;
+}
