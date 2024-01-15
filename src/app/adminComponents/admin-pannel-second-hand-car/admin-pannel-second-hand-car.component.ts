@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { PostsService } from "../admin-service/Post.service";
 import { Car } from "../../models/car";
 import { mimeType } from "../admin-pannel-second-hand-car/mime-type.validator";
+import { LoginComponent } from "src/app/login/login.component";
 
 @Component({
   selector: "app-admin-pannel-second-hand-car",
@@ -12,6 +13,8 @@ import { mimeType } from "../admin-pannel-second-hand-car/mime-type.validator";
 export class AdminPannelSecondHandCarComponent implements OnInit {
   Car: Car;
   form: FormGroup;
+  dataCar: FormGroup[] = [];
+
   imagePreview: string;
   constructor(public PostService: PostsService) {}
 
@@ -35,7 +38,7 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
       description: new FormControl(null, {
         validators: [Validators.required],
       }),
-      filePicture: new FormControl(null, {
+      picture: new FormControl(null, {
         validators: [Validators.required],
         asyncValidators: [mimeType],
       }),
@@ -60,16 +63,12 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
   get description() {
     return this.form.controls["description"];
   }
-  get filePicture() {
-    return this.form.controls["filePicture"];
+  get picture() {
+    return this.form.controls["picture"];
   }
 
   onSubmit() {
     console.log(this.form.value);
-  }
-
-  onPostCar() {
-    throw new Error("Method not implemented.");
   }
 
   onImagePicked(event: Event) {
@@ -77,7 +76,6 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
 
     if (picture.files && picture.files.length > 0) {
       const file = picture.files[0];
-
       const reader = new FileReader();
       reader.onload = () => {
         this.imagePreview = reader.result as string;
@@ -86,13 +84,11 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
     }
   }
 
-  // onPostCar() {
-  //   if (this.form.invalid) {
-  //     return;
-  //   }
-  //   this.PostService.addCar(this.Car).subscribe((Car) => {
-  //     this.Care.push(Car);
-  //   });
-  //   this.form.reset();
-  // }
+  onPostCar() {
+    this.PostService.addCar(this.form).subscribe((car) => {
+      this.dataCar.push(car);
+      console.log(car);
+    });
+    this.form.reset();
+  }
 }

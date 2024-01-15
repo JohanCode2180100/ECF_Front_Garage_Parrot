@@ -6,6 +6,7 @@ import { Observable, tap } from "rxjs";
 import { AuthService } from "../../auth.service";
 import { FormContact } from "../../models/formContact";
 import { Car } from "../../models/car";
+import { FormGroup } from "@angular/forms";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
@@ -44,12 +45,12 @@ export class PostsService {
   }
 
   // ADD CAR----------------------------------------------------------------------------
-  addCar(Car: Car): Observable<Car> {
+  addCar(form: FormGroup): Observable<any> {
     const token = this.authService.getToken();
     if (!token) {
       this.router.navigate(["/login"]);
     }
-    return this.http.post<Car>(this.carUrl, Car).pipe(
+    return this.http.post<Car>(this.carUrl, form.value).pipe(
       tap(() => {
         this.router.navigate(["/second-hand-car"]).then(() => {
           window.scrollTo(0, 0);
