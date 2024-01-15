@@ -10,7 +10,10 @@ import { Car } from "../../models/car";
 })
 export class AdminPannelSecondHandCarComponent implements OnInit {
   carData: Car[] = [];
-  minlength: 2;
+  path = "";
+  picture: string = "";
+
+  imageUrl: any;
 
   constructor(public PostService: PostsService) {}
   ngOnInit() {}
@@ -21,11 +24,4 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
     });
   }
 
-  // onImagePicked(event: Event) {
-  //   const file = (event.target as HTMLInputElement).files[0];
-  //   this.form.patchValue({ image: file });
-  //   this.form.get("image").updateValueAndValidity();
-  //   console.log(file);
-  //   console.log(this.form.value);
-  // }
 }

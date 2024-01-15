@@ -48,6 +48,7 @@ import { AdminPannelImageComponent } from "./adminComponents/admin-pannel-image/
 import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-review/admin-pannel-review.component";
 import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
 import { FilterCarsComponent } from "./components/filter-cars/filter-cars.component";
+import { ImageViewComponent } from './adminComponents/image-view/image-view.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { FilterCarsComponent } from "./components/filter-cars/filter-cars.compon
     AdminPannelOpeningHoursComponent,
     AdminPannelImageComponent,
     FilterCarsComponent,
+    ImageViewComponent,
   ],
   imports: [
     BrowserModule,

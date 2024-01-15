@@ -20,6 +20,7 @@ export class SecondHandCarComponent implements OnInit {
   getCars() {
     this.carsService.getCars().subscribe((data: Car[]) => {
       if (data) {
+        
         this.carsData = data;
       } else {
         console.error("Aucune donnée n'a été renvoyée par le service.");
