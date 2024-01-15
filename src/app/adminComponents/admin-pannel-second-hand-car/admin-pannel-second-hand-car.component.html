@@ -1,140 +1,117 @@
-<div>
-  <form #postForm="ngForm" (submit)="onPostCar(postForm)" class="form">
+<div class="containerForm">
+  <form [formGroup]="form" (submit)="onPostCar()" class="form">
     <mat-form-field>
       <mat-label>Marque</mat-label>
       <input
         matInput
         name="brand"
-        ngModel
         type="text"
+        formControlName="brand"
         placeholder="Marque du véhicule"
-        required
-        brand
-        #brand="ngModel"
       />
-    </mat-form-field>
-    <div class="error">
-      <p
-        class="invalid-feedback"
-        *ngIf="brand.touched && brand.hasError('required')"
+
+      <mat-error *ngIf="brand.hasError('required')"
+        >Entrer une marque.</mat-error
       >
-        La marque du véhicule est obligatoire
-      </p>
-    </div>
+    </mat-form-field>
 
     <mat-form-field>
       <mat-label>Nom</mat-label>
       <input
         matInput
         name="model"
-        ngModel
         type="text"
+        formControlName="model"
         placeholder="Modéle du véhicule"
-        required
-        model
-        #model="ngModel"
       />
+      <mat-error *ngIf="model.hasError('required')"
+        >Entrer un modéle.</mat-error
+      >
     </mat-form-field>
-    <p
-      class="invalid-feedback"
-      *ngIf="model.touched && model.hasError('required')"
-    >
-      Le modéle du véhicule est obligatoire
-    </p>
 
     <mat-form-field>
       <mat-label>Année de mise en circulation</mat-label>
       <input
         matInput
         name="year"
-        ngModel
         type="number"
+        formControlName="year"
         placeholder="Année de mise en circulation"
-        required
-        year
-        #year="ngModel"
       />
-    </mat-form-field>
-    <div class="error">
-      <p
-        class="invalid-feedback"
-        *ngIf="year.touched && year.hasError('required')"
+      <mat-error *ngIf="year.hasError('required')"
+        >Entrer une année "ex:2004"</mat-error
       >
-        L'année de mise en circulation est obligatoire "ex: 2024"
-      </p>
-    </div>
+      <mat-error *ngIf="year.hasError('minlength')"
+        >Saisir 4 chiffres</mat-error
+      >
+    </mat-form-field>
 
     <mat-form-field>
       <mat-label>Prix</mat-label>
       <input
         matInput
         name="price"
-        ngModel
         type="number"
         placeholder="Prix du véhicule"
-        required
-        price
-        #price="ngModel"
+        formControlName="price"
       />
+      <mat-error *ngIf="price.hasError('required')">Entrer un prix</mat-error>
     </mat-form-field>
-    <p
-      class="invalid-feedback"
-      *ngIf="price.touched && price.hasError('required')"
-    >
-      Le prix du véhicule est obligatoire
-    </p>
     <mat-form-field>
       <mat-label>Kilomètres </mat-label>
       <input
         matInput
         name="kilometer"
-        required
-        ngModel
         type="number"
         placeholder="Kilométrage du véhicule"
-        kilometer
-        #kilometer="ngModel"
+        formControlName="kilometer"
       />
+      <mat-error *ngIf="kilometer.hasError('required')"
+        >Kilométrage (6 chiffres max).</mat-error
+      >
     </mat-form-field>
-    <p
-      class="invalid-feedback"
-      *ngIf="kilometer.touched && kilometer.hasError('required')"
-    >
-      Le kilométrage du véhicule est obligatoire
-    </p>
-    <p
-      class="invalid-feedback"
-      *ngIf="kilometer.touched && kilometer.hasError('maxlength')"
-    >
-      veuillez entrer un maximum de 6 chiffres
-    </p>
 
     <mat-form-field>
       <mat-label>Description</mat-label>
       <textarea
         matInput
         name="description"
-        ngModel
         placeholder="description du véhicule"
+        formControlName="description"
         rows="8"
         cols="28"
         type="textArea"
-        required
-        description
-        #description="ngModel"
       ></textarea>
+      <mat-error *ngIf="description.hasError('required')"
+        >Entrer une description</mat-error
+      >
     </mat-form-field>
-    <p
-      class="invalid-feedback"
-      *ngIf="description.touched && description.hasError('required')"
-    >
-      Une description est obligatoire
-    </p>
+
     <div>
       <button mat-stroke-button type="button" (click)="filePicker.click()">
         Ajouter Image
       </button>
-      <input type="file" #filePicker />
+      <input
+        name="filePicture"
+        type="file"
+        #filePicker
+        (change)="onImagePicked($event)"
+        formControlName="filePicture"
+      />
+      <mat-error *ngIf="filePicture.hasError('required')"
+        >Ajouter une image principale</mat-error
+      >
+    </div>
+
+    <div
+      class="image-preview"
+      *ngIf="
+        imagePreview !== '' && imagePreview 
+      "
+    >
+      <img [src]="imagePreview" alt="form.value.filePicture" />
+
+      <mat-error *ngIf="filePicture.hasError('valid')">test</mat-error>
     </div>
 
     <button
@@ -142,9 +119,7 @@
       color="primary"
       class="example-label"
       class="example-button-row"
-      [ngClass]="{ 'disabled-btn': postForm.invalid }"
-      class="btn"
-      [disabled]="postForm.invalid"
+      type="submit"
     >
       Enregistrer
     </button>

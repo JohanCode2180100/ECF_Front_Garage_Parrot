@@ -27,7 +27,12 @@ input[type="file"] {
   display: table-cell;
   max-width: 600px;
 }
-.invalid-feedback {
-  font-weight: bold;
-  color: red;
+.image-preview {
+  height: 15rem;
+  width: 15rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
 }

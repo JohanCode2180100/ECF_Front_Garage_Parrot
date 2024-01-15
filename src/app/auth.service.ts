@@ -56,18 +56,19 @@ export class AuthService {
 
   autoAuthAdmin() {
     const authInformation = this.getAuthData();
-    if (!authInformation) {
-      return;
-    }
-    const now = new Date();
-    const expiresIn = authInformation.expirationDate.getTime() - now.getTime();
+    if (authInformation) {
+      const now = new Date();
+      const expiresIn =
+        authInformation.expirationDate.getTime() - now.getTime();
 
-    if (expiresIn > 0) {
-      this.token = authInformation.token;
-      this.isAuthenticated = true;
-      this.setAuthTimer(expiresIn / 1000);
-      this.authStatusListener.next(true);
+      if (expiresIn > 0) {
+        this.token = authInformation.token;
+        this.isAuthenticated = true;
+        this.setAuthTimer(expiresIn / 1000);
+        this.authStatusListener.next(true);
+      }
     }
+    return false;
   }
   logout() {
     this.token = null;
@@ -95,7 +96,7 @@ export class AuthService {
     const token = localStorage.getItem("token");
     const expirationDate = localStorage.getItem("expiration");
     if (!token || !expirationDate) {
-      return;
+      return null;
     }
     return {
       token: token,
