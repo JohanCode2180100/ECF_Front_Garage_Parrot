@@ -5,7 +5,7 @@ export interface Car {
   year: number;
   kilometer: number;
   price: number;
-  picture: string;
+  image: string;
   description: string;
   createdAt: Date;
 }

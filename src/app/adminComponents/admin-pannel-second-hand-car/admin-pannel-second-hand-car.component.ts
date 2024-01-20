@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { PostsService } from "../admin-service/Post.service";
 import { Car } from "../../models/car";
 import { mimeType } from "../admin-pannel-second-hand-car/mime-type.validator";
-import { LoginComponent } from "src/app/login/login.component";
 
 @Component({
   selector: "app-admin-pannel-second-hand-car",
@@ -11,11 +10,11 @@ import { LoginComponent } from "src/app/login/login.component";
   styleUrls: ["./admin-pannel-second-hand-car.component.css"],
 })
 export class AdminPannelSecondHandCarComponent implements OnInit {
-  Car: Car;
+  car: Car;
   form: FormGroup;
-  dataCar: FormGroup[] = [];
 
   imagePreview: string;
+
   constructor(public PostService: PostsService) {}
 
   ngOnInit() {
@@ -38,7 +37,7 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
       description: new FormControl(null, {
         validators: [Validators.required],
       }),
-      picture: new FormControl(null, {
+      image: new FormControl(null, {
         validators: [Validators.required],
         asyncValidators: [mimeType],
       }),
@@ -63,30 +62,22 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
   get description() {
     return this.form.controls["description"];
   }
-  get picture() {
-    return this.form.controls["picture"];
-  }
-
-  onSubmit() {
-    console.log(this.form.value);
-  }
 
   onImagePicked(event: Event) {
-    const picture = event.target as HTMLInputElement;
+    const file = (event.target as HTMLInputElement).files[0];
+    this.form.patchValue({ image: file });
+    this.form.get("image").updateValueAndValidity();
 
-    if (picture.files && picture.files.length > 0) {
-      const file = picture.files[0];
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.imagePreview = reader.result as string;
-      };
-      reader.readAsDataURL(file);
-    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result as string;
+    };
+    reader.readAsDataURL(file);
   }
 
   onPostCar() {
     this.PostService.addCar(this.form).subscribe((car) => {
-      this.dataCar.push(car);
+      this.car = car;
       console.log(car);
     });
     this.form.reset();

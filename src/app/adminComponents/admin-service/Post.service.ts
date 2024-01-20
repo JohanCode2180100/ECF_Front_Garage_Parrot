@@ -50,7 +50,17 @@ export class PostsService {
     if (!token) {
       this.router.navigate(["/login"]);
     }
-    return this.http.post<Car>(this.carUrl, form.value).pipe(
+
+    const formData = new FormData();
+    formData.append("brand", form.get("brand").value);
+    formData.append("model", form.get("model").value);
+    formData.append("year", form.get("year").value);
+    formData.append("price", form.get("price").value);
+    formData.append("kilometer", form.get("kilometer").value);
+    formData.append("description", form.get("description").value);
+    formData.append("image", form.get("image").value);
+
+    return this.http.post<Car>(this.carUrl, formData).pipe(
       tap(() => {
         this.router.navigate(["/second-hand-car"]).then(() => {
           window.scrollTo(0, 0);

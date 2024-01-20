@@ -9,7 +9,7 @@ import { carsService } from "src/app/services/cars.service";
   template: `
     <div class="container">
       <h2>{{ carByID.brand }} {{ carByID.model }} - {{ carByID.year }}</h2>
-      <img [src]="carByID.picture" alt="image d'une voiture d'occasions" />
+      <img [src]="carByID.image" alt="image d'une voiture d'occasions" />
       <p>{{ carByID.kilometer }} km</p>
       <p class="price">{{ carByID.price | currency : "EUR" : "symbol" }}</p>
       <p>{{ carByID.description }}</p>

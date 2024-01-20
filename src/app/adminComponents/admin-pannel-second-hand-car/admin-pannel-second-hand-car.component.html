@@ -91,22 +91,11 @@
       <button mat-stroke-button type="button" (click)="filePicker.click()">
         Ajouter Image
       </button>
-      <input
-        name="picture"
-        type="file"
-        #filePicker
-        (change)="onImagePicked($event)"
-        formControlName="picture"
-      />
-      <mat-error *ngIf="picture.hasError('required')"
-        >Ajouter une image principale</mat-error
-      >
+      <input type="file" #filePicker (change)="onImagePicked($event)" />
     </div>
 
     <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview">
       <img [src]="imagePreview" alt="form.value.picture" />
-
-      <mat-error *ngIf="picture.hasError('required')">test</mat-error>
     </div>
 
     <button
