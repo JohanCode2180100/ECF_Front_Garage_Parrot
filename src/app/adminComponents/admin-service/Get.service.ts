@@ -5,11 +5,12 @@ import { AuthService } from "../../auth.service";
 import { Router } from "@angular/router";
 import { Review } from "../../models/review";
 import { FormContact } from "../../models/formContact";
+import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: "root",
 })
 export class GetService {
-  private apiUrlAdmin = "http://localhost:3000/admin";
+  private apiUrlAdmin = environment.apiUrlAdminApi;
 
   constructor(
     private http: HttpClient,
@@ -24,7 +25,7 @@ export class GetService {
       this.router.navigate(["/login"]);
     }
     return this.http
-      .get<any>(`${this.apiUrlAdmin}/api/review/pending`)
+      .get<any>(`${this.apiUrlAdmin}review/pending`)
       .pipe(map((data) => data.reviewStatus));
   }
   //READ PANNEL CONTACT
@@ -35,7 +36,7 @@ export class GetService {
       this.router.navigate(["/login"]);
     }
     return this.http
-      .get<any>(`${this.apiUrlAdmin}/api/contact`)
+      .get<any>(`${this.apiUrlAdmin}contact`)
       .pipe(map((data) => data.contact));
   }
 }

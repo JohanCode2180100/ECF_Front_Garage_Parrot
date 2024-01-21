@@ -2,18 +2,18 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
 import { HomePage } from "../models/homePage";
-
+import { environment } from "../../environments/environment";
 @Injectable({
   providedIn: "root",
 })
 export class HomePageService {
-  private apiUrl = "http://localhost:3000";
+  private apiUrl = environment.apiUrl + environment.api;
 
   constructor(private http: HttpClient) {}
 
   getHomePage(): Observable<HomePage[]> {
     return this.http
-      .get<any>(`${this.apiUrl}/api/section_homepage`)
+      .get<any>(`${this.apiUrl}section_homepage`)
       .pipe(map((data) => data.HomePage));
   }
 }

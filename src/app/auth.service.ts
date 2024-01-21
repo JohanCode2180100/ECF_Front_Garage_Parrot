@@ -4,6 +4,8 @@ import { AuthData } from "../guard/auth-guard-model";
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
 
+import { environment } from "../environments/environment";
+
 @Injectable({
   providedIn: "root",
 })
@@ -12,6 +14,8 @@ export class AuthService {
   private token: string | null;
   private tokenTimer: any;
   private authStatusListener = new Subject<boolean>();
+
+  privateUrl = environment.apiUrl + environment.api;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -27,7 +31,7 @@ export class AuthService {
   }
 
   login(userEmail: string, userPassword: string) {
-    const baseURL = "http://localhost:3000/api/login";
+    const baseURL = this.privateUrl + "login";
     const authData: AuthData = {
       userEmail: userEmail,
       userPassword: userPassword,
