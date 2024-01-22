@@ -2,12 +2,13 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
 import { HomePage } from "../models/homePage";
-import { environment } from "../../environments/environment";
+
+import { env } from "src/environments/environment.prod";
 @Injectable({
   providedIn: "root",
 })
 export class HomePageService {
-  private apiUrl = environment.apiUrl + environment.api;
+  private apiUrl = env.apiURL;
 
   constructor(private http: HttpClient) {}
 

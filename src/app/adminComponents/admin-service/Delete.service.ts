@@ -2,11 +2,11 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { AuthService } from "../../auth.service";
-import { environment } from "src/environments/environment";
+import { env } from "../../../environments/environment.prod";
 
 @Injectable({ providedIn: "root" })
 export class DeleteService {
-  private urlAdmin = environment.apiUrlAdminApi;
+  private urlAdmin = env.apiURLadmin;
 
   private apireview = this.urlAdmin + "review";
   private apiForm = this.urlAdmin + "contact";

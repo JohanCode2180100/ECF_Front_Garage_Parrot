@@ -1,7 +1,6 @@
-export const environment = {
+export const env = {
   production: true,
-  apiUrl: "https://garageparrotbackend-29c911d2d7f6.herokuapp.com/",
-  api: "api/",
-  apiUrlAdminApi:
+  apiURL: "https://garageparrotbackend-29c911d2d7f6.herokuapp.com/api/",
+  apiURLadmin:
     "https://garageparrotbackend-29c911d2d7f6.herokuapp.com/admin/api/",
 };

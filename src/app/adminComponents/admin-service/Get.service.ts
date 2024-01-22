@@ -5,12 +5,13 @@ import { AuthService } from "../../auth.service";
 import { Router } from "@angular/router";
 import { Review } from "../../models/review";
 import { FormContact } from "../../models/formContact";
-import { environment } from "src/environments/environment";
+import { env } from "src/environments/environment.prod";
+
 @Injectable({
   providedIn: "root",
 })
 export class GetService {
-  private apiUrlAdmin = environment.apiUrlAdminApi;
+  private apiUrlAdmin = env.apiURLadmin;
 
   constructor(
     private http: HttpClient,

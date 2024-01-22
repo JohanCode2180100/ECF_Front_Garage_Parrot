@@ -7,13 +7,13 @@ import { AuthService } from "../../auth.service";
 import { FormContact } from "../../models/formContact";
 import { Car } from "../../models/car";
 import { FormGroup } from "@angular/forms";
-import { environment } from "src/environments/environment";
+import { env } from "src/environments/environment.prod";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
-  private reviewUrl = environment.apiUrl + environment.api + "review";
-  private formUrl = environment.apiUrl + environment.api + "contact";
-  private carUrl = environment.apiUrlAdminApi + "second-hand-car";
+  private reviewUrl = env.apiURL + "review";
+  private formUrl = env.apiURL + "contact";
+  private carUrl = env.apiURLadmin + "second-hand-car";
 
   constructor(
     private http: HttpClient,

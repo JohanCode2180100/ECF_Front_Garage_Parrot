@@ -2,11 +2,12 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../auth.service";
 import { HttpClient } from "@angular/common/http";
-import { environment } from "src/environments/environment";
+
+import { env } from "src/environments/environment.prod";
 
 @Injectable({ providedIn: "root" })
 export class PutService {
-  private apiUrl = environment.apiUrlAdminApi + "reviewPending";
+  private apiUrl = env.apiURLadmin + "reviewPending";
 
   constructor(
     private http: HttpClient,

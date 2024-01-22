@@ -3,8 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { AuthData } from "../guard/auth-guard-model";
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
-
-import { environment } from "../environments/environment";
+import { env } from "src/environments/environment.prod";
 
 @Injectable({
   providedIn: "root",
@@ -15,7 +14,7 @@ export class AuthService {
   private tokenTimer: any;
   private authStatusListener = new Subject<boolean>();
 
-  privateUrl = environment.apiUrl + environment.api;
+  privateUrl = env.apiURL;
 
   constructor(private http: HttpClient, private router: Router) {}
 
