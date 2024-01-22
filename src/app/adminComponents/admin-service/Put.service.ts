@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "../../auth.service";
 import { HttpClient } from "@angular/common/http";
 
-import { env } from "src/environments/environment.prod";
+import { env } from "src/environments/environment.production";
 
 @Injectable({ providedIn: "root" })
 export class PutService {

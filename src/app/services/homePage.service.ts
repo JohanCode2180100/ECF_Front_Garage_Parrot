@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
 import { HomePage } from "../models/homePage";
 
-import { env } from "src/environments/environment.prod";
+import { env } from "src/environments/environment.production";
 @Injectable({
   providedIn: "root",
 })
