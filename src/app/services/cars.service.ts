@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, map, of, tap } from "rxjs";
 import { Car } from "../models/car";
-import { env } from "../../environments/environment.production";
+import { env } from "../../environments/environment";
 
 @Injectable({
   providedIn: "root",

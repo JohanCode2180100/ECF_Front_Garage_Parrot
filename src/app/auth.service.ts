@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { AuthData } from "../guard/auth-guard-model";
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
-import { env } from "src/environments/environment.production";
+import { env } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",

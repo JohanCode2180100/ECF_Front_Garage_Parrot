@@ -5,7 +5,7 @@ import { AuthService } from "../../auth.service";
 import { Router } from "@angular/router";
 import { Review } from "../../models/review";
 import { FormContact } from "../../models/formContact";
-import { env } from "src/environments/environment.production";
+import { env } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",

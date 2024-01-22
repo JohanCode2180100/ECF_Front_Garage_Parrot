@@ -7,7 +7,7 @@ import { AuthService } from "../../auth.service";
 import { FormContact } from "../../models/formContact";
 import { Car } from "../../models/car";
 import { FormGroup } from "@angular/forms";
-import { env } from "src/environments/environment.production";
+import { env } from "src/environments/environment";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { AuthService } from "../../auth.service";
-import { env } from "../../../environments/environment.production";
+import { env } from "../../../environments/environment";
 
 @Injectable({ providedIn: "root" })
 export class DeleteService {

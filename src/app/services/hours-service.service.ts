@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Hours } from "../models/hours";
 import { Observable, map } from "rxjs";
-import { env } from "src/environments/environment.production";
+import { env } from "../../environments/environment";
 
 @Injectable({
   providedIn: "root",

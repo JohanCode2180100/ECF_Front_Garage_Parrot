@@ -7,7 +7,7 @@
     "start": "node serveur.js --configuration=production",
     "build": "ng build",
     "watch": "ng build --watch ",
-    "heroku-postbuil": "ng build "
+    "heroku-postbuild": "ng build --configuration=production "
   },
   "private": true,
   "dependencies": {
