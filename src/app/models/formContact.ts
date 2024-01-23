@@ -1,9 +1,9 @@
 export interface FormContact {
-  Contact_form_id: number;
-  Name: string;
-  FirstName: string;
-  Adress: string;
-  Email: string;
-  Phone: string;
-  Message: string;
+  contact_form_id: number;
+  name: string;
+  firstName: string;
+  adress: string;
+  email: string;
+  phone: string;
+  message: string;
 }
