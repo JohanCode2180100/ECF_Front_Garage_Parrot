@@ -13,7 +13,7 @@ export class SectionService {
 
   getSection(): Observable<section[]> {
     return this.http
-      .get<any>(`${this.apiUrl}section`)
+      .get<any>(`${this.apiUrl}section_homePage`)
       .pipe(map((data) => data.section));
   }
 }
