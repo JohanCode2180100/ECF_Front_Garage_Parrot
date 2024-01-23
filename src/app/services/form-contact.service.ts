@@ -13,6 +13,6 @@ export class FormContactService {
 
   // ADD FORM----------------------------------------------------------------------------
   addPostForm(FormContact: FormContact): Observable<FormContact> {
-    return this.http.post<FormContact>(`${this.formUrl}/contact`, FormContact);
+    return this.http.post<FormContact>(`${this.formUrl}contact`, FormContact);
   }
 }
