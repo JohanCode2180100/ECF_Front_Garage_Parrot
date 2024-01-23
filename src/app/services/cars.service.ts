@@ -8,13 +8,13 @@ import { env } from "../../environments/environment";
   providedIn: "root",
 })
 export class carsService {
-  apiUrlAll = env.apiURL + "second-hand-car";
+  apiUrlAll = env.apiURL;
 
   constructor(private http: HttpClient) {}
 
   getCars(): Observable<Car[]> {
     return this.http
-      .get<any>(`${this.apiUrlAll}`)
+      .get<any>(`${this.apiUrlAll}second_hand_car`)
       .pipe(map((data) => data.cars));
   }
 
@@ -22,11 +22,11 @@ export class carsService {
     if (term.length <= 1) {
       return of([]);
     }
-    const url = `${this.apiUrlAll}?name=${term}`;
+    const url = `${this.apiUrlAll}second_hand_car?name=${term}`;
     return this.http.get<any>(url).pipe(map((data) => data.cars));
   }
   getCarsById(secondHandCarId: number): Observable<Car[]> {
-    const url = `${this.apiUrlAll}/${secondHandCarId}`;
+    const url = `${this.apiUrlAll}second_hand_car/${secondHandCarId}`;
     return this.http.get<any>(url).pipe(map((data) => data.car));
   }
 }

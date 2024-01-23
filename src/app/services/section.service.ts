@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
-import { Section } from "../models/Section";
+import { section } from "../models/Section";
 import { env } from "src/environments/environment";
 
 @Injectable({
@@ -11,7 +11,7 @@ export class SectionService {
   private apiUrl = env.apiURL;
   constructor(private http: HttpClient) {}
 
-  getSection(): Observable<Section[]> {
+  getSection(): Observable<section[]> {
     return this.http
       .get<any>(`${this.apiUrl}section`)
       .pipe(map((data) => data.section));
