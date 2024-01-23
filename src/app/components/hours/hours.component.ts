@@ -11,8 +11,8 @@ import { Hours } from "../../models/hours";
     <li *ngFor="let day of hoursData">
       <span class="day">{{ day.days }}: </span>
       <span class="hours"
-        >{{ day.open_am }} : {{ day.close_am }} | {{ day.open_pm }} -
-        {{ day.close_pm }}</span
+        >{{ day.open_AM }} : {{ day.close_AM }} | {{ day.open_PM }} -
+        {{ day.close_AM }}</span
       >
     </li>
   </div>`,

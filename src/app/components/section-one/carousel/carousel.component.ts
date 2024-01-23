@@ -10,5 +10,5 @@ import { Component } from "@angular/core";
   styleUrls: ["./carousel.component.css"],
 })
 export class SectionOneCarouselComponent {
-  pictures: string[] = ["assets/picture/carEngine.jpg"];
+  pictures: string[] = ["assets/picture/carEngine.jpeg"];
 }
