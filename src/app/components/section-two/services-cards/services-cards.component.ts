@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { section } from "src/app/models/Section";
 import { SectionService } from "src/app/services/section.service";
+import { HomePage } from "src/app/models/homePage";
 
 @Component({
   selector: "app-services-cards",
@@ -26,7 +26,7 @@ import { SectionService } from "src/app/services/section.service";
   styleUrls: ["./services-cards.component.css"],
 })
 export class ServicesCardsComponent implements OnInit {
-  sectionData: section[];
+  sectionData: HomePage[];
 
   constructor(private sectionService: SectionService) {}
 
