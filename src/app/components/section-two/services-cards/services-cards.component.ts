@@ -13,12 +13,12 @@ import { HomePage } from "src/app/models/homePage";
     </h2>
 
     <div class="section2Card">
-      <div class="card" *ngFor="let service of sectionData">
+      <div class="card" *ngFor="let section of sectionData">
         <div class="title">
-          <h3>{{ service.title }}</h3>
+          <h3>{{ section.title }}</h3>
         </div>
         <div class="containCard">
-          <p>{{ service.content }}</p>
+          <p>{{ section.content }}</p>
         </div>
       </div>
     </div>

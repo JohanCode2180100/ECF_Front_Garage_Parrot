@@ -4,7 +4,6 @@ import { Router } from "@angular/router";
 import { Review } from "../../models/review";
 import { Observable, tap } from "rxjs";
 import { AuthService } from "../../auth.service";
-import { FormContact } from "../../models/formContact";
 import { Car } from "../../models/car";
 import { FormGroup } from "@angular/forms";
 import { env } from "src/environments/environment";
@@ -12,7 +11,6 @@ import { env } from "src/environments/environment";
 @Injectable({ providedIn: "root" })
 export class PostsService {
   private reviewUrl = env.apiURL + "review";
-  private formUrl = env.apiURL + "contact";
   private carUrl = env.apiURLadmin + "second-hand-car";
 
   constructor(
@@ -40,10 +38,7 @@ export class PostsService {
     );
   }
 
-  // ADD FORM----------------------------------------------------------------------------
-  addPostForm(FormContact: FormContact): Observable<FormContact> {
-    return this.http.post<FormContact>(this.formUrl, FormContact);
-  }
+ 
 
   // ADD CAR----------------------------------------------------------------------------
   addCar(form: FormGroup): Observable<any> {

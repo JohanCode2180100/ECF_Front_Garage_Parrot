@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { PostsService } from "src/app/adminComponents/admin-service/Post.service";
 import { FormContact } from "src/app/models/formContact";
+import { FormContactService } from "src/app/services/form-contact.service";
 
 @Component({
   selector: "app-contact-page-information",
@@ -66,7 +66,7 @@ import { FormContact } from "src/app/models/formContact";
             ngModel
             #name="ngModel"
             type="text"
-            name="Name"
+            name="name"
             id="name"
             placeholder="Nom*"
           />
@@ -88,7 +88,7 @@ import { FormContact } from "src/app/models/formContact";
             ngModel
             #adress="ngModel"
             type="text"
-            name="Adress"
+            name="adress"
             id="address"
             placeholder="Adresse*"
           />
@@ -99,7 +99,7 @@ import { FormContact } from "src/app/models/formContact";
             ngModel
             #email="ngModel"
             type="Email"
-            name="Email"
+            name="email"
             id="email"
             placeholder="Email*"
           />
@@ -124,7 +124,7 @@ import { FormContact } from "src/app/models/formContact";
             rows="8"
             cols="28"
             type="textArea"
-            name="Message"
+            name="message"
             id="message"
             placeholder="Votre message*"
           ></textarea>
@@ -152,7 +152,10 @@ import { FormContact } from "src/app/models/formContact";
 export class ContactPageInformationComponent implements OnInit {
   formData: FormContact[] = [];
 
-  constructor(private PostService: PostsService, private router: Router) {}
+  constructor(
+    private formContactService: FormContactService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
@@ -160,9 +163,10 @@ export class ContactPageInformationComponent implements OnInit {
   emailInput?: ElementRef<HTMLInputElement>;
 
   onSubmit(form: NgForm) {
-    this.PostService.addPostForm(form.value).subscribe((FormContact) => {
+    this.formContactService.addPostForm(form.value).subscribe((FormContact) => {
       this.formData.push(FormContact);
       this.router.navigate([""]);
+      console.log(this.formData);
     });
   }
   navigateToHome() {
