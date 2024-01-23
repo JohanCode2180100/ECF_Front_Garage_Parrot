@@ -1,12 +1,12 @@
 <mat-card class="example-card" *ngFor="let form of formData">
   <mat-card-header>
-    <mat-card-title>{{ form.FirstName }} {{ form.Name }}</mat-card-title>
-    <mat-card-subtitle>{{ form.Email }}</mat-card-subtitle>
-    <mat-card-subtitle>{{ form.Phone }}</mat-card-subtitle>
+    <mat-card-title>{{ form.firstName }} {{ form.name }}</mat-card-title>
+    <mat-card-subtitle>{{ form.email }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ form.phone }}</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>{{ form.Message }}</mat-card-content>
+  <mat-card-content>{{ form.message }}</mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="onDelete(form.Contact_form_id)">
+    <button mat-button (click)="onDelete(form.contact_form_id)">
       Supprimer
     </button>
   </mat-card-actions>
