@@ -21,7 +21,7 @@ export class FormContactService {
           this.router.navigate(["/"]).then(() => {
             window.scrollTo(0, 0);
             alert(
-              "Votre avis sera visible apres validation des administrateurs du site"
+              "Votre formulaire est en route !!! Nous allons prendre contact avec vous"
             );
           });
         })
