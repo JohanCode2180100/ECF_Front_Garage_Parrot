@@ -77,7 +77,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
             ngModel
             #firstName="ngModel"
             type="text"
-            name="FirstName"
+            name="firstName"
             id="firstName"
             placeholder="Prénom*"
           />
@@ -89,7 +89,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
             #adress="ngModel"
             type="text"
             name="adress"
-            id="address"
+            id="adress"
             placeholder="Adresse*"
           />
 
@@ -111,7 +111,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
             #phone="ngModel"
             type="phone"
             pattern="[0-9]{10}"
-            name="Phone"
+            name="phone"
             id="phone"
             placeholder="téléphone*"
           />
@@ -150,12 +150,12 @@ import { FormContactService } from "src/app/services/form-contact.service";
   styleUrls: ["./contact-page-information.css"],
 })
 export class ContactPageInformationComponent implements OnInit {
-  formData: FormContact[] = [];
-
   constructor(
     private formContactService: FormContactService,
     private router: Router
   ) {}
+
+  formData: FormContact[] = [];
 
   ngOnInit() {}
 
@@ -165,10 +165,10 @@ export class ContactPageInformationComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.formContactService.addPostForm(form.value).subscribe((FormContact) => {
       this.formData.push(FormContact);
-      this.router.navigate([""]);
-      console.log(this.formData);
+      
     });
   }
+
   navigateToHome() {
     this.router.navigate(["/"]).then(() => {
       window.scrollTo(0, 0);

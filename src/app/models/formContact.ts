@@ -1,4 +1,4 @@
-export interface FormContact {
+export class FormContact {
   contact_form_id: number;
   name: string;
   firstName: string;
