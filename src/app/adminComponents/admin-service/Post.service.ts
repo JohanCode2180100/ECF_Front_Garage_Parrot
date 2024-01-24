@@ -10,8 +10,8 @@ import { env } from "src/environments/environment";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
-  private reviewUrl = env.apiURL + "review";
-  private carUrl = env.apiURLadmin + "second-hand-car";
+  private reviewUrl = env.apiURL;
+  private carUrl = env.apiURLadmin;
 
   constructor(
     private http: HttpClient,
@@ -26,7 +26,7 @@ export class PostsService {
       this.router.navigate(["/login"]);
     }
 
-    return this.http.post<Review>(this.reviewUrl, Review).pipe(
+    return this.http.post<Review>(`${this.reviewUrl}review`, Review).pipe(
       tap(() => {
         this.router.navigate(["/"]).then(() => {
           window.scrollTo(0, 0);
@@ -54,7 +54,7 @@ export class PostsService {
     formData.append("description", form.get("description").value);
     formData.append("image", form.get("image").value);
 
-    return this.http.post<Car>(this.carUrl, formData).pipe(
+    return this.http.post<Car>(`${this.carUrl}second_hand_car`, formData).pipe(
       tap(() => {
         this.router.navigate(["/second-hand-car"]).then(() => {
           window.scrollTo(0, 0);
