@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HoursServiceService } from "src/app/services/hours-service.service";
-import { Hours } from "../../models/hours";
+import { Hours } from "../../services/models/hours";
 
 @Component({
   selector: "app-hours",

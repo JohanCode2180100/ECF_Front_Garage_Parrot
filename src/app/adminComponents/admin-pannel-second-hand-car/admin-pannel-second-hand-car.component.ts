@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { PostsService } from "../admin-service/Post.service";
-import { Car } from "../../models/car";
+import { Car } from "../../services/models/car";
 import { mimeType } from "../admin-pannel-second-hand-car/mime-type.validator";
 
 @Component({

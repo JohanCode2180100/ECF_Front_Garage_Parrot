@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { carsService } from "src/app/services/cars.service";
-import { Car } from "src/app/models/car";
+import { Car } from "src/app/services/models/car";
 @Component({
   selector: "app-second-hand-car",
   templateUrl: "./second-hand-car.component.html",
@@ -20,7 +20,6 @@ export class SecondHandCarComponent implements OnInit {
   getCars() {
     this.carsService.getCars().subscribe((data: Car[]) => {
       if (data) {
-        
         this.carsData = data;
       } else {
         console.error("Aucune donnée n'a été renvoyée par le service.");

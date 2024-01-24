@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { SectionService } from "src/app/services/section.service";
-import { HomePage } from "src/app/models/homePage";
+import { HomePageService } from "src/app/services/homePage.service";
+
+import { HomePage } from "src/app/services/models/homePage";
 
 @Component({
   selector: "app-services-cards",
@@ -13,7 +14,7 @@ import { HomePage } from "src/app/models/homePage";
     </h2>
 
     <div class="section2Card">
-      <div class="card" *ngFor="let section of sectionData">
+      <div class="card" *ngFor="let section of homePageData">
         <div class="title">
           <h3>{{ section.title }}</h3>
         </div>
@@ -26,16 +27,17 @@ import { HomePage } from "src/app/models/homePage";
   styleUrls: ["./services-cards.component.css"],
 })
 export class ServicesCardsComponent implements OnInit {
-  sectionData: HomePage[];
+  homePageData: HomePage[];
 
-  constructor(private sectionService: SectionService) {}
+  constructor(private homePageService: HomePageService) {}
 
   ngOnInit() {
-    this.getSection();
+    this.getHomePage();
   }
-  getSection() {
-    this.sectionService.getSection().subscribe((data) => {
-      this.sectionData = data;
+  getHomePage() {
+    this.homePageService.getHomePage().subscribe((data) => {
+      this.homePageData = data;
+      console.log(this.homePageData);
     });
   }
 }

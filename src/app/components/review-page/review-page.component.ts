@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Review } from "src/app/models/review";
+import { Review } from "src/app/services/models/review";
 import { ReviewService } from "src/app/services/review.service";
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { carsService } from "src/app/services/cars.service";
-import { Car } from "src/app/models/car";
+import { Car } from "src/app/services/models/car";
 import { Router } from "@angular/router";
 import {
   Observable,

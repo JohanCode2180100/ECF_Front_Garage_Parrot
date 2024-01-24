@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { GetService } from "../admin-service/Get.service";
-import { FormContact } from "../../models/formContact";
+import { FormContact } from "../../services/models/formContact";
 import { DeleteService } from "../admin-service/Delete.service";
 
 @Component({

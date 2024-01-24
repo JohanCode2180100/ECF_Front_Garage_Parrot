@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
-import { Review } from "../../models/review";
+import { Review } from "../../services/models/review";
 import { Observable, tap } from "rxjs";
 import { AuthService } from "../../auth.service";
-import { Car } from "../../models/car";
+import { Car } from "../../services/models/car";
 import { FormGroup } from "@angular/forms";
 import { env } from "src/environments/environment";
 
@@ -37,8 +37,6 @@ export class PostsService {
       })
     );
   }
-
- 
 
   // ADD CAR----------------------------------------------------------------------------
   addCar(form: FormGroup): Observable<any> {

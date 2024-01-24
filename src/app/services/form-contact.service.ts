@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, tap } from "rxjs";
 import { env } from "src/environments/environment";
-import { FormContact } from "../models/formContact";
+import { FormContact } from "./models/formContact";
 import { Router } from "@angular/router";
 
 @Injectable({
