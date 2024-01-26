@@ -10,7 +10,7 @@ import { mimeType } from "../admin-pannel-second-hand-car/mime-type.validator";
   styleUrls: ["./admin-pannel-second-hand-car.component.css"],
 })
 export class AdminPannelSecondHandCarComponent implements OnInit {
-  car: Car;
+  car: Car[] = [];
   form: FormGroup;
 
   imagePreview: string;
@@ -76,9 +76,17 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
   }
 
   onPostCar() {
-    this.PostService.addCar(this.form).subscribe((car) => {
-      this.car = car;
-      console.log(car);
+    const formData = new FormData();
+    formData.append("brand", this.form.value.brand);
+    formData.append("model", this.form.value.model);
+    formData.append("year", this.form.value.year);
+    formData.append("price", this.form.value.price);
+    formData.append("kilometer", this.form.value.kilometer);
+    formData.append("description", this.form.value.description);
+    formData.append("image", this.form.value.image);
+
+    this.PostService.addCar(formData).subscribe((car) => {
+      this.car.push(car);
     });
     this.form.reset();
   }

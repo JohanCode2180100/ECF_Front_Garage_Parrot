@@ -39,20 +39,11 @@ export class PostsService {
   }
 
   // ADD CAR----------------------------------------------------------------------------
-  addCar(form: FormGroup): Observable<any> {
+  addCar(formData: FormData): Observable<any> {
     const token = this.authService.getToken();
     if (!token) {
       this.router.navigate(["/login"]);
     }
-
-    const formData = new FormData();
-    formData.append("brand", form.get("brand").value);
-    formData.append("model", form.get("model").value);
-    formData.append("year", form.get("year").value);
-    formData.append("price", form.get("price").value);
-    formData.append("kilometer", form.get("kilometer").value);
-    formData.append("description", form.get("description").value);
-    formData.append("image", form.get("image").value);
 
     return this.http.post<Car>(`${this.carUrl}second_hand_car`, formData).pipe(
       tap(() => {
