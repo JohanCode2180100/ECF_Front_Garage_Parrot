@@ -12,7 +12,7 @@ import { Component } from "@angular/core";
       <div class="section3Card">
         <div class="card">
           <div class="title">
-            <h3>Révisions constructeurs certifiées</h3>
+            <h3>Révisions constructeurs</h3>
           </div>
           <div class="containCard">
             <span class="material-symbols-outlined"> workspace_premium</span>

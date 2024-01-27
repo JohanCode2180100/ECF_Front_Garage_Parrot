@@ -10,7 +10,6 @@ import { Car } from "src/app/services/models/car";
 export class SecondHandCarComponent implements OnInit {
   carsData: Car[];
   car: Car;
-  
 
   constructor(private carsService: carsService, private router: Router) {}
 

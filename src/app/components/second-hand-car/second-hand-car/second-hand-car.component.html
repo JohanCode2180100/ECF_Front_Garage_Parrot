@@ -33,7 +33,7 @@
 <div class="container">
   <div class="containerCarSells" *ngFor="let car of carsData">
     <mat-card class="example-card">
-      <img [src]="car.image" />
+      <img src="{{ car.image }}" />
       <div class="titleCard">
         <mat-card-title
           >{{ car.brand }} {{ car.model }} <br />
