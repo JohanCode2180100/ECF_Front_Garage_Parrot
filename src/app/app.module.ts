@@ -12,7 +12,7 @@ import { SectionOneCarouselComponent } from "./components/section-one/carousel/c
 import { sectionOneContainComponent } from "./components/section-one/contain/contain.component";
 import { ServicesCardsComponent } from "./components/section-two/services-cards/services-cards.component";
 import { MatCardModule } from "@angular/material/card";
-import { MatChipsModule } from "@angular/material/chips";
+import { MatChipListbox, MatChipsModule } from "@angular/material/chips";
 import { MatInputModule } from "@angular/material/input";
 import { SectionThreeComponent } from "./components/section-three/section-three.component";
 import { FooterComponent } from "./components/footer/footer.component";
@@ -49,8 +49,8 @@ import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-revie
 import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
 import { FilterCarsComponent } from "./components/filter-cars/filter-cars.component";
 import { ImageViewComponent } from "./adminComponents/image-view/image-view.component";
-import { ReviewValidComponent } from './adminComponents/admin-pannel-review/review-valid/review-valid.component';
-import { ReviewPendingComponent } from './adminComponents/admin-pannel-review/review-pending/review-pending.component';
+import { ReviewValidComponent } from "./adminComponents/admin-pannel-review/review-valid/review-valid.component";
+import { ReviewPendingComponent } from "./adminComponents/admin-pannel-review/review-pending/review-pending.component";
 
 @NgModule({
   declarations: [
@@ -98,6 +98,7 @@ import { ReviewPendingComponent } from './adminComponents/admin-pannel-review/re
     MatInputModule,
     MatTableModule,
     MatChipsModule,
+
     MatProgressSpinnerModule,
     MatTabsModule,
     MatButtonModule,

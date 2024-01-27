@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/auth.service";
 import { Review } from "src/app/services/models/review";
 import { ReviewService } from "src/app/services/review.service";
+import { DeleteService } from "../../admin-service/Delete.service";
 
 @Component({
   selector: "app-review-valid",
@@ -15,11 +16,13 @@ export class ReviewValidComponent implements OnInit {
     "demo-firstName",
     "demo-containt",
     "demo-note",
+    "demo-delete",
   ];
 
   constructor(
     private reviewService: ReviewService,
-    public authService: AuthService
+    public authService: AuthService,
+    private deleteService: DeleteService
   ) {}
 
   ngOnInit() {
@@ -39,5 +42,10 @@ export class ReviewValidComponent implements OnInit {
         console.error("Aucune donnée n'a été renvoyée par le service.");
       }
     });
+  }
+
+  deleteReview(reviewId: number) {
+    this.deleteService.reviewDeleteById(reviewId);
+    this.getReviewValid();
   }
 }
