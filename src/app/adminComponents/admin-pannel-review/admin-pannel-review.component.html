@@ -1,11 +1,6 @@
-<mat-tab-group>
-  <mat-tab [label]="review.firstName" *ngFor="let review of reviewData"
-    >{{ review.containt }} - note : {{ review.note }}
-    <mat-chip-option (click)="validReview(review.review_id)"
-      >Accepter</mat-chip-option
-    >
-    <mat-chip-option color="warn" (click)="deleteReview(review.review_id)"
-      >Supprimer</mat-chip-option
-    ></mat-tab
-  >
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Avis en attente"
+    ><app-review-pending></app-review-pending
+  ></mat-tab>
+  <mat-tab label="Avis en ligne"><app-review-valid></app-review-valid></mat-tab>
 </mat-tab-group>

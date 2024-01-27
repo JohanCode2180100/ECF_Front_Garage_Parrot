@@ -1,44 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { Review } from "../../services/models/review";
-import { GetService } from "../admin-service/Get.service";
-import { AuthService } from "src/app/auth.service";
-import { DeleteService } from "../admin-service/Delete.service";
-import { PutService } from "../admin-service/Put.service";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-admin-pannel-review",
   templateUrl: "./admin-pannel-review.component.html",
   styles: [],
 })
-export class AdminPannelReviewComponent implements OnInit {
-  reviewData: Review[] = [];
-
-  constructor(
-    public authService: AuthService,
-    private GetService: GetService,
-    private deleteService: DeleteService,
-    private putService: PutService
-  ) {}
-
-  ngOnInit() {
-    this.getReviewPending();
-  }
-
-  getReviewPending() {
-    this.GetService.getReviewPending().subscribe((data: Review[]) => {
-      if (data) {
-        this.reviewData = data;
-      } else {
-        console.error("Aucune donnée n'a été renvoyée par le service.");
-      }
-    });
-  }
-  validReview(reviewId: number) {
-    this.putService.approuvedPendingReviewById(reviewId);
-    this.getReviewPending();
-  }
-  deleteReview(reviewId: number) {
-    this.deleteService.reviewDeleteById(reviewId);
-    this.getReviewPending();
-  }
-}
+export class AdminPannelReviewComponent {}
