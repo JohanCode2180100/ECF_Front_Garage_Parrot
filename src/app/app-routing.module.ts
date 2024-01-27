@@ -18,6 +18,8 @@ import { AdminPannelOpeningHoursComponent } from "./adminComponents/admin-pannel
 import { AdminPannelImageComponent } from "./adminComponents/admin-pannel-image/admin-pannel-image.component";
 import { AdminPannelHomePageComponent } from "./adminComponents/admin-pannel-home-page/admin-pannel-home-page.component";
 import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
+import { ReviewPendingComponent } from "./adminComponents/admin-pannel-review/review-pending/review-pending.component";
+import { ReviewValidComponent } from "./adminComponents/admin-pannel-review/review-valid/review-valid.component";
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
@@ -36,7 +38,17 @@ const routes: Routes = [
     component: AdminDashboardComponent,
 
     children: [
-      { path: "adminPannel_review", component: AdminPannelReviewComponent },
+      {
+        path: "adminPannel_review",
+        component: AdminPannelReviewComponent,
+        children: [
+          {
+            path: "adminPannel_review_pending",
+            component: ReviewPendingComponent,
+          },
+          { path: "adminPannel_review_valid", component: ReviewValidComponent },
+        ],
+      },
       {
         path: "adminPannel_second-hand-car",
         component: AdminPannelSecondHandCarComponent,
