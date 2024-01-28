@@ -45,6 +45,7 @@ export class ReviewPendingComponent {
       }
     });
   }
+
   validReview(reviewId: number) {
     this.putService.approuvedPendingReviewById(reviewId);
     this.getReviewPending();
