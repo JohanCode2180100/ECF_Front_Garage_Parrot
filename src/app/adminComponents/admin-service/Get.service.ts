@@ -40,4 +40,6 @@ export class GetService {
       .get<any>(`${this.apiUrlAdmin}contact`)
       .pipe(map((data) => data.contact));
   }
+
+  
 }
