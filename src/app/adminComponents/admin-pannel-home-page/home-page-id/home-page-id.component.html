@@ -1,0 +1,21 @@
+<div *ngIf="homePageData">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <label for="title">Titre de la section :</label>
+    <input
+      type="text"
+      id="title"
+      [ngModel]="homePageData.title"
+      name="title"
+    />
+
+    <label for="content">contenu de la section :</label>
+    <textarea
+      type="text"
+      id="content"
+      [ngModel]="homePageData.content"
+      name="content"
+    ></textarea>
+
+    <button type="submit">Enregistrer les modifications</button>
+  </form>
+</div>

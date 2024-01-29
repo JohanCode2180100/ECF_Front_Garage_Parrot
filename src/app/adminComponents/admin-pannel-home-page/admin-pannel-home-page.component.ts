@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HomePage } from "../../services/models/homePage";
 import { AuthService } from "src/app/auth.service";
 import { HomePageService } from "src/app/services/homePage.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-admin-pannel-home-page",
@@ -9,13 +10,20 @@ import { HomePageService } from "src/app/services/homePage.service";
   styles: [],
 })
 export class AdminPannelHomePageComponent implements OnInit {
-  dataSection_HomePage: HomePage[] = [];
+  dataSection_HomePage: HomePage[];
+  homePage: HomePage;
 
-  displayedColumns: string[] = ["demo-position", "demo-titre", "demo-contenu", "demo-update"];
+  displayedColumns: string[] = [
+    "demo-position",
+    "demo-titre",
+    "demo-contenu",
+    "demo-update",
+  ];
 
   constructor(
     private homePageService: HomePageService,
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -34,5 +42,8 @@ export class AdminPannelHomePageComponent implements OnInit {
     });
   }
 
-  updateSectionId(section_homePage_id) {}
+  goToUpdateSectionId(section_homePage_id: number) {
+    this.router.navigate(["adminPannel_HomePage_id/", section_homePage_id]);
+    
+  }
 }

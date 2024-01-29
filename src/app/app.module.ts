@@ -49,6 +49,7 @@ import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-revie
 import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
 import { FilterCarsComponent } from "./components/filter-cars/filter-cars.component";
 import { ImageViewComponent } from "./adminComponents/image-view/image-view.component";
+import { HomePageIdComponent } from './adminComponents/admin-pannel-home-page/home-page-id/home-page-id.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { ImageViewComponent } from "./adminComponents/image-view/image-view.comp
     AdminPannelImageComponent,
     FilterCarsComponent,
     ImageViewComponent,
+    HomePageIdComponent,
   ],
   imports: [
     BrowserModule,
