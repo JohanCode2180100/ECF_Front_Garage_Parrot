@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { GetService } from "../../admin-service/Get.service";
 import { PutService } from "../../admin-service/Put.service";
 
@@ -7,18 +7,21 @@ import { PutService } from "../../admin-service/Put.service";
   selector: "app-home-page-id",
 
   templateUrl: "./home-page-id.component.html",
-  styles: [],
+  styleUrls: ["./home-page-id.component.css"],
 })
 export class HomePageIdComponent implements OnInit {
   id = this.actRoute.snapshot.params["id"];
   public data: any;
   public dataBinding: any = {};
 
+  displayedColumns: string[] = ["Titre", "Contenu"];
+
   constructor(
     private route: ActivatedRoute,
     private getService: GetService,
     public actRoute: ActivatedRoute,
-    private putService: PutService
+    private putService: PutService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -49,5 +52,18 @@ export class HomePageIdComponent implements OnInit {
         console.error("erreur de maj", error);
       }
     );
+  }
+  //retour sur page d'accueil
+  backHome() {
+    console.log("bonjour");
+    this.router.navigate(["/"]).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
+  //retour page précédente
+  previousPage() {
+    this.router.navigate(["/adminPannel/adminPannel_HomePage"]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }

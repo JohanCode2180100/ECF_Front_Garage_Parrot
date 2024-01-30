@@ -1,21 +1,34 @@
-<div *ngIf="data">
+<div class="form" *ngIf="data">
   <form #form="ngForm" (ngSubmit)="updatedData()">
-    <label for="title">Titre de la section :</label>
-    <input
-      type="text"
-      id="title"
-      [(ngModel)]="dataBinding.title"
-      name="title"
-    />
+    <mat-form-field>
+      <mat-label for="title">Titre de la section :</mat-label>
+      <input
+        matInput
+        type="text"
+        id="title"
+        [(ngModel)]="dataBinding.title"
+        name="title"
+      />
+    </mat-form-field>
 
-    <label for="content">contenu de la section :</label>
-    <textarea
-      type="text"
-      id="content"
-      [(ngModel)]="dataBinding.content"
-      name="content"
-    ></textarea>
-
-    <button type="submit">Enregistrer les modifications</button>
+    <mat-form-field>
+      <mat-label for="content">contenu de la section :</mat-label>
+      <textarea
+        class="textArea"
+        matInput
+        type="text"
+        id="content"
+        [(ngModel)]="dataBinding.content"
+        name="content"
+      ></textarea>
+    </mat-form-field>
+    <div class="boutton">
+      <button mat-raised-button color="primary" type="submit">
+        Enregistrer les modifications
+      </button>
+      <button type="button" mat-raised-button color="warn" (click)="backHome()">
+        Retour page d'accueil
+      </button>
+    </div>
   </form>
 </div>
