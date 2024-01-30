@@ -20,10 +20,12 @@ import { AdminPannelHomePageComponent } from "./adminComponents/admin-pannel-hom
 import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
 import { ReviewPendingComponent } from "./adminComponents/admin-pannel-review/review-pending/review-pending.component";
 import { ReviewValidComponent } from "./adminComponents/admin-pannel-review/review-valid/review-valid.component";
+import { HomePageIdComponent } from "./adminComponents/admin-pannel-home-page/home-page-id/home-page-id.component";
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
   { path: "second-hand-car/:id", component: CarDetailComponent },
+
   { path: "contact", component: ContactPageInformationComponent },
   {
     path: "avis",
@@ -31,6 +33,12 @@ const routes: Routes = [
   },
   { path: "reviewForm", component: ReviewFormComponent },
   { path: "login", component: LoginComponent },
+  {
+    path: "adminPannel_HomePage_id/:id",
+    canActivate: [AdminGuard],
+    component: HomePageIdComponent,
+  },
+
   {
     path: "adminPannel",
     canActivate: [AdminGuard],
@@ -53,7 +61,11 @@ const routes: Routes = [
         path: "adminPannel_second-hand-car",
         component: AdminPannelSecondHandCarComponent,
       },
-      { path: "adminPannel_HomePage", component: AdminPannelHomePageComponent },
+      {
+        path: "adminPannel_HomePage",
+        component: AdminPannelHomePageComponent,
+      },
+
       { path: "admin_panel_section", component: AdminPannelSectionComponent },
       {
         path: "admin_pannel_contact_form",
@@ -70,6 +82,7 @@ const routes: Routes = [
       },
     ],
   },
+
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent },
 ];

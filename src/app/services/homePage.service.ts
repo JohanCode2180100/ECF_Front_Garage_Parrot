@@ -14,7 +14,8 @@ export class HomePageService {
 
   getHomePage(): Observable<HomePage[]> {
     return this.http
-      .get<any>(`${this.apiUrl}section_homePage`)
+      .get<any>(`${this.apiUrl}section_homepage`)
       .pipe(map((data) => data.title));
+      
   }
 }

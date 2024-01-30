@@ -2,12 +2,13 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../auth.service";
 import { HttpClient } from "@angular/common/http";
-
 import { env } from "src/environments/environment";
+import { Observable } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class PutService {
   private apiUrl = env.apiURLadmin + "reviewPending";
+  private apiUrlHomepage = env.apiURLadmin + "home_page";
 
   constructor(
     private http: HttpClient,
@@ -27,5 +28,15 @@ export class PutService {
       .subscribe((response) => {
         console.log(message);
       });
+  }
+
+  updatedHomePageById(id: number, updatedData: any): Observable<any> {
+    const token = this.authService.getToken();
+
+    if (!token) {
+      this.router.navigate(["/login"]);
+    }
+    const url = `${this.apiUrlHomepage}/${id}`;
+    return this.http.put(url, updatedData);
   }
 }
