@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { GetService } from "../../admin-service/Get.service";
-import { HomePage } from "src/app/services/models/homePage";
-import { NgForm } from "@angular/forms";
 import { PutService } from "../../admin-service/Put.service";
 
 @Component({
@@ -13,7 +11,8 @@ import { PutService } from "../../admin-service/Put.service";
 })
 export class HomePageIdComponent implements OnInit {
   id = this.actRoute.snapshot.params["id"];
-  homePageData: HomePage = { section_homePage_id: 0, title: "", content: "" };
+  public data: any;
+  public dataBinding: any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -28,14 +27,8 @@ export class HomePageIdComponent implements OnInit {
 
       this.getService.getHomePageByID(id).subscribe(
         (data) => {
-          console.log("Données reçues du service:", data);
-
-          if (data.homePage && data.homePage.length > 0) {
-            this.homePageData = data.homePage[0];
-            console.log("homePageData après attribution:", this.homePageData);
-          } else {
-            console.error("Aucune donnée valide reçue du service.");
-          }
+          this.data = data.homePage[0];
+          this.dataBinding = { ...this.data };
         },
         (error) => {
           console.error(
@@ -47,7 +40,14 @@ export class HomePageIdComponent implements OnInit {
     });
   }
 
-  onSubmit(form){}
-
-  
+  updatedData() {
+    this.putService.updatedHomePageById(this.id, this.dataBinding).subscribe(
+      (response) => {
+        console.log("mise à jour des données", response);
+      },
+      (error) => {
+        console.error("erreur de maj", error);
+      }
+    );
+  }
 }

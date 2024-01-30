@@ -1,10 +1,10 @@
-<div *ngIf="homePageData">
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+<div *ngIf="data">
+  <form #form="ngForm" (ngSubmit)="updatedData()">
     <label for="title">Titre de la section :</label>
     <input
       type="text"
       id="title"
-      [ngModel]="homePageData.title"
+      [(ngModel)]="dataBinding.title"
       name="title"
     />
 
@@ -12,7 +12,8 @@
     <textarea
       type="text"
       id="content"
-      [ngModel]="homePageData.content"
+      [ngModel]="data.content"
+      [(ngModel)]="dataBinding.content"
       name="content"
     ></textarea>
 
