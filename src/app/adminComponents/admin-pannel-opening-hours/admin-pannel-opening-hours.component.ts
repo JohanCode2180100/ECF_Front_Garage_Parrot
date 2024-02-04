@@ -7,7 +7,19 @@ import { Hours } from "src/app/services/models/hours";
 @Component({
   selector: "app-admin-pannel-opening-hours",
   templateUrl: "./admin-pannel-opening-hours.component.html",
-  styleUrls: ["./admin-pannel-opening-Hours.component.css"],
+  styles: [
+    `
+      table {
+        width: 70%;
+      }
+
+      .title {
+        text-align: center;
+        color: #aa111b;
+        font-size: 1.5rem;
+      }
+    `,
+  ],
 })
 export class AdminPannelOpeningHoursComponent implements OnInit {
   hoursData: Hours[];
@@ -35,9 +47,8 @@ export class AdminPannelOpeningHoursComponent implements OnInit {
     });
   }
 
-  goToChangeHoursDay(opening_hours_id:number) {
+  goToChangeHoursDay(opening_hours_id: number) {
     this.router.navigate(["adminHoursId/", opening_hours_id]);
-
   }
 
   backHome() {
