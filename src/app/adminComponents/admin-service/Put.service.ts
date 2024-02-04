@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
 export class PutService {
   private apiUrl = env.apiURLadmin + "reviewPending";
   private apiUrlHomepage = env.apiURLadmin + "home_page";
+  private apiUrlHours = env.apiURLadmin + "hours";
 
   constructor(
     private http: HttpClient,
@@ -37,6 +38,16 @@ export class PutService {
       this.router.navigate(["/login"]);
     }
     const url = `${this.apiUrlHomepage}/${id}`;
+    return this.http.put(url, updatedData);
+  }
+
+  updatedHoursbyId(id: number, updatedData: any): Observable<any> {
+    const token = this.authService.getToken();
+
+    if (!token) {
+      this.router.navigate(["/login"]);
+    }
+    const url = `${this.apiUrlHours}/${id}`;
     return this.http.put(url, updatedData);
   }
 }

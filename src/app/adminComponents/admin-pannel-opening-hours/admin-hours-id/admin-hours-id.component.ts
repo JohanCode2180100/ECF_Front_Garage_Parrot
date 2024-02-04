@@ -4,61 +4,57 @@ import { GetService } from "../../admin-service/Get.service";
 import { PutService } from "../../admin-service/Put.service";
 
 @Component({
-  selector: "app-home-page-id",
-
-  templateUrl: "./home-page-id.component.html",
-  styleUrls: ["./home-page-id.component.css"],
+  selector: "app-admin-hours-id",
+  templateUrl: "./admin-hours-id.component.html",
+  styleUrls: ["./admin-hours-id.component.css"],
 })
-export class HomePageIdComponent implements OnInit {
+export class AdminHoursIdComponent implements OnInit {
   id = this.route.snapshot.params["id"];
   public data: any;
-  public dataBinding: any = {};
-
-  displayedColumns: string[] = ["Titre", "Contenu"];
+  public databinding: any = {};
 
   constructor(
     private route: ActivatedRoute,
-    private getService: GetService,
+    private router: Router,
     private putService: PutService,
-    private router: Router
+    private getService: GetService
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       const id = +params["id"];
 
-      this.getService.getHomePageByID(id).subscribe(
+      this.getService.getHoursById(id).subscribe(
         (data) => {
-          this.data = data.homePage[0];
-          this.dataBinding = { ...this.data };
+          this.data = data.hours[0];
+          this.databinding = { ...this.data };
         },
         (error) => {
           console.error(
-            "Une erreur s'est produite lors de la récupération des données",
+            "Une erreur s est produite lors de la récupération des données",
             error
           );
         }
       );
     });
   }
-
-  updatedData() {
-    this.putService.updatedHomePageById(this.id, this.dataBinding).subscribe(
+  updatedHours() {
+    this.putService.updatedHoursbyId(this.id, this.databinding).subscribe(
       (response) => {
-        console.log("mise à jour des données", response);
+        alert("Données mises à jours");
+        this.previousPage();
       },
       (error) => {
         console.error("erreur de maj", error);
       }
     );
   }
-  //retour sur page d'accueil
+
   backHome() {
     this.router.navigate(["/"]).then(() => {
       window.scrollTo(0, 0);
     });
   }
-  //retour page précédente
   previousPage() {
     this.router.navigate(["/adminPannel/adminPannel_HomePage"]).then(() => {
       window.scrollTo(0, 0);

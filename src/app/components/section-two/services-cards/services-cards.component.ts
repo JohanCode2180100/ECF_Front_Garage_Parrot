@@ -37,7 +37,6 @@ export class ServicesCardsComponent implements OnInit {
   getHomePage() {
     this.homePageService.getHomePage().subscribe((data) => {
       this.homePageData = data;
-      console.log(this.homePageData);
     });
   }
 }

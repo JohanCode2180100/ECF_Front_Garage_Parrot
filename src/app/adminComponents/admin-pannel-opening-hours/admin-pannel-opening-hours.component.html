@@ -1,1 +1,46 @@
-<p>admin-pannel-opening-hours works!</p>
+<h3 class="title">Gestion des heures d'ouverture</h3>
+
+<table mat-table [dataSource]="hoursData" class="mat-elevation-z8 demo-table">
+  <ng-container matColumnDef="demo-days">
+    <th mat-header-cell *matHeaderCellDef>Jour</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.days }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="demo-open_AM">
+    <th mat-header-cell *matHeaderCellDef>Heure ouverture matin</th>
+    <td mat-cell *matCellDef="let element">{{ element.open_AM }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="demo-close_AM">
+    <th mat-header-cell *matHeaderCellDef>Heure fermeture matin</th>
+    <td mat-cell *matCellDef="let element">{{ element.close_AM }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="demo-open_PM">
+    <th mat-header-cell *matHeaderCellDef>Heure ouverture après-midi</th>
+    <td mat-cell *matCellDef="let element">{{ element.open_PM }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="demo-close_PM">
+    <th mat-header-cell *matHeaderCellDef>Heure fermeture après-midi</th>
+    <td mat-cell *matCellDef="let element">{{ element.close_PM }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="demo-update">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let element">
+      <button
+        (click)="goToChangeHoursDay(element.opening_hours_id)"
+        mat-fab
+        color="primary"
+      >
+        <mat-icon mat-button color="accent">build_circle</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

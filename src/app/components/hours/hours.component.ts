@@ -12,7 +12,7 @@ import { Hours } from "../../services/models/hours";
       <span class="day">{{ day.days }}: </span>
       <span class="hours"
         >{{ day.open_AM }} : {{ day.close_AM }} | {{ day.open_PM }} -
-        {{ day.close_AM }}</span
+        {{ day.close_PM }}</span
       >
     </li>
   </div>`,

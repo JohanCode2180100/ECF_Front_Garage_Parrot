@@ -1,0 +1,67 @@
+<div class="form" *ngIf="data">
+  <form #form="ngForm" (ngSubmit)="updatedHours()">
+    <mat-form-field>
+      <mat-label for="title">jour de la semaine</mat-label>
+      <input
+        matInput
+        type="text"
+        id="day"
+        [(ngModel)]="databinding.days"
+        name="day"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="title">Heure d'ouverture matin</mat-label>
+      <input
+        matInput
+        type="text"
+        id="open_AM"
+        [(ngModel)]="databinding.open_AM"
+        name="open_AM"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="title">Heure de fermeture matin</mat-label>
+      <input
+        matInput
+        type="text"
+        id="close_AM"
+        [(ngModel)]="databinding.close_AM"
+        name="close_AM"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="title">Heure d'ouverture matin</mat-label>
+      <input
+        matInput
+        type="text"
+        id="open_PM"
+        [(ngModel)]="databinding.open_PM"
+        name="open_PM"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="title">Heure de fermeture après-midi</mat-label>
+      <input
+        matInput
+        type="text"
+        id="close_PM"
+        [(ngModel)]="databinding.close_PM"
+        name="close_PM"
+      />
+    </mat-form-field>
+
+    <div class="boutton">
+      <button mat-raised-button color="primary" type="submit">
+        Enregistrer les modifications
+      </button>
+      <button type="button" mat-raised-button color="warn" (click)="backHome()">
+        Retour page d'accueil
+      </button>
+    </div>
+  </form>
+</div>

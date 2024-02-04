@@ -56,6 +56,8 @@ import { ReviewPendingComponent } from "./adminComponents/admin-pannel-review/re
 import { HomePageIdComponent } from "./adminComponents/admin-pannel-home-page/home-page-id/home-page-id.component";
 import { RegisterComponent } from "./adminComponents/auth/register/register.component";
 
+import { AdminHoursIdComponent } from "./adminComponents/admin-pannel-opening-hours/admin-hours-id/admin-hours-id.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +92,7 @@ import { RegisterComponent } from "./adminComponents/auth/register/register.comp
     ReviewPendingComponent,
     HomePageIdComponent,
     RegisterComponent,
+    AdminHoursIdComponent,
   ],
   imports: [
     BrowserModule,
