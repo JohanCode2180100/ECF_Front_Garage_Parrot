@@ -12,7 +12,7 @@ import { SectionOneCarouselComponent } from "./components/section-one/carousel/c
 import { sectionOneContainComponent } from "./components/section-one/contain/contain.component";
 import { ServicesCardsComponent } from "./components/section-two/services-cards/services-cards.component";
 import { MatCardModule } from "@angular/material/card";
-import { MatChipListbox, MatChipsModule } from "@angular/material/chips";
+import { MatChipsModule } from "@angular/material/chips";
 import { MatInputModule } from "@angular/material/input";
 import { SectionThreeComponent } from "./components/section-three/section-three.component";
 import { FooterComponent } from "./components/footer/footer.component";
@@ -54,6 +54,7 @@ import { ReviewValidComponent } from "./adminComponents/admin-pannel-review/revi
 import { ReviewPendingComponent } from "./adminComponents/admin-pannel-review/review-pending/review-pending.component";
 
 import { HomePageIdComponent } from "./adminComponents/admin-pannel-home-page/home-page-id/home-page-id.component";
+import { RegisterComponent } from "./adminComponents/auth/register/register.component";
 
 @NgModule({
   declarations: [
@@ -85,11 +86,10 @@ import { HomePageIdComponent } from "./adminComponents/admin-pannel-home-page/ho
     AdminPannelImageComponent,
     FilterCarsComponent,
     ImageViewComponent,
-
     ReviewValidComponent,
     ReviewPendingComponent,
-
     HomePageIdComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

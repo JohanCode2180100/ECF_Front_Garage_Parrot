@@ -31,6 +31,7 @@ export class AuthService {
 
   login(userEmail: string, userPassword: string) {
     const baseURL = this.privateUrl + "login";
+    console.log(userEmail, userPassword);
     const authData: AuthData = {
       userEmail: userEmail,
       userPassword: userPassword,
