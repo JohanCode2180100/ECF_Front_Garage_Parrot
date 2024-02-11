@@ -30,7 +30,10 @@
       </p>
       <p
         class="invalid.feedback"
-        *ngIf="email.hasError('required') || email.hasError('email')"
+        *ngIf="
+          (email.touched && email.hasError('required')) ||
+          email.hasError('email')
+        "
       >
         L'adresse mail n'est pas valide
       </p>
