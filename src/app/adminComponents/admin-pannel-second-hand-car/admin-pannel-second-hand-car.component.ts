@@ -14,28 +14,51 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
   form: FormGroup;
   defaultPath: string = "";
   imagePreview: string;
-
+  regexletters: string = "^[A-Za-z]+$";
+  regexlettersAndNumbers: string = "^[A-Za-z0-9]+$";
+  regexNumbers: string = "^[0-9]+$";
+  regexText: string = "^[A-Za-z0-9() -]+$";
   constructor(public PostService: PostsService) {}
 
   ngOnInit() {
     this.form = new FormGroup({
       brand: new FormControl(null, {
-        validators: [Validators.required, Validators.minLength(2)],
+        validators: [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern(this.regexletters),
+        ],
       }),
       model: new FormControl(null, {
-        validators: [Validators.required, Validators.minLength(1)],
+        validators: [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.pattern(this.regexlettersAndNumbers),
+        ],
       }),
       year: new FormControl(null, {
-        validators: [Validators.required, Validators.minLength(4)],
+        validators: [
+          Validators.required,
+          Validators.maxLength(4),
+          Validators.minLength(4),
+          Validators.pattern(this.regexNumbers),
+        ],
       }),
       price: new FormControl(null, {
-        validators: [Validators.required],
+        validators: [
+          Validators.required,
+          Validators.pattern(this.regexNumbers),
+        ],
       }),
       kilometer: new FormControl(null, {
-        validators: [Validators.required, Validators.maxLength(6)],
+        validators: [
+          Validators.required,
+          Validators.maxLength(6),
+          Validators.pattern(this.regexNumbers),
+        ],
       }),
       description: new FormControl(null, {
-        validators: [Validators.required],
+        validators: [Validators.required, Validators.pattern(this.regexText)],
       }),
       image: new FormControl(null, {
         validators: [Validators.required],
@@ -79,6 +102,9 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
   }
 
   onPostCar() {
+    if (this.form.invalid) {
+      return;
+    }
     const formData = new FormData();
     formData.append("brand", this.form.value.brand);
     formData.append("model", this.form.value.model);
