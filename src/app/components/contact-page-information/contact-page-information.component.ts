@@ -24,17 +24,39 @@ import { FormContactService } from "src/app/services/form-contact.service";
             >
               Le nom est obligatoire
             </p>
+
+            <p
+              class="invalid-feedback"
+              *ngIf="name.touched && name.hasError('pattern')"
+            >
+              Le nom n'est pas conforme
+            </p>
+
             <span
               class="invalid-feedback"
               *ngIf="firstName.touched && firstName.hasError('required')"
             >
               Le prénom est obligatoire
             </span>
+
             <span
               class="invalid-feedback"
-              *ngIf="firstName.touched && firstName.hasError('required')"
+              *ngIf="adress.touched && adress.hasError('pattern')"
             >
-              L'adresse' est obligatoire
+              L'adresse n'est pas conforme
+            </span>
+            <span
+              class="invalid-feedback"
+              *ngIf="adress.touched && adress.hasError('required')"
+            >
+              L'adresse mail est obligatoire
+            </span>
+
+            <span
+              class="invalid-feedback"
+              *ngIf="firstName.touched && firstName.hasError('pattern')"
+            >
+              Le prénom n'est pas conforme
             </span>
             <span
               class="invalid-feedback"
@@ -48,9 +70,21 @@ import { FormContactService } from "src/app/services/form-contact.service";
             >
               L'adresse mail est invalide
             </span>
+            <span
+              class="invalid-feedback"
+              *ngIf="email.touched && email.hasError('pattern')"
+            >
+              L'adresse mail n'est pas conforme
+            </span>
             <p class="invalid-feedback" *ngIf="phone.touched && phone.invalid">
               Le numéro de téléphone est obligatoire et doit contenir 10
               chiffres
+            </p>
+            <p
+              class="invalid-feedback"
+              *ngIf="phone.touched && phone.hasError('pattern')"
+            >
+              Le numéro de téléphone n'est pas conforme
             </p>
             <p
               class="invalid-feedback"
@@ -69,6 +103,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
             name="name"
             id="name"
             placeholder="Nom*"
+            [pattern]="regexletters"
           />
 
           <input
@@ -80,6 +115,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
             name="firstName"
             id="firstName"
             placeholder="Prénom*"
+            [pattern]="regexletters"
           />
 
           <input
@@ -91,6 +127,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
             name="adress"
             id="adress"
             placeholder="Adresse*"
+            [pattern]="regexlettersAndNumbers"
           />
 
           <input
@@ -102,6 +139,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
             name="email"
             id="email"
             placeholder="Email*"
+            [pattern]="regexEmail"
           />
 
           <input
@@ -114,6 +152,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
             name="phone"
             id="phone"
             placeholder="téléphone*"
+            [pattern]="regexPhone"
           />
 
           <textarea
@@ -150,6 +189,11 @@ import { FormContactService } from "src/app/services/form-contact.service";
   styleUrls: ["./contact-page-information.css"],
 })
 export class ContactPageInformationComponent implements OnInit {
+  regexletters: string = "^[A-Za-z]+$";
+  regexlettersAndNumbers: string = "^[A-Za-z0-9]+$";
+  regexPhone: string = "^0[1-9]([-. ]?[0-9]{2}){4}$";
+  regexEmail: string = "([A-Za-z]|[^s@]){4,}@([A-Za-z]|[^s@]){2,}.(com|net|fr)";
+
   constructor(
     private formContactService: FormContactService,
     private router: Router
