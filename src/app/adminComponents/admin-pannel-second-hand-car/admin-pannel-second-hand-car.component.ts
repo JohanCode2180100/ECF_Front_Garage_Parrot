@@ -12,7 +12,7 @@ import { mimeType } from "../admin-pannel-second-hand-car/mime-type.validator";
 export class AdminPannelSecondHandCarComponent implements OnInit {
   car: Car[] = [];
   form: FormGroup;
-
+  defaultPath: string = "";
   imagePreview: string;
 
   constructor(public PostService: PostsService) {}

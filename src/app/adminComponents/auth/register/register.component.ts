@@ -29,7 +29,9 @@ export class RegisterComponent implements OnInit {
           Validators.required,
           Validators.email,
           //regex avec au moins un chiffre, une lette et un carac spécial
-          Validators.pattern("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$"),
+          Validators.pattern(
+            /([A-Z]|[a-z]|[^<>()\[\]\\\/.,;:\s@"]){4,}\@([A-Z]|[a-z]|[^<>()\[\]\\\/.,;:\s@"]){4,}\.(com|net|fr)/
+          ),
         ],
         [this.uniqueMailAsyncValidator.bind(this)]
       ),
@@ -81,9 +83,13 @@ export class RegisterComponent implements OnInit {
         next: () => {
           this.router.navigate(["/"]), alert("Administrateur ajouté");
         },
-        error: (error) =>
-          (this.errorMessage =
+        error: (error) => {
+          ((this.errorMessage =
             "un probleme est survenu, merci de réessayer ultérieurement"),
+          error),
+            this.registerForm.reset();
+          alert("Erreur lors de l'insertion, merci de rééssayer");
+        },
       });
   }
 
