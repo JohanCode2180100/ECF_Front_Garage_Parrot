@@ -20,6 +20,9 @@ import { ReviewPendingComponent } from "./adminComponents/admin-pannel-review/re
 import { ReviewValidComponent } from "./adminComponents/admin-pannel-review/review-valid/review-valid.component";
 import { HomePageIdComponent } from "./adminComponents/admin-pannel-home-page/home-page-id/home-page-id.component";
 import { AdminHoursIdComponent } from "./adminComponents/admin-pannel-opening-hours/admin-hours-id/admin-hours-id.component";
+import { UpdatedCarComponent } from "./adminComponents/admin-pannel-second-hand-car/updated-car/updated-car.component";
+import { DeletedCarComponent } from "./adminComponents/admin-pannel-second-hand-car/deleted-car/deleted-car.component";
+import { CreateCarComponent } from "./adminComponents/admin-pannel-second-hand-car/create-car/create-car.component";
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
@@ -64,6 +67,18 @@ const routes: Routes = [
       {
         path: "adminPannel_second-hand-car",
         component: AdminPannelSecondHandCarComponent,
+
+        children: [
+          {
+            path: "adminPannel_createdCar",
+            component: CreateCarComponent,
+          },
+          {
+            path: "adminPannel_updatedCar",
+            component: UpdatedCarComponent,
+          },
+          { path: "adminPannel_deletedCar", component: DeletedCarComponent },
+        ],
       },
       {
         path: "adminPannel_HomePage",
