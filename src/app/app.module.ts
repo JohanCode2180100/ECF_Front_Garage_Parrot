@@ -41,7 +41,6 @@ import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { AuthInterceptor } from "./auth-interceptor";
 import { AdminPannelSecondHandCarComponent } from "./adminComponents/admin-pannel-second-hand-car/admin-pannel-second-hand-car.component";
 import { AdminPannelHomePageComponent } from "./adminComponents/admin-pannel-home-page/admin-pannel-home-page.component";
-import { AdminPannelSectionComponent } from "./adminComponents/admin-pannel-section/admin-pannel-section.component";
 import { AdminPannelContactFormComponent } from "./adminComponents/admin-pannel-contact-form/admin-pannel-contact-form.component";
 import { AdminPannelOpeningHoursComponent } from "./adminComponents/admin-pannel-opening-hours/admin-pannel-opening-hours.component";
 import { AdminPannelImageComponent } from "./adminComponents/admin-pannel-image/admin-pannel-image.component";
@@ -57,6 +56,10 @@ import { HomePageIdComponent } from "./adminComponents/admin-pannel-home-page/ho
 import { RegisterComponent } from "./adminComponents/auth/register/register.component";
 
 import { AdminHoursIdComponent } from "./adminComponents/admin-pannel-opening-hours/admin-hours-id/admin-hours-id.component";
+import { CreateCarComponent } from './adminComponents/admin-pannel-second-hand-car/create-car/create-car.component';
+import { UpdatedCarComponent } from './adminComponents/admin-pannel-second-hand-car/updated-car/updated-car.component';
+import { DeletedCarComponent } from './adminComponents/admin-pannel-second-hand-car/deleted-car/deleted-car.component';
+import { UpdatedCarByIDComponent } from './adminComponents/admin-pannel-second-hand-car/updated-car/updated-car-by-id/updated-car-by-id.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +85,7 @@ import { AdminHoursIdComponent } from "./adminComponents/admin-pannel-opening-ho
     AdminPannelReviewComponent,
     AdminPannelSecondHandCarComponent,
     AdminPannelHomePageComponent,
-    AdminPannelSectionComponent,
+
     AdminPannelContactFormComponent,
     AdminPannelOpeningHoursComponent,
     AdminPannelImageComponent,
@@ -93,6 +96,10 @@ import { AdminHoursIdComponent } from "./adminComponents/admin-pannel-opening-ho
     HomePageIdComponent,
     RegisterComponent,
     AdminHoursIdComponent,
+    CreateCarComponent,
+    UpdatedCarComponent,
+    DeletedCarComponent,
+    UpdatedCarByIDComponent,
   ],
   imports: [
     BrowserModule,

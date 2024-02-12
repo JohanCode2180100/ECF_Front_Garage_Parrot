@@ -31,7 +31,6 @@ export class AuthService {
 
   login(userEmail: string, userPassword: string) {
     const baseURL = this.privateUrl + "login";
-    console.log(userEmail, userPassword);
     const authData: AuthData = {
       userEmail: userEmail,
       userPassword: userPassword,
@@ -42,7 +41,6 @@ export class AuthService {
       .subscribe((response) => {
         const token = response.token;
         this.token = token;
-        //Token TIMER before the logout
         if (token) {
           const expiresInDuration = response.expiresIn;
           this.setAuthTimer(expiresInDuration);

@@ -9,6 +9,7 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent {
+  regexEmail: string = "([A-Za-z]|[^s@]){4,}@([A-Za-z]|[^s@]){2,}.(com|net|fr)";
   message: string = "Vous êtes déconnecté.";
   userEmail: string;
   userPassword: string;
