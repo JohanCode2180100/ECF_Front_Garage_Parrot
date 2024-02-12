@@ -1,0 +1,78 @@
+<div class="form" *ngIf="data">
+  <form #form="ngForm" (ngSubmit)="updatedData()">
+    <mat-form-field>
+      <mat-label for="title">Marque</mat-label>
+      <input
+        matInput
+        type="text"
+        id="brand"
+        [(ngModel)]="dataBinding.brand"
+        name="brand"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="model">Modèle</mat-label>
+      <input
+        matInput
+        type="text"
+        id="model"
+        [(ngModel)]="dataBinding.model"
+        name="model"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="model">année</mat-label>
+      <input
+        matInput
+        type="text"
+        id="year"
+        [(ngModel)]="dataBinding.year"
+        name="year"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="price">KM</mat-label>
+      <input
+        matInput
+        type="text"
+        id="kilometer"
+        [(ngModel)]="dataBinding.kilometer"
+        name="kilometer"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="price">Prix</mat-label>
+      <input
+        matInput
+        type="text"
+        id="price"
+        [(ngModel)]="dataBinding.price"
+        name="price"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="description">Description</mat-label>
+      <textarea
+        matInput
+        type="text"
+        id="description"
+        [(ngModel)]="dataBinding.description"
+        name="description"
+      ></textarea>
+    </mat-form-field>
+
+    <div class="image-preview"><img src="" alt=""></div>
+
+
+    <div class="boutton">
+      <button mat-raised-button color="primary" type="submit">
+        Enregistrer les modifications
+      </button>
+      <button type="button" mat-raised-button color="warn" (click)="backHome()">
+        Retour page d'accueil
+      </button>
+    </div>
+  </form>
+</div>

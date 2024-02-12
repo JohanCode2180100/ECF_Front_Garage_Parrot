@@ -10,6 +10,7 @@ export class PutService {
   private apiUrl = env.apiURLadmin + "reviewPending";
   private apiUrlHomepage = env.apiURLadmin + "home_page";
   private apiUrlHours = env.apiURLadmin + "hours";
+  private apiUrlCarId = env.apiURLadmin + "second_hand_car";
 
   constructor(
     private http: HttpClient,
@@ -48,6 +49,16 @@ export class PutService {
       this.router.navigate(["/login"]);
     }
     const url = `${this.apiUrlHours}/${id}`;
+    return this.http.put(url, updatedData);
+  }
+
+  updatedCarById(id: number, updatedData: any): Observable<any> {
+    const token = this.authService.getToken();
+
+    if (!token) {
+      this.router.navigate(["/login"]);
+    }
+    const url = `${this.apiUrlCarId}/${id}`;
     return this.http.put(url, updatedData);
   }
 }

@@ -10,6 +10,7 @@ export class DeleteService {
 
   private apireview = this.urlAdmin + "review";
   private apiForm = this.urlAdmin + "contact";
+  private apiDeletedCar = this.urlAdmin + "second_hand_car";
 
   constructor(
     private http: HttpClient,
@@ -44,4 +45,22 @@ export class DeleteService {
         console.log(message);
       });
   }
+
+  carDeleteByID(second_hand_car_id: number) {
+    const token = this.authService.getToken();
+
+    if (!token) {
+      this.router.navigate(["/login"]);
+    }
+    const message = "Voiture supprimée";
+    return this.http
+      .delete(`${this.apiDeletedCar}/` + second_hand_car_id)
+      .subscribe((response) => {
+        alert(message);
+      });
+
+
+  }
+
+ 
 }
