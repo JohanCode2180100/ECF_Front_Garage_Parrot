@@ -59,6 +59,7 @@ import { AdminHoursIdComponent } from "./adminComponents/admin-pannel-opening-ho
 import { CreateCarComponent } from './adminComponents/admin-pannel-second-hand-car/create-car/create-car.component';
 import { UpdatedCarComponent } from './adminComponents/admin-pannel-second-hand-car/updated-car/updated-car.component';
 import { DeletedCarComponent } from './adminComponents/admin-pannel-second-hand-car/deleted-car/deleted-car.component';
+import { UpdatedCarByIDComponent } from './adminComponents/admin-pannel-second-hand-car/updated-car/updated-car-by-id/updated-car-by-id.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { DeletedCarComponent } from './adminComponents/admin-pannel-second-hand-
     CreateCarComponent,
     UpdatedCarComponent,
     DeletedCarComponent,
+    UpdatedCarByIDComponent,
   ],
   imports: [
     BrowserModule,

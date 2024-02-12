@@ -23,6 +23,7 @@ import { AdminHoursIdComponent } from "./adminComponents/admin-pannel-opening-ho
 import { UpdatedCarComponent } from "./adminComponents/admin-pannel-second-hand-car/updated-car/updated-car.component";
 import { DeletedCarComponent } from "./adminComponents/admin-pannel-second-hand-car/deleted-car/deleted-car.component";
 import { CreateCarComponent } from "./adminComponents/admin-pannel-second-hand-car/create-car/create-car.component";
+import { UpdatedCarByIDComponent } from "./adminComponents/admin-pannel-second-hand-car/updated-car/updated-car-by-id/updated-car-by-id.component";
 
 const routes: Routes = [
   { path: "second-hand-car", component: SecondHandCarComponent },
@@ -44,6 +45,11 @@ const routes: Routes = [
     path: "adminHoursId/:id",
     canActivate: [AdminGuard],
     component: AdminHoursIdComponent,
+  },
+  {
+    path: "adminPannelCarByID/:id",
+    canActivate: [AdminGuard],
+    component: UpdatedCarByIDComponent,
   },
 
   {
