@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { AuthData } from "../guard/auth-guard-model";
-import { Subject } from "rxjs";
+import { Subject, catchError, throwError } from "rxjs";
 import { Router } from "@angular/router";
 import { env } from "src/environments/environment";
 
@@ -38,6 +38,16 @@ export class AuthService {
 
     this.http
       .post<{ token: string; expiresIn: number }>(baseURL, authData)
+      .pipe(
+        catchError((error) => {
+          if (error.status === 401) {
+            alert("Identifiant ou mot de passe incorrect");
+            window.location.reload();
+            console.error("Erreur 401 : Non autorisé");
+          }
+          return throwError(error);
+        })
+      )
       .subscribe((response) => {
         const token = response.token;
         this.token = token;
