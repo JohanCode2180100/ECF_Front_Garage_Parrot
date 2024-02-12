@@ -6,16 +6,28 @@
 >
   <mat-icon class="burger-icon">menu</mat-icon>
 </button>
-
-<ul *ngIf="isMenuOpen">
-  <li (click)="closeMenu()"><a routerLink="/">Accueil</a></li>
-  <li (click)="closeMenu()">
-    <a routerLink="/second-hand-car">Nos voitures d'occasions</a>
-  </li>
-  <li (click)="closeMenu()"><a routerLink="/contact">Nous contacter</a></li>
-  <li (click)="closeMenu()"><a routerLink="/avis">Avis</a></li>
-  <li (click)="closeMenu()"><a routerLink="/login">Espace pro</a></li>
-  <li (click)="closeMenu()" style="text-align: center">
-    <span class="material-symbols-outlined"> close </span>
-  </li>
-</ul>
+<div class="ulBurger">
+  <ul *ngIf="isMenuOpen">
+    <li (click)="closeMenu()">
+      <a routerLink="/"
+        ><span class="material-symbols-outlined"> home </span></a
+      >
+    </li>
+    <li (click)="closeMenu()">
+      <a routerLink="/second-hand-car"
+        ><span class="material-symbols-outlined"> directions_car </span></a
+      >
+    </li>
+    <li (click)="closeMenu()">
+      <a routerLink="/contact"
+        ><span class="material-symbols-outlined"> contact_page </span></a
+      >
+    </li>
+    <li (click)="closeMenu()">
+      <a routerLink="/avis"
+        ><span class="material-symbols-outlined"> rate_review </span></a
+      >
+    </li>
+   
+  </ul>
+</div>
