@@ -134,6 +134,8 @@
       class="example-label"
       class="example-button-row"
       [ngClass]="{ 'disabled-btn': form.invalid }"
+      class="btn"
+      [disabled]="form.invalid"
     >
       Enregistrer
     </button>

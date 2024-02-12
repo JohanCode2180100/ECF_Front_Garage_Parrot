@@ -58,7 +58,7 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
         ],
       }),
       description: new FormControl(null, {
-        validators: [Validators.required, Validators.pattern(this.regexText)],
+        validators: [Validators.required],
       }),
       image: new FormControl(null, {
         validators: [Validators.required],
@@ -102,9 +102,6 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
   }
 
   onPostCar() {
-    if (this.form.invalid) {
-      return;
-    }
     const formData = new FormData();
     formData.append("brand", this.form.value.brand);
     formData.append("model", this.form.value.model);
