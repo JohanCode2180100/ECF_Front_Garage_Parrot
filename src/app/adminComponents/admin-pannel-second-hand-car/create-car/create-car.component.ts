@@ -90,7 +90,6 @@ export class CreateCarComponent {
 
     this.PostService.addCar(formData).subscribe((car) => {
       this.car.push(car);
-      console.log(this.car);
     });
     this.form.reset();
   }
