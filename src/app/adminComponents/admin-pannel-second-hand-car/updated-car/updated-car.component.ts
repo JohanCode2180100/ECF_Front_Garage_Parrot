@@ -48,7 +48,7 @@ import { Router } from "@angular/router";
       <ng-container matColumnDef="demo-createdAt">
         <th mat-header-cell *matHeaderCellDef>Mise en ligne</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.createdAT | date : "dd/MM/yyyy" }}
+          {{ element.createdAt | date : "dd/MM/yyyy" }}
         </td>
       </ng-container>
 
