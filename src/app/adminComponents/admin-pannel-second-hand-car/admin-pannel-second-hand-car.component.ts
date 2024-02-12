@@ -66,9 +66,6 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({ image: file });
-
-    const defaultPath = "http://localhost:3000/images" + file;
-
     this.form.get("image").updateValueAndValidity();
 
     const reader = new FileReader();
@@ -79,6 +76,9 @@ export class AdminPannelSecondHandCarComponent implements OnInit {
   }
 
   onPostCar() {
+    if (this.form.invalid) {
+      return;
+    }
     const formData = new FormData();
     formData.append("brand", this.form.value.brand);
     formData.append("model", this.form.value.model);
