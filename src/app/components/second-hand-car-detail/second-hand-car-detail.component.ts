@@ -44,6 +44,9 @@ export class CarDetailComponent implements OnInit {
       this.carsService.getCarsById(carId).subscribe(
         (data: Car[]) => {
           this.carByID = data[0];
+          this.carByID.image =
+            "https://garageparrotbackend-29c911d2d7f6.herokuapp.com/images/" +
+            this.carByID.image;
         },
         (error) => {
           console.error(
