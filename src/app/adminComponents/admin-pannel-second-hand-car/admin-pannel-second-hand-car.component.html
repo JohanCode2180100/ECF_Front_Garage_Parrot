@@ -13,6 +13,13 @@
       <mat-error *ngIf="brand.hasError('required')"
         >Entrer une marque.</mat-error
       >
+
+      <mat-error *ngIf="brand.errors?.['minlength']"
+        >2 caracteres minimun</mat-error
+      >
+      <mat-error *ngIf="brand.hasError('pattern')"
+        >Les lettres sont uniquement autorisées</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field>
@@ -27,6 +34,11 @@
       <mat-error *ngIf="model.hasError('required')"
         >Entrer un modéle.</mat-error
       >
+      <mat-error *ngIf="model.errors?.['minlength']">1 caractere min</mat-error>
+
+      <mat-error *ngIf="model.hasError('pattern')"
+        >Les lettres et les chiffres sont uniquement autorisées</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field>
@@ -34,16 +46,19 @@
       <input
         matInput
         name="year"
-        type="number"
+        type="text"
         formControlName="year"
         placeholder="Année de mise en circulation"
       />
       <mat-error *ngIf="year.hasError('required')"
-        >Entrer une année "ex:2004"</mat-error
+        >Vous devez indiquer une année</mat-error
       >
-      <mat-error *ngIf="year.hasError('minlength')"
-        >Saisir 4 chiffres</mat-error
+
+      <mat-error *ngIf="year.hasError('pattern')"
+        >unqiuement des chiffres</mat-error
       >
+      <mat-error *ngIf="year.hasError('minlength')">4 chiffres min</mat-error>
+      <mat-error *ngIf="year.hasError('maxlength')">4 chiffres max</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -51,23 +66,37 @@
       <input
         matInput
         name="price"
-        type="number"
+        type="text"
         placeholder="Prix du véhicule"
         formControlName="price"
       />
-      <mat-error *ngIf="price.hasError('required')">Entrer un prix</mat-error>
+      <mat-error *ngIf="price.hasError('required')"
+        >Vous devez indiquer un prix</mat-error
+      >
+
+      <mat-error *ngIf="price.hasError('pattern')"
+        >unqiuement des chiffres</mat-error
+      >
     </mat-form-field>
     <mat-form-field>
       <mat-label>Kilomètres </mat-label>
       <input
         matInput
         name="kilometer"
-        type="number"
+        type="text"
         placeholder="Kilométrage du véhicule"
         formControlName="kilometer"
       />
       <mat-error *ngIf="kilometer.hasError('required')"
         >Kilométrage (6 chiffres max).</mat-error
+      >
+
+      <mat-error *ngIf="kilometer.hasError('pattern')"
+        >unqiuement des chiffres</mat-error
+      >
+
+      <mat-error *ngIf="kilometer.hasError('maxlength')"
+        >6 chiffres max</mat-error
       >
     </mat-form-field>
 
@@ -104,6 +133,9 @@
       color="primary"
       class="example-label"
       class="example-button-row"
+      [ngClass]="{ 'disabled-btn': form.invalid }"
+      class="btn"
+      [disabled]="form.invalid"
     >
       Enregistrer
     </button>

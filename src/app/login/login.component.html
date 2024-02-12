@@ -11,9 +11,14 @@
         #emailInput="ngModel"
         required
         email
+        [pattern]="regexEmail"
       />
       <mat-error *ngIf="emailInput.invalid"
         >Veuillez entrer un mail valide</mat-error
+      >
+
+      <mat-error *ngIf="emailInput.hasError['pattern']"
+        >Le mail n'est pas conforme</mat-error
       >
     </mat-form-field>
     <mat-form-field>

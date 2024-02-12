@@ -127,7 +127,13 @@
         Le mot de passe est obligatoire
       </p>
     </div>
-    <button mat-raised-button color="primary">
+    <button
+      mat-raised-button
+      color="primary"
+      [ngClass]="{ 'disabled-btn': registerForm.invalid }"
+      class="btn"
+      [disabled]="registerForm.invalid"
+    >
       Créer un compte utilisateur
     </button>
   </form>

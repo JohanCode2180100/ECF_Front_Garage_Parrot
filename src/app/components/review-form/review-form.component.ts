@@ -18,6 +18,13 @@ import { Review } from "src/app/services/models/review";
           <span *ngIf="message.length > 255" class="error-message">
             Le message ne doit pas dépasser 255 caractères.></span
           >
+
+          <span
+            class="invalid-feedback"
+            *ngIf="firstName.touched && firstName.hasError('pattern')"
+          >
+            Le prénom ne doit contenir que des lettres...
+          </span>
         </div>
 
         <input
@@ -29,6 +36,7 @@ import { Review } from "src/app/services/models/review";
           name="firstName"
           id="firstName"
           placeholder="Prénom*"
+          [pattern]="regexletters"
         />
 
         <textarea
@@ -77,6 +85,7 @@ export class ReviewFormComponent implements OnInit {
   //longueur string
   message: string = "";
   rating: number;
+  regexletters: string = "^[A-Za-z]+$";
 
   reviewData: Review[] = [];
 
