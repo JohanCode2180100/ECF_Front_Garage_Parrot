@@ -85,7 +85,7 @@ export class ReviewFormComponent implements OnInit {
   //longueur string
   message: string = "";
   rating: number;
-  regexletters: string = "^[A-Za-z]+$";
+  regexletters: string = "^[A-Za-zéèÉÈ\\- ]+$";
 
   reviewData: Review[] = [];
 

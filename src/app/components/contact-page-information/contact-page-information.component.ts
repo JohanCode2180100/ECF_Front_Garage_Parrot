@@ -189,8 +189,8 @@ import { FormContactService } from "src/app/services/form-contact.service";
   styleUrls: ["./contact-page-information.css"],
 })
 export class ContactPageInformationComponent implements OnInit {
-  regexletters: string = "^[A-Za-z]+$";
-  regexlettersAndNumbers: string = "^[A-Za-z0-9\\s-]+$";
+  regexletters: string = "^[A-Za-zéèÉÈ\\- ]+$";
+  regexlettersAndNumbers: string = "^[A-Za-z0-9-zéèÉÈ\\- ]+$";
   regexPhone: string = "^0[1-9]([-. ]?[0-9]{2}){4}$";
   regexEmail: string = "([A-Za-z]|[^s@]){4,}@([A-Za-z]|[^s@]){2,}.(com|net|fr)";
 
