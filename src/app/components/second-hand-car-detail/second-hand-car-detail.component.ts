@@ -7,7 +7,7 @@ import { carsService } from "src/app/services/cars.service";
 @Component({
   selector: "app-second-hand-car-detail",
   template: `
-    <div class="container">
+    <div class="container" *ngIf="carByID">
       <h2>{{ carByID.brand }} {{ carByID.model }} - {{ carByID.year }}</h2>
       <img [src]="carByID.image" alt="image d'une voiture d'occasions" />
       <p>{{ carByID.kilometer }} km</p>
@@ -44,9 +44,6 @@ export class CarDetailComponent implements OnInit {
       this.carsService.getCarsById(carId).subscribe(
         (data: Car[]) => {
           this.carByID = data[0];
-          this.carByID.image =
-            "https://garageparrotbackend-29c911d2d7f6.herokuapp.com/images/" +
-            this.carByID.image;
         },
         (error) => {
           console.error(
