@@ -60,6 +60,7 @@ import { CreateCarComponent } from './adminComponents/admin-pannel-second-hand-c
 import { UpdatedCarComponent } from './adminComponents/admin-pannel-second-hand-car/updated-car/updated-car.component';
 import { DeletedCarComponent } from './adminComponents/admin-pannel-second-hand-car/deleted-car/deleted-car.component';
 import { UpdatedCarByIDComponent } from './adminComponents/admin-pannel-second-hand-car/updated-car/updated-car-by-id/updated-car-by-id.component';
+import { ErrorInterceptor } from "./error-interceptor";
 
 @NgModule({
   declarations: [
@@ -126,6 +127,7 @@ import { UpdatedCarByIDComponent } from './adminComponents/admin-pannel-second-h
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     HoursServiceService,
     carsService,
   ],
