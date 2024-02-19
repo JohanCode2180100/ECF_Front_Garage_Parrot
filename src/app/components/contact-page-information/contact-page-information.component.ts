@@ -1,8 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { FormContact } from "src/app/services/models/formContact";
 import { FormContactService } from "src/app/services/form-contact.service";
+import { Car } from "src/app/services/models/car";
+import { MessageService } from "src/app/services/contactMessage.service";
 
 @Component({
   selector: "app-contact-page-information",
@@ -10,6 +12,10 @@ import { FormContactService } from "src/app/services/form-contact.service";
     <div class="container">
       <div class="title">
         <h2>DEMANDE D'INFORMATIONS</h2>
+
+        <div *ngIf="carByID" class="test">
+          {{ carByID.brand }}
+        </div>
       </div>
       <h3>
         Pour toute demande d'informations, merci de compléter ce formulaire
@@ -158,7 +164,7 @@ import { FormContactService } from "src/app/services/form-contact.service";
           <textarea
             required
             message
-            ngModel
+            ngModel="{{ carMessage }}"
             #message="ngModel"
             rows="8"
             cols="28"
@@ -193,15 +199,40 @@ export class ContactPageInformationComponent implements OnInit {
   regexlettersAndNumbers: string = "^[A-Za-z0-9-zéèÉÈ\\- ]+$";
   regexPhone: string = "^0[1-9]([-. ]?[0-9]{2}){4}$";
   regexEmail: string = "([A-Za-z]|[^s@]){4,}@([A-Za-z]|[^s@]){2,}.(com|net|fr)";
+  carMessage: string;
 
   constructor(
     private formContactService: FormContactService,
-    private router: Router
+    private route: ActivatedRoute,
+    private router: Router,
+    private messageService: MessageService
   ) {}
 
   formData: FormContact[] = [];
+  carByID: Car;
+  carBrand: string;
+  carModel: string;
+  carPrice: number;
+  carYear: number;
+  message: string = "vous voulez des informations concernant la ";
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      (this.carBrand = params["carBrand"]),
+        (this.carModel = params["carModel"]),
+        (this.carYear = params["year"] ? params["year"].toString() : ""),
+        (this.carPrice = params["price"] ? params["price"].toString() : "");
+
+      if (this.carBrand && this.carModel && this.carYear && this.carPrice) {
+        this.carMessage = this.messageService.CarMessage(
+          this.carBrand,
+          this.carModel,
+          this.carYear,
+          this.carPrice
+        );
+      }
+    });
+  }
 
   @ViewChild("email")
   emailInput?: ElementRef<HTMLInputElement>;

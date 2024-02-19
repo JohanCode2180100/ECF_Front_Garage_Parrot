@@ -15,7 +15,9 @@ import { carsService } from "src/app/services/cars.service";
       <p>{{ carByID.description }}</p>
 
       <mat-card-actions class="cardAction">
-        <button mat-button class="submit">Demande de renseignements</button>
+        <button mat-button (click)="goToContactCar()">
+          Demande de renseignements
+        </button>
       </mat-card-actions>
       <span class="createdAt"
         >Mise en ligne de l'annonce : {{ carByID.createdAt }}</span
@@ -52,6 +54,17 @@ export class CarDetailComponent implements OnInit {
           );
         }
       );
+    });
+  }
+
+  goToContactCar() {
+    this.router.navigate(["/contact"], {
+      queryParams: {
+        carBrand: this.carByID.brand,
+        carModel: this.carByID.model,
+        year: this.carByID.year,
+        price: this.carByID.price,
+      },
     });
   }
 
