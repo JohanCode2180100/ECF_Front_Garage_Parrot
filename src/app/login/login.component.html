@@ -35,6 +35,9 @@
         >Veuillez entrer un mot de passe valide</mat-error
       >
     </mat-form-field>
+
+    <input type="hidden" name="_csrf" [value]="" />
+
     <button type="submit" *ngIf="!isLoading">Login</button>
     <mat-spinner *ngIf="isLoading"></mat-spinner>
   </form>

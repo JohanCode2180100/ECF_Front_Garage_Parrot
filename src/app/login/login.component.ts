@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
 import { AuthService } from "../auth.service";
-import { Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
+import { CsrfTokensService } from "../csrf-tokens.service";
+
 
 @Component({
   selector: "app-login",
@@ -15,9 +16,17 @@ export class LoginComponent {
   userPassword: string;
   auth: AuthService;
 
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(
+    public authService: AuthService,
+
+    public csrfTokenService: CsrfTokensService
+  ) {}
+
+  
 
   isLoading = false;
+
+  
 
   onLogin(form: NgForm) {
     if (form.invalid) {
@@ -26,4 +35,8 @@ export class LoginComponent {
     this.isLoading = true;
     this.authService.login(form.value.userEmail, form.value.userPassword);
   }
+
+  
 }
+
+
