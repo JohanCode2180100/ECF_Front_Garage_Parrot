@@ -76,6 +76,10 @@
   p {
     font-size: 1.8em;
   }
+  img {
+    max-width: 80%;
+    max-height: 80%;
+  }
   .createdAt {
     font-size: 28px;
   }
@@ -91,6 +95,11 @@
   p {
     font-size: 2em;
   }
+
+  img {
+    max-width: 60%;
+    max-height: 60%;
+  }
   .createdAt {
     font-size: 28px;
   }
@@ -99,5 +108,12 @@
   }
   .backCar {
     margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  img {
+    max-width: 40%;
+    max-height: 40%;
   }
 }
