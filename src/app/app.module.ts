@@ -48,18 +48,17 @@ import { AdminPannelReviewComponent } from "./adminComponents/admin-pannel-revie
 import { CarDetailComponent } from "./components/second-hand-car-detail/second-hand-car-detail.component";
 import { FilterCarsComponent } from "./components/filter-cars/filter-cars.component";
 import { ImageViewComponent } from "./adminComponents/image-view/image-view.component";
-
 import { ReviewValidComponent } from "./adminComponents/admin-pannel-review/review-valid/review-valid.component";
 import { ReviewPendingComponent } from "./adminComponents/admin-pannel-review/review-pending/review-pending.component";
-
 import { HomePageIdComponent } from "./adminComponents/admin-pannel-home-page/home-page-id/home-page-id.component";
 import { RegisterComponent } from "./adminComponents/auth/register/register.component";
-
 import { AdminHoursIdComponent } from "./adminComponents/admin-pannel-opening-hours/admin-hours-id/admin-hours-id.component";
-import { CreateCarComponent } from './adminComponents/admin-pannel-second-hand-car/create-car/create-car.component';
-import { UpdatedCarComponent } from './adminComponents/admin-pannel-second-hand-car/updated-car/updated-car.component';
-import { DeletedCarComponent } from './adminComponents/admin-pannel-second-hand-car/deleted-car/deleted-car.component';
-import { UpdatedCarByIDComponent } from './adminComponents/admin-pannel-second-hand-car/updated-car/updated-car-by-id/updated-car-by-id.component';
+import { CreateCarComponent } from "./adminComponents/admin-pannel-second-hand-car/create-car/create-car.component";
+import { UpdatedCarComponent } from "./adminComponents/admin-pannel-second-hand-car/updated-car/updated-car.component";
+import { DeletedCarComponent } from "./adminComponents/admin-pannel-second-hand-car/deleted-car/deleted-car.component";
+import { UpdatedCarByIDComponent } from "./adminComponents/admin-pannel-second-hand-car/updated-car/updated-car-by-id/updated-car-by-id.component";
+import { ErrorInterceptor } from "./error-interceptor";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -85,7 +84,6 @@ import { UpdatedCarByIDComponent } from './adminComponents/admin-pannel-second-h
     AdminPannelReviewComponent,
     AdminPannelSecondHandCarComponent,
     AdminPannelHomePageComponent,
-
     AdminPannelContactFormComponent,
     AdminPannelOpeningHoursComponent,
     AdminPannelImageComponent,
@@ -114,7 +112,6 @@ import { UpdatedCarByIDComponent } from './adminComponents/admin-pannel-second-h
     MatInputModule,
     MatTableModule,
     MatChipsModule,
-
     MatProgressSpinnerModule,
     MatTabsModule,
     MatButtonModule,
@@ -123,9 +120,11 @@ import { UpdatedCarByIDComponent } from './adminComponents/admin-pannel-second-h
     MatSliderModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDialogModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     HoursServiceService,
     carsService,
   ],
