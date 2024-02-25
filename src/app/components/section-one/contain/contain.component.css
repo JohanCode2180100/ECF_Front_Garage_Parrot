@@ -2,9 +2,8 @@
   .titleDisplay {
     display: none;
     text-align: center;
-    
   }
- 
+
   .contain {
     width: 100%;
   }
@@ -44,8 +43,15 @@ nav ul li a {
 }
 
 .p {
-  margin: 20 10 10 0;
+  margin: 10 10 10 0;
   padding: 10px;
-  text-align: justify;
+  text-align: center;
   color: #470b0f;
+}
+@media screen and (min-width: 1200px) {
+  .p {
+    font-size: 1.6em;
+    text-align: justify;
+    line-height: 150%;
+  }
 }

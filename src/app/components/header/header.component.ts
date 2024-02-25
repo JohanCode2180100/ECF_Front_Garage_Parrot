@@ -30,4 +30,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.authListenerSubs.unsubscribe();
   }
+  navigateToHome() {
+    this.router.navigate(["/"]).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
 }

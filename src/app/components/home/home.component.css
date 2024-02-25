@@ -1,0 +1,20 @@
+@media screen and (min-width: 820px) {
+  .section1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contain {
+    width: 80%;
+  }
+  .carousel {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1220px) {
+  .carousel {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+  }
+}
