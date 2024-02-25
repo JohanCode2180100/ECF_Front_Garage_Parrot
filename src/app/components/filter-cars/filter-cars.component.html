@@ -13,9 +13,7 @@
         placeholder="ex: Ford, Peugeot"
       />
       <div>
-        <a *ngFor="let car of Car$ | async" (click)="toGoDetailCar(car)">{{
-          car.brand
-        }}</a>
+        <a *ngFor="let car of Car$ | async" (click)="toGoDetailCar(car)">{{car.model}}</a>
       </div>
     </mat-form-field>
   </form>

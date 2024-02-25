@@ -12,6 +12,8 @@ export class MessageService {
     year: number,
     price: number
   ): string {
-    return `Bonjour \n Je souhaiterais des informations concernant le véhicule ${brand} ${model}, année de mise en circulation ( ${year} ) au prix de ${price} EUR ! \n `;
+    return `Bonjour \n Je souhaiterais des informations concernant le véhicule 
+    ${brand} ${model}, année de mise en circulation ( ${year} ) au prix de 
+    ${price} EUR ! \n `;
   }
 }
