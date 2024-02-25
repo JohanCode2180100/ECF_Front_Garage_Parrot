@@ -1,4 +1,8 @@
-@media screen and (min-width: 280px) {
+@media screen and (max-width: 347px) {
+  header{
+    display: flex;
+    justify-content: space-evenly;
+  }
   .linkDisplay {
     display: none;
   }
@@ -6,12 +10,16 @@
     font-size: 8px;
     text-align: center;
   }
+  h1{
+    display: none;
+  }
   img {
     width: 60px;
     margin-left: 10px;
   }
+  
 }
-@media screen and (min-width: 390px) {
+@media screen and (min-width: 348px) {
   .linkDisplay {
     display: none;
   }

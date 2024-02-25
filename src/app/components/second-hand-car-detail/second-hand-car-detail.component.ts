@@ -15,7 +15,7 @@ import { carsService } from "src/app/services/cars.service";
       <p>{{ carByID.description }}</p>
 
       <mat-card-actions class="cardAction">
-        <button mat-button (click)="goToContactCar()">
+        <button mat-raised-button color="primary" (click)="goToContactCar()">
           Demande de renseignements
         </button>
       </mat-card-actions>

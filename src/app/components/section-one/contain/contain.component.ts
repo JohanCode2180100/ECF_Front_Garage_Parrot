@@ -4,7 +4,7 @@ import { Component } from "@angular/core";
   selector: "app-contain",
   template: `
   <div class="title titleDisplay">
-    <h1>
+    <h1 class="title">
       <span class="red">CONFIEZ VOTRE VEHICULE A </span>
       <span class="dark">DES MAINS EXPERTES</span>
     </h1>
